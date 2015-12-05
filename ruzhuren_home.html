@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>入住人信息</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="css/frame_home.css">
+  <link rel="stylesheet" type="text/css" href="css/content_home.css">
+  <link rel="stylesheet" type="text/css" href="css/ruzhuren_home.css">
+  <script  language="JavaScript" src="js/ruzhuren.js"></script>
+</head>
+<body>
+<div id="body">	
+<!--head-->
+	<div id="head">
+	<!--head_in-->	
+	  <div id="head_in">
+		<div id="head_left">
+			<img src="images/logo_home.jpg"/>
+		</div>
+	    <div id="head_right">
+			<div id="img_head">
+				<img src="images/dingdan_head.jpg">
+			</div>
+			<div id="p_head">
+				我的订单
+			</div>
+		</div>
+	  </div>
+	</div>
+<!--center-->
+
+	<div id="center">
+		<div id="center_top"></div>
+		<div id="center_list">
+		
+			<div id="center_1">
+				<p>用户中心<p>
+			</div>
+			<div id="center_1_1"></div>
+			<div id="center_2">
+				<div id="list_1"><img src="images/user_home.jpg"></img></div>
+				<div id="list_2"><a href="">个人中心首页</div>
+				<div id="list_3"><img src="images/right_home.jpg"></img></div></a>
+			</div>
+			<hr/>
+			<div id="center_3">
+				<div id="list_1"><img src="images/dingdan_home.jpg"></img></div>
+				<div id="list_2"><a href="">订单中心</div>
+				<div id="list_3"><img src="images/right_home.jpg"></img></div></a>
+			</div>
+			<hr/>
+			<div id="center_4">
+				<div id="list_1"><img src="images/ruzhuren_home.jpg"></img></div>
+				<div id="list_2"><a id="a_main" href="">入住人信息</div>
+				<div id="list_3"><img src="images/right_home.jpg"></img></div></a>
+			</div>
+			<hr/>
+			<div id="center_5">
+				<div id="list_1"><img src="images/xiugai_home.jpg"></img></div>
+				<div id="list_2"><a href="">修改资料</div>
+				<div id="list_3"><img src="images/right_home.jpg"></img></div></a>
+			</div>
+			<hr/>
+			<div id="center_3">
+				<div id="list_1"><img src="images/mima_home.jpg"></img></div>
+				<div id="list_2"><a href="">密码设置</div>
+				<div id="list_3"><img src="images/right_home.jpg"></img></div></a>
+			</div>
+		
+		</div>
+		
+		<div id="center_content">
+			<div id="content_1">
+				<nobr id="nobr1">入住人信息</nobr>
+			</div>
+			<hr id="hr2" />
+			<div id="content_zhu_1">
+			<form>
+				<table cellspacing=0 cellpadding=0>
+				<tr id="table_head">
+				<td style="width:40px;">编号</td><td style="width:100px;">姓名</td>
+				<td style="width:140px;">身份证</td><td style="width:40px;">性别</td>
+				<td style="width:100px;">出生日期</td><td style="width:90px;">联系电话</td>
+				<td style="width:100px;">邮箱</td><td style="width:40px;">操作</td>
+				</tr>
+				
+				<tr id="table_tr">
+				<td>1234567	</td><td>登登陆</td><td>130283399402738473</td><td>男</td>
+				<td>1992/02/23</td><td>18200299239</td><td>huyaoweidd1992@qq.com</td><td>删除</td>
+				</tr>
+				<tr id="table_tr">
+				<td>123434</td><td>耳陆</td><td>130283399402738473</td><td>男</td>
+				<td>1992/02/23</td><td>182029939</td><td>1234husyoeld@qq.com</td><td>删除</td>
+				</tr>
+				
+				</table>
+			</form>
+			</div>
+			<div id="center_zhu_3">
+				<img id="tianjia" src="images/tianjia_home.jpg" onclick="return tianjiaruzhuren()">	
+			</div>
+			<div id="center_zhu_2">
+				<div id="center_zhu_2_1">
+					<div id="center_zhu_left">新增入住人</div>
+					<div id="center_zhu_right"><img src="images/cancel_home.jpg" onclick="return close3()"></div>
+				</div>
+				<div id="center_zhu_2_2">
+				<form>
+					<table border="0" id="table2">
+						<tr>
+						<td class="td1">姓名:</td><td class="td2"> <input type="text" name="name" /></td><td class="td1">身份证:</td><td class="td2"> <input type="text" name="IDcard" /></td>					
+						</tr>
+						<tr>
+						<td class="td1">邮箱:</td><td class="td2"><input type="text" name="email" /></td><td class="td1">联系电话:</td><td class="td2"><input type="text" name="phone" /></td>					
+						</tr>
+						<tr>
+						<td class="td1">出生日期:</td><td id="td4"><input type="text" name="year" class="td3"/>年<input type="text" name="month" class="td3"/>月<input type="text" name="day" class="td3"/>日</td>
+						</tr>
+					</table>
+					<div id="save"><img src="images/save_home.jpg" /></div>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--bottom-->
+	<div class="clear"></div>
+	<div id="bottom">
+	</div>
+</div>
+</body>
+</html>
