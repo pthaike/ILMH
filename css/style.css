@@ -7,6 +7,7 @@
   top: 0;
   z-index: 10;
   width: 100%;
+  background-color: rgba(0,0,0,0.02);
 }
 .navlogo{
 	margin-left: 2em;
@@ -15,13 +16,24 @@
 .navlogin{
 	float: right;
   margin-top: 1.5em;
+  line-height: 36px;
 }
 .navlogin li{
-	margin-right: 1em;
+	margin-right: 10px;
 	font-size: 1.3em;
 	font-family: sans-serif;
   color: white;
   float: left;
+}
+.navlogin a{
+  text-decoration: none;
+  color: white;
+}
+
+.navsearch{
+  height: 36px;
+  background: red;
+  padding: 2px;
 }
 
 .rslides {
@@ -66,6 +78,216 @@
 /*  .body{
     height: 900px;
   }*/
+
+
+
+.login{
+  width:680px;
+  position:fixed;
+  border:#ebebeb;
+  height:320px;
+  top:50%;
+  left:45%;
+  /*display:none;*/
+  background:#ffffff;
+  box-shadow:0px 0px 20px #ddd;
+  z-index:9999;
+  margin-left:-250px;
+  margin-top:-140px;
+}
+
+.register{
+  width: 380px;
+  float: left;
+  display: none;
+}
+
+.phone-log{
+  width: 380px;
+  float: left;
+  
+}
+
+.other-log{
+  width: 237px;
+  float: left;
+}
+
+.login-title, .register-title{
+  width:100%;
+  margin:10px 0px 0px 0px;
+  text-align:center;
+  line-height:40px;
+  height:40px;
+  font-size:18px;
+  position:relative;
+}
+.register-input{
+  height:35px;
+  float: left;
+  margin: 5px 5px;
+  border: #ebebeb 1px solid;
+}
+.register-input div{
+      float: left;
+}
+.register-input-content{
+  margin:20px 40px;
+}
+.get-code{
+  height: 35px;
+  border: #ebebeb 1px solid
+}
+.register-input img{
+  height: 35px;
+  width: 35px;
+}
+.register-input input.list-input{
+  height: 35px;
+  border: none;
+}
+/*.login-title span{
+  position:absolute;
+  font-size:12px;
+  right:-20px;
+  top:-30px;
+  background:#ffffff;
+  border:#ebebeb solid 1px;
+  width:40px;
+  height:40px;
+  border-radius:20px;
+}
+.login-title span a{
+  display:block;
+}*/
+.login-input-content{
+  margin:20px 40px;
+
+}
+.login-input {
+  overflow:hidden;
+  margin:0px 0px 20px 0px;
+  border: #ebebeb 1px solid;
+}
+/*.login-input label{
+  float:left;
+  width:90px;
+  padding-right:10px;
+  text-align:right;
+  line-height:35px;
+  height:35px;
+  font-size:14px;
+}*/
+.close-login{
+    float: right;
+    background: black;
+    height: 40px;
+    width: 40px;
+}
+.close-login img{
+  height: 40px;
+  width: 40px;
+}
+.login-input input.list-input{
+  float:left;
+  line-height:35px;
+  height:35px;
+  width:250px;
+  text-indent:5px;
+  float: left;
+  border: none;
+}
+
+.login-input img{
+  height: 35px;
+  width: 35px;
+  line-height: 35px
+      
+}
+
+.login-input div{
+      float: left;
+}
+.forget-pswd{
+  float: right;
+}
+.pswdlabel{
+  float: left;
+}
+.login-button{
+  width:250px;
+  line-height:40px;
+  font-size:14px;
+  text-align:center;
+  background: red;
+  color: white;
+  
+}
+.reg-button{
+    width: 280px;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center;
+    background: red;
+    color: white;
+    margin: 5px 5px;
+}
+.login-button a, .reg-button a{
+  display:block;
+  text-decoration: none;
+  color: white;
+  font-size: 1.6em;
+}
+.login-footer{
+  margin: 35px 0;
+  height: 20px;
+}
+.pswdlabel{
+   height: 20px;
+}
+.forget-pswd{
+  height: 20px;
+}
+.login-bg{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0px;
+  left:0px;
+  background:#ebebeb;
+  filter:alpha(opacity=30);
+  -moz-opacity:0.3;
+  -khtml-opacity:0.3;
+  opacity:0.3;
+  display:none;}
+
+  .line{
+        margin-top: 33px;
+        float: left;
+  }
+
+  .float-left{
+    float: left;
+  }
+  .other-way, .wantreg, .havecount{
+    margin: 20px 0px 20px 40px;
+    height: 60px;
+    width: 100%;
+  }
+  .other-way img{
+    height: 60px;
+    width: 60px;
+  }
+  .havecount{
+    display: none;
+  }
+
+  .othername{
+    line-height: 60px;
+    margin-left: 70px;
+
+  }
+
 
   .search{
     position: absolute;
@@ -237,10 +459,10 @@
   }
 
   .video_cont{
-    width: 400px;
+    width: 470px;
     height: 310px;
     float: left;
-    margin: 45px 40px;
+    margin: 45px 5px;
     position: relative;
   }
 
@@ -251,7 +473,7 @@
   .play{
     position: absolute;
     top:125px;
-    left: 170px;
+    left: 205px;
     height: 60px;
     width: 60px;
   }
@@ -274,6 +496,8 @@
   .play_link:hover{
     background: rgba(234, 232, 232, 0.5);
   }
+
+  /* login */
 
   .footer{
     width: 100%;

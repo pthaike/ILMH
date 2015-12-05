@@ -5,16 +5,12 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="js/jquery-1.9.0.min.js"></script>
-<script src="js/jquery.bxslider.min.js"></script>
-<!-- bxSlider CSS file -->
-<link href="js/jquery.bxslider.css" rel="stylesheet" />
+<script type="text/javascript" src="js/login.js"></script>
+<script src="js/jquery.bxslider.js"></script>
+<link href="css/jquery.bxslider.css" rel="stylesheet" />
 <script>
   $(document).ready(function(){
-  $('.bxslider').bxSlider();
-});
-  $('.bxslider').bxSlider({
-  auto: true,
-  autoControls: true
+  $('.bxslider').bxSlider({auto:true,autoControls: false});
 });
 </script>
 </head>
@@ -29,7 +25,7 @@
 		<div class="navlogin">
 			<ul>
 				<li>注册就送50元优惠券</li>
-				<li><a href="#">登录</a></li>
+				<li class="login-header"><a href="javascript:void(0);">登录</a></li>
 				<li><span class="navseach">立即搜索房源</span></li>
 			</ul>
 		</div>
@@ -41,9 +37,123 @@
 		  <li><img src="images/banner1.jpg" alt=""></li>
 		</ul>
 	</div>
+	<div class="clear"></div>
+	<div class="search">
+		<div class="sinput">
+			<div class="search_box">
+				<div class="search_img"><img src="images/addr.png"></div>
+				<input id="search_addr" class="search_input" type="text" placeholder="现在只开放成都地区">
+			</div>
+			<div class="search_box">
+				<div class="search_img"><img src="images/time.png"></div>
+				<input id="search_time" class="search_input" type="text" placeholder="入住离开时间">
+			</div>
+			<div class="search_bt">
+				<input id="search_botton" class="search_input" type="button" value="搜索" >
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="ad">
+		<div class="ad_box">
+			<div class="ad_img"><img src="images/ad.png"></div>
+			<div class="ad_text">注册就送50元优惠券</div>
+		</div>
+	</div>
 </div>
-<div class="body">
+
+<div class="login">
+    <div class="login-title">登录会员<span><a href="javascript:void(0);" class="close-login">关闭</a></span></div>
+    <div class="login-input-content">
+        <div class="login-input">
+            <label>用&nbsp;户&nbsp;&nbsp;名：</label>
+            <input type="text" placeholder="请输入用户名"  name="info[username]" id="username" class="list-input"/>
+        </div>
+        <div class="login-input">
+            <label>登录密码：</label>
+            <input type="password" placeholder="请输入登录密码" name="info[password]" id="password" class="list-input"/>
+        </div>
+    </div>
+    <div class="login-button"><a href="javascript:void(0);" id="login-button-submit">登录会员</a></div>
+</div>
+
+<div class="content-box">
+	<div class="theme">
+		<div class="theme_box">
+			<div class="theme_title">来成都，住我家</div>
+			<div class="theme_cont">和你在这里遇见，是我最美的记忆</div>
+		</div>
+	</div>
+	<div class="view_pic">
+		<ul class="view_pic_box">
+			<li class="view_img_left">
+				<img src="images/pic1.jpg" alt="">
+				<div class="view_pic_describe">
+					<div class="price">￥268.00</div>
+					<div class="address">锦江、天府广场春熙路旁房源</div>
+				</div>
+				<a href="#"></a>
+			</li>
+			<li class="view_img_right">
+				<img src="images/pic2.jpg" alt="">
+				<div class="view_pic_describe">
+					<div class="price">￥268.00</div>
+					<div class="address">锦江、天府广场春熙路旁房源</div>
+				</div>
+				<a href="#"></a>
+			</li>
+			<li class="view_img_right">
+				<img src="images/pic2.jpg" alt="">
+				<div class="view_pic_describe">
+					<div class="price">￥168.00</div>
+					<div class="address">新会展中心</div>
+				</div>
+				<a href="#"></a>
+			</li>
+			<li class="view_img_right">
+				<img src="images/pic2.jpg" alt="">
+				<div class="view_pic_describe">
+					<div class="price">￥188.00</div>
+					<div class="address">新会展中心</div>
+				</div>
+				<a href="#"></a>
+			</li>
+			<li class="view_img_right">
+				<img src="images/pic2.jpg" alt="">
+				<div class="view_pic_describe">
+					<div class="price">￥268.00</div>
+					<div class="address">新会展中心</div>
+				</div>
+				<a href="#"></a>
+			</li>
+		</ul>
+	</div>
+	<div class="theme">
+		<div class="theme_box">
+			<div class="theme_title">理念，特色</div>
+			<div class="theme_cont">住我家，给你一份最特别的温暖</div>
+		</div>
+	</div>
+	<div class="view_video">
+		<ul class="view_video_box">
+			<li class="video_cont">
+				<img src="images/video1.jpg" class="backimg">
+				<img src="images/play.png" class="play">
+				<div class="play_des">住我家，给你一个温暖的家</div>
+				<a href="#" class="play_link"></a>
+			</li>
+			<li class="video_cont">
+				<img src="images/video2.jpg" class="backimg">
+				<img src="images/play.png" class="play">
+				<div class="play_des">成都(锦官城、天府之国)</div>
+				<a href="#" class="play_link"></a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="footer">
 	
+</div>
 </div>
 </body>
 </html>
