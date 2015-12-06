@@ -10,10 +10,39 @@
 <script src="js/jquery.bxslider.js"></script>
 <link href="css/jquery.bxslider.css" rel="stylesheet" />
 <script>
-  $(document).ready(function(){
-  $('.bxslider').bxSlider({auto:true,autoControls: false});
+  $('.bxslider').bxSlider({
+  buildPager: function(slideIndex){
+    switch(slideIndex){
+      case 0:
+        return '<img src="/images/house_sm1.png">';
+      case 1:
+        return '<img src="/images/house_sm2.png">';
+
+    }
+  }
 });
 </script>
+<style type="text/css">
+  .bx-wrapper .bx-pager {
+    bottom: -95px;
+  }
+  
+  .bx-wrapper .bx-pager a {
+    border: solid #ccc 1px;
+    display: block;
+    margin: 0 5px;
+    padding: 3px;
+  }
+  
+  .bx-wrapper .bx-pager a:hover,
+  .bx-wrapper .bx-pager a.active {
+    border: solid #5280DD 1px;
+  }
+  
+  .bx-wrapper {
+    margin-bottom: 120px;
+  }
+</style>
 </head>
 <body>
 <!-- header -->
@@ -119,7 +148,14 @@
 <div class="content">
 	<div class="main">
 		<div class="content_left">
-			<div class="content_1"></div>
+			<div class="content_1">
+				<div class="gallery">
+					<ul class="bxslider">
+					  <li><a href="#"><img src="images/house1.png" alt=""></a></li>
+					  <li><a href="#"><img src="images/house2.png" alt=""></a></li>
+					</ul>
+				</div>
+			</div>
 			<div class="content_2"></div>
 			<div class="content_3"></div>
 		</div>
