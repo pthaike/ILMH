@@ -73,6 +73,7 @@
 	top: 0px;
 	left: 0px;
   width: 100%;
+  height: 833px;
   }
 
 /*  .body{
@@ -291,7 +292,7 @@
 
   .search{
     position: absolute;
-    top: 450px;
+    top: 647px;
     width: 100%;
   }
 
@@ -332,7 +333,7 @@
   }
   .ad{
     position: absolute;
-    top: 526px;
+    top: 750px;
     width: 100%;
   }
   .ad_box{
