@@ -5,11 +5,44 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="css/frame_home.css">
   <link rel="stylesheet" type="text/css" href="css/content_home.css">
-  <link href="css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
-  <link href="css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="css/rating_bar.css" media="all" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" type="text/css" href="css/pay.css">
-  <script src="js/star-rating.min.js" type="text/javascript"></script>
   <script src="js/jquery-1.9.0.min.js"></script>
+  <script src="js/rating_bar.js" type="text/javascript"></script>
+  <script type="text/javascript">
+        $(function() {
+			$("#houserating").webwidget_rating_bar({
+                    rating_star_length: '5',
+                    rating_default_value: '0',
+                    rating_function_name: '',
+                    directory: 'images/'
+                });
+			$("#similarrating").webwidget_rating_bar({
+                    rating_star_length: '5',
+                    rating_default_value: '0',
+                    rating_function_name: '',
+                    directory: 'images/'
+                });
+			$("#saferating").webwidget_rating_bar({
+                    rating_star_length: '5',
+                    rating_default_value: '0',
+                    rating_function_name: '',
+                    directory: 'images/'
+                });
+			$("#tranrating").webwidget_rating_bar({
+                    rating_star_length: '5',
+                    rating_default_value: '0',
+                    rating_function_name: '',
+                    directory: 'images/'
+                });
+			$("#pricerating").webwidget_rating_bar({
+                    rating_star_length: '5',
+                    rating_default_value: '0',
+                    rating_function_name: '',
+                    directory: 'images/'
+                });
+            });
+  </script>
 </head>
 <body>
 <div id="body">	
@@ -83,24 +116,37 @@
 		
 		<div id="center_content">
 			<div id="content_1">
-				<nobr id="nobr1">订单详情</nobr>
-				<span class="second_title"><img src="images/right-row.png"><span>支付</span></span>
+				<nobr id="nobr1">订单中心</nobr>
+				<span class="second_title"><img src="images/right-row.png"><span>订单详情</span></span>
 			</div>
 			<hr id="hr2" />
 			<div class="pay_center_view">
 				<div class="pay_center_img"><img src="images/pay_house.png"></div>
 				<div class="pay_center_des">
-					<div class="pay_dt_item"><span>订单状态:</span><span class="pay_des_right"><a href="#">待支付</a></span><span class="pay_des_right">已完成</span><span class="pay_des_right">(<a href="#">去评价</a>)</span></div>
+					<div class="pay_dt_item"><span>订单状态:</span><span class="pay_des_right">已完成</span></div>
 					<div class="pay_dt_item"><span>订单编号：</span><span class="pay_des_right">464654545454</span></div>
 					<div class="pay_dt_item"><span>住房地址：</span><span class="pay_des_right">成都市靖江区锦江城市花园2期</span></div>
-					<div class="pay_dt_item"><span>入住离开时间</span><span class="pay_des_right">2015.09.12至2015.09.15</span></div>
+					<div class="pay_dt_item"><span>入住离开时间：</span><span class="pay_des_right">2015.09.12至2015.09.15</span></div>
 				</div>
 			</div>
 			<div class="clear"></div>
 			<div class="pay_center_view">
-				<div><span>房屋整体评价</span><input id="houserate" type="number" class="rating" min=1 max=5 step=2 data-size="lg" data-rtl="true"></div>
-				<input id="input-21b" value="4" type="number" class="rating" min=0 max=5 step=0.2 data-size="lg">
+				<div class="rate_box"><span>房屋整体评价</span><span><input name="houserating" value="5" id="houserating" type="hidden"></span></div>
+				<div class="rate_box"><span>是否与描述相同</span><span><input name="similarrating" value="5" id="similarrating" type="hidden"></span></div>
+				<div class="rate_box"><span>安全程度</span><span><input name="saferating" value="5" id="saferating" type="hidden"></span></div>
+				<div class="rate_box"><span>交通位置</span><span><input name="tranrating" value="5" id="tranrating" type="hidden"></span></div>
+				<div class="rate_box"><span>性价比</span><span><input name="pricerating" value="5" id="pricerating" type="hidden"></span></div>
+				<div class="clear"></div>
+				<div class="house_values">
+					<div>评价</div>
+					<div><textarea rows="8" cols="80" name="house_value"></textarea></div>
+				</div>
+				<div class="pay_way_bt">
+				<input type="botton" value="提交评价"/>
 			</div>
+			</div>
+
+
 			</div>
 
 			</div>
