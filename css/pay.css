@@ -101,3 +101,28 @@
 .choose_pay_title{
 	font-weight: bold;
 }
+
+/*=====================================*/
+/*paydetail*/
+/*=====================================*/
+
+
+.pay_detail_tb table{
+	border: #ebebeb 1px solid;
+}
+.pay_dt_item, .pay_detail_tb{
+	padding: 6px;
+}
+.pay_detail_tb td{
+	text-align: center;
+	padding: 5px;
+}
+.pay_center_view{
+	height: 250px;
+	margin-bottom: 20px;
+}
+.pay_detail_tb img{
+	height: 92px;
+	width: 92px;
+}
+
