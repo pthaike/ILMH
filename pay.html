@@ -3,9 +3,24 @@
 <head>
   <title>订单中心</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script src="js/jquery-1.9.0.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/frame_home.css">
   <link rel="stylesheet" type="text/css" href="css/content_home.css">
   <link rel="stylesheet" type="text/css" href="css/pay.css">
+  <script type="text/javascript">
+  	function changepaytoyl(){
+  		var wxobj=document.getElementById("weixin")
+  		wxobj.style.display="table-row";
+  		var obj = document.getElementById("zfb");
+  		obj.style.display="table-row";
+  	}
+  	function changepaytopt(){
+  		var wxobj=document.getElementById("weixin")
+  		wxobj.style.display="none";
+  		var obj = document.getElementById("zfb");
+  		obj.style.display="none";
+  	}
+  </script>
 </head>
 <body>
 <div id="body">	
@@ -97,12 +112,11 @@
 			<div class="pay_way_choose">
 			<table border="1px" cellspacing="0px">
 				<tr class="pay_title">
-					<td ><span><a href="#" class="pay_title_plat">支付平台</a></span></td>
-					<td ><span><a href="#" class="pay_title_yl">银联支付</a></span></td>
+					<td ><span><a href="javascript:void(0)" class="pay_title_plat" onclick="changepaytoyl();">支付平台</a></span></td>
+					<td ><span><a href="javascript:void(0)" class="pay_title_yl" onclick="return changepaytopt()">银联支付</a></span></td>
 					<td></td>
 				</tr>
-				<div class="pay_platfomr">
-					<tr>
+				<tr class="platform" id="weixin">
 					<td colspan="3">
 						<div class="pay_way_check">
 							<input type="checkbox" />
@@ -114,7 +128,7 @@
 						</div>
 					</td>
 				</tr>
-				<tr>
+				<tr class="platform" id="zfb">
 					<td colspan="3">
 					<div class="pay_way_check">
 						<input type="checkbox" />
@@ -126,8 +140,10 @@
 					</div>
 					</td>
 				</tr>
+
+				<div id="ylpay">
+					
 				</div>
-				
 			</table>
 			<div class="pay_way_box">
 			<div class="pay_way_bt">
