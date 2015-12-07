@@ -10,7 +10,7 @@
 <link href="css/jquery.bxslider.css" rel="stylesheet" />
 <script>
   $(document).ready(function(){
-  $('.bxslider').bxSlider({auto:true,autoControls: false});
+  $('.bxslider').bxSlider({auto:true,autoControls: false,pager:false});
 });
 </script>
 </head>
@@ -98,16 +98,16 @@
 	    <div class="register-input-content">
 	        <div class="register-input">
 	            <div class="register_num"><img src="images/phone.png"></div>
-	            <input type="text" placeholder="输手机号" class="list-input"/>
+	            <input type="text" placeholder="输手机号" class="item-input"/>
 	            <input type="button" value="获取验证码" class="get-code"/>
 	        </div>
 	        <div class="register-input">
 	            <div class="register_code"><img src="images/email.png"></div>
-	            <input type="text" placeholder="验证码" class="list-input"/>
+	            <input type="text" placeholder="验证码" class="item-input"/>
 	        </div>
 	        <div class="register-input">
 	            <div class="register_pswd"><img src="images/login-pswd.png"></div>
-	            <input type="password" placeholder="登录密码" class="list-input"/>
+	            <input type="password" placeholder="登录密码" class="item-input"/>
 	        </div>
 	        <div class="clear"></div>
 	        <div class="reg-button"><a href="javascript:void(0);" id="login-button-submit">注册</a></div>
@@ -152,36 +152,38 @@
 	<div class="view_pic">
 		<ul class="view_pic_box">
 			<li class="view_img_left">
+				<div class="view_pic_describe">
+					<div class="price">￥268.00</div>
+					<div class="address">锦江、天府广场春熙路旁房源</div>
+				</div>
+				<a href="#"></a>
 				<img src="images/pic1.jpg" alt="">
+			</li>
+			<li class="view_img_right">
 				<div class="view_pic_describe">
 					<div class="price">￥268.00</div>
 					<div class="address">锦江、天府广场春熙路旁房源</div>
 				</div>
-				<a href="#"></a>
+				<span><a href="#"></a></span>
+				<img src="images/pic2.jpg" alt="">
 			</li>
 			<li class="view_img_right">
-				<img src="images/pic2.jpg" alt="">
-				<div class="view_pic_describe">
-					<div class="price">￥268.00</div>
-					<div class="address">锦江、天府广场春熙路旁房源</div>
-				</div>
-				<a href="#"></a>
-			</li>
-			<li class="view_img_right">
-				<img src="images/pic2.jpg" alt="">
+				
 				<div class="view_pic_describe">
 					<div class="price">￥168.00</div>
 					<div class="address">新会展中心</div>
 				</div>
 				<a href="#"></a>
+				<img src="images/pic2.jpg" alt="">
 			</li>
 			<li class="view_img_right">
-				<img src="images/pic2.jpg" alt="">
+				
 				<div class="view_pic_describe">
 					<div class="price">￥188.00</div>
 					<div class="address">新会展中心</div>
 				</div>
 				<a href="#"></a>
+				<img src="images/pic2.jpg" alt="">
 			</li>
 			<li class="view_img_right">
 				<img src="images/pic2.jpg" alt="">

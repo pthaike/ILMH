@@ -44,7 +44,7 @@
 		preventDefaultSwipeY: false,
 
 		// PAGER
-		pager: false,
+		pager: true,
 		pagerType: 'full',
 		pagerShortSeparator: ' / ',
 		pagerSelector: null,
@@ -57,7 +57,7 @@
 		prevText: 'Prev',
 		nextSelector: null,
 		prevSelector: null,
-		autoControls: false,
+		autoControls: true,
 		startText: 'Start',
 		stopText: 'Stop',
 		autoControlsCombine: false,

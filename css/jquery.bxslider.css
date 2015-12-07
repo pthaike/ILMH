@@ -15,15 +15,16 @@
 ===================================*/
 
 .bx-wrapper {
-	position: relative;
-	margin: 0 auto 60px;
+	/*position: relative;*/
+	margin: 0 auto 30px;
 	padding: 0;
 	*zoom: 1;
 }
 
 .bx-wrapper img {
-	max-width: 100%;
+	/*max-width: 100%;*/
 	display: block;
+	/*height: 393px;*/
 }
 
 /** THEME
@@ -47,8 +48,9 @@
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
 	position: absolute;
-	bottom: -30px;
-	width: 100%;
+	top:5px;
+	right: 1px;
+	width: 100px;
 }
 
 /* LOADER */
@@ -72,7 +74,7 @@
 	font-family: Arial;
 	font-weight: bold;
 	color: #666;
-	padding-top: 20px;
+	/*padding-top: 20px;*/
 }
 
 .bx-wrapper .bx-pager .bx-pager-item,
@@ -200,4 +202,9 @@
 	display: block;
 	font-size: .85em;
 	padding: 10px;
+}
+
+.bx-pager-item img{
+	width: 90px;
+	height: 66px;
 }

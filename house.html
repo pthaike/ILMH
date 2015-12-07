@@ -10,39 +10,25 @@
 <script src="js/jquery.bxslider.js"></script>
 <link href="css/jquery.bxslider.css" rel="stylesheet" />
 <script>
+	 $(document).ready(function(){
   $('.bxslider').bxSlider({
   buildPager: function(slideIndex){
     switch(slideIndex){
       case 0:
-        return '<img src="/images/house_sm1.png">';
+        return '<img src="images/house_sm1.png">';
       case 1:
-        return '<img src="/images/house_sm2.png">';
-
+        return '<img src="images/house_sm2.png">';
+      case 2:
+        return '<img src="images/house_sm1.png">';
+      case 3:
+        return '<img src="images/house_sm2.png">';
+      case 4:
+        return '<img src="images/house_sm2.png">';
     }
   }
 });
+});
 </script>
-<style type="text/css">
-  .bx-wrapper .bx-pager {
-    bottom: -95px;
-  }
-  
-  .bx-wrapper .bx-pager a {
-    border: solid #ccc 1px;
-    display: block;
-    margin: 0 5px;
-    padding: 3px;
-  }
-  
-  .bx-wrapper .bx-pager a:hover,
-  .bx-wrapper .bx-pager a.active {
-    border: solid #5280DD 1px;
-  }
-  
-  .bx-wrapper {
-    margin-bottom: 120px;
-  }
-</style>
 </head>
 <body>
 <!-- header -->
@@ -149,18 +135,151 @@
 	<div class="main">
 		<div class="content_left">
 			<div class="content_1">
-				<div class="gallery">
-					<ul class="bxslider">
-					  <li><a href="#"><img src="images/house1.png" alt=""></a></li>
-					  <li><a href="#"><img src="images/house2.png" alt=""></a></li>
-					</ul>
+			<!-- house picture -->
+				<div class="content_1_title">
+					<div>锦江区庭院带四间卧房</div>
+					<div>住我家>成都>四川成都市成华区</div>
+				</div>
+				<div class="house_slide_top">
+					<div class="house_slide">
+						<div class="house_slide_left">
+							<ul class="bxslider">
+							  <li class="house_slide_img"><a href="#"><img src="images/house1.png" alt=""></a></li>
+							  <li class="house_slide_img"><a href="#"><img src="images/house2.png" alt=""></a></li>
+							  <li class="house_slide_img"><a href="#"><img src="images/house1.png" alt=""></a></li>
+							  <li class="house_slide_img"><a href="#"><img src="images/house2.png" alt=""></a></li>
+							  <li class="house_slide_img"><a href="#"><img src="images/house2.png" alt=""></a></li>
+							</ul>
+						</div>
+						<div class="house_slide_right"></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<!-- house describe -->
+				<div class="house_slide_down">
+					<div class="brf_des_box">
+						<div class="brf_des_img"><img src="images/house_size.png"></div>
+						<div class="brf_des">
+							<div class="brf_des_title">房屋面积：50平米</div>
+							<div class="brf_des_com">房屋户型：1室2厅1卫1厨2阳台</div>
+						</div>
+					</div>
+					<div class="brf_des_slide"><img src="images/small_line.png"></div>
+					<div class="brf_des_box">
+						<div class="brf_des_img"><img src="images/people_num.png"></div>
+						<div class="brf_des">
+							<div class="brf_des_title">宜住2人</div>
+							<div class="brf_des_com">房客独享整套房屋</div>
+						</div>
+					</div>
+					<div class="brf_des_slide"><img src="images/small_line.png"></div>
+					<div class="brf_des_box">
+						<div class="brf_des_img"><img src="images/bed_size.png"></div>
+						<div class="brf_des">
+							<div class="brf_des_title">双人床2米 x 1.5米 x 1张</div>
+							<div class="brf_des_com">沙发：2米 x 0.8米 x 1张</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="content_2"></div>
-			<div class="content_3"></div>
+			<div class="content_2">
+				<table>
+					<tr>
+						<td class="content_2_img"><img src="images/content_2_house.png"><div>房屋介绍</div></td>
+						<td class="content_2_des">卧室里面有 无线宽带 55寸三星智能电视机 全新台式商务电脑 床头灯 茶桌 衣柜等。厨房里面有 冰箱 微波炉 燃气灶 电饭煲 各式调味品。房间主色调是 欧式时尚风。房间装修风格是 欧式奢华装修。卫生间里面有 滚筒洗衣机 抽水马桶 淋浴 各种洗浴用品。</td>
+					</tr>
+					<tr>
+						<td class="content_2_img"><img src="images/content_2-pat.png"><div>小区介绍</div></td>
+						<td class="content_2_des">无线宽带 55寸三星智能电视机 全新台式商务电脑 床头灯 茶桌 衣柜等。厨房里面有 冰箱 微波炉 燃气灶 电饭煲 各式调味品。房间主色调是 欧式时尚风。房间装修风格是 欧式奢华装修。卫生间里面有 滚筒洗衣机 抽水马桶 淋浴 各</td>
+					</tr>
+					<tr>
+						<td class="content_2_img"><img src="images/content_2_env.png"><div>周边介绍</div></td>
+						<td class="content_2_des">周围的饭馆有 湘菜馆 特色本地饭馆 等。有浦发银行 工商 建设银行。有 农工商 乐购等大中小型各种商超 满足日常需要。有空可以逛逛国美 乐购，医院 徐泾镇中心医院 等，各种设施齐全。</td>
+					</tr>
+					<tr>
+						<td class="content_2_img"><img src="images/content_2_bus.png"><div>交通情况</div></td>
+						<td class="content_2_des">无论从机场还是高铁均可乘坐地铁 2号线 坐到徐泾东 或者 车接。周围的公交车站有 朱徐线 710 706 865 等，交通便利。打的16元左右。从徐泾东到家里的距离大约4 公里。开车10左右分钟，客人白天到达，提前联系后可提供免费接送服务。</td>
+					</tr>
+					<tr>
+						<td class="content_2_img"><img src="images/content_2_tv.png"><div>配套设施</div></td>
+						<td class="content_2_des"><span class="item_gap">电视机</span><span class="item_gap">电冰箱</span><span class="item_gap">洗衣机</span><span class="item_gap">电视机</span><span class="item_gap">电冰箱</span><span class="item_gap">洗衣机</span><span class="item_gap">电视机</span><span class="item_gap">电冰箱</span><span class="item_gap">洗衣机</span></td>
+					</tr>
+				</table>
+			</div>
+			<!-- house comment -->
+			<div class="content_3">
+				<table>
+					<tr class="fisr_tr">
+						<td colspan="3">
+							<img src="images/comment.png">
+							<span>房屋评价信息</span>
+							<span>(120)</span>
+						</td>
+					</tr>
+					<tr class="comment_item">
+						<td>
+							<img src="images/portraint.png">
+						</td>
+						<td class="underline">
+							<div class="comment_type">
+								<div class="comment_name">山河故人</div>
+								<div class="comemnt_time">入住时间： <span>2015年10月</span></div>
+							</div>
+							<div class="clear"></div>
+							<div>来叔叔这边借宿好几次了，来过一次之后再也没留意过周边别的酒店宾馆，这里绝对是五星+。 房间收拾的特别整洁舒服，特别为借宿的客人着想 各种细节方面可以看出来。叔叔做的饭也特别好吃，特别有家的感觉。临走的时候还送我一大包东西，不知道的还以为我去了亲戚家。谢谢叔叔这样真诚的对待每一位房客。感恩。</div>
+							
+							<div class="comment_type">房东回复</div>
+							<div class="org_box"><span class="org_bot_cor"></span>美丽漂亮的朝鲜族美女带着两个韩国朋友（她们公司的老板和老板娘）入住我家，呵呵，还是第一次接待来自韩国的朋友，三天来相处的非常和谐，因为有美女做翻译，沟通交流一点也没有困难。感谢他们选择入住我家，期待着他们再次光临！</div>
+						</td>
+					</tr>
+					<tr class="comment_item">
+						<td>
+							<img src="images/portraint.png">
+						</td>
+						<td class="underline">
+							<div class="comment_type">
+								<div class="comment_name">山河故人</div>
+								<div class="comemnt_time">入住时间： <span>2015年10月</span></div>
+							</div>
+							<div class="clear"></div>
+							<div>来叔叔这边借宿好几次了，来过一次之后再也没留意过周边别的酒店宾馆，这里绝对是五星+。 房间收拾的特别整洁舒服，特别为借宿的客人着想 各种细节方面可以看出来。叔叔做的饭也特别好吃，特别有家的感觉。临走的时候还送我一大包东西，不知道的还以为我去了亲戚家。谢谢叔叔这样真诚的对待每一位房客。感恩。</div>
+						</td>
+					</tr>
+					<tr class="comment_item">
+						<td>
+							<img src="images/portraint.png">
+						</td>
+						<td class="underline">
+							<div class="comment_type">
+								<div class="comment_name">山河故人</div>
+								<div class="comemnt_time">入住时间： <span>2015年10月</span></div>
+							</div>
+							<div class="clear"></div>
+							<div>来叔叔这边借宿好几次了，来过一次之后再也没留意过周边别的酒店宾馆，这里绝对是五星+。 房间收拾的特别整洁舒服，特别为借宿的客人着想 各种细节方面可以看出来。叔叔做的饭也特别好吃，特别有家的感觉。临走的时候还送我一大包东西，不知道的还以为我去了亲戚家。谢谢叔叔这样真诚的对待每一位房客。感恩。</div>
+							
+							<div class="comment_type">房东回复</div>
+							<div class="org_box"><span class="org_bot_cor"></span>美丽漂亮的朝鲜族美女带着两个韩国朋友（她们公司的老板和老板娘）入住我家，呵呵，还是第一次接待来自韩国的朋友，三天来相处的非常和谐，因为有美女做翻译，沟通交流一点也没有困难。感谢他们选择入住我家，期待着他们再次光临！</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!-- house comment end -->
 		</div>
 		<div class="content_right">
-			
+		<div class="content_right_box">
+			<div class="content_right_item1">
+				<span class="content_right_price">￥268</span><span class="content_right_unit">/晚</span><span class="line_through">原价<span>400</span>/晚</span>
+			</div>
+			<div class="content_right_item2">
+				<img src="images/time_pic.png">
+				<div>2015-11-15至2015-11-13</div>
+			</div>
+			<div class="content_right_item3"><input type="button" value="预定住房"></div>
+			<div class="content_right_item4">地理位置</div>
+			<div class="content_right_map">
+				<img src="images/right_map.png">
+			</div>
+		</div>
 		</div>
 	</div>
 </div>
