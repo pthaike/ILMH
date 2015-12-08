@@ -63,10 +63,11 @@ body{
   }
   
   .bx-wrapper .bx-pager a {
-    border: solid #ccc 1px;
+    /*border: solid #ccc 1px;*/
     display: block;
     margin: 0 5px;
     padding: 3px;
+    height: 65px;
   }
   
   .bx-wrapper .bx-pager a:hover,
@@ -146,6 +147,9 @@ body{
 .comment_item td:last-child{
   padding: 20px 25px;
 }
+.underline{
+  padding: 20px 25px;
+}
 .comment_type{
   height: 40px;
   line-height: 30px;
@@ -213,4 +217,13 @@ body{
 }
 .content_right_item2 div,img{
   float: left;
+}
+.fisr_tr img div{
+  float: left;
+  height: 36px;
+  line-height: 36px;
+}
+.fisr_tr div{
+  height: 36px;
+  line-height: 36px;
 }
