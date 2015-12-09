@@ -1,0 +1,97 @@
+@import url("init.css");
+.clear{clear:both;} /* clear float */
+.first-title{
+
+}
+.second_title{
+	font-size: 1.2em;
+}
+.second_title img{
+	margin-bottom: -5px;
+}
+.platform{
+	
+}
+.pay_center_img{
+	float: left;
+}
+.pay_des_item{
+	margin: 10px;
+	padding: 7px;
+}
+.pay_center_img img{
+	height: 235px;
+	width: 270px;
+}
+.pay_des_right, .pay_des_price{
+	margin-left: 6px;
+}
+.pay_des_price{
+	color: red;
+	font-size: 1.6em;
+}
+.pay_center_des{
+	margin-left: 280px;
+	margin-right: 58px;
+}
+.text{
+	width:100%;
+	height:40px;
+	font-size:16px;
+	font-weight:bold;
+	line-height:40px;
+
+}
+#center_1 p{
+	margin-left:1em;
+}
+.table_info {
+	width:100%;
+}
+.table_info table{
+	width:100%;
+	background-color:#DCDCDC;
+	height:40px;
+	text-align:center;
+}
+
+.table_info input{
+	width:18px;
+	margin:5px 5px;
+	height:18px;
+	color:white;
+}
+.add_info{
+	width:100%;
+	height:30px;
+	text-align:right;
+	line-height:30px;
+	font-size:17px;
+	margin-top:5px;
+}
+.protocol{
+	width:70%;
+	margin:auto;
+	height:40px;
+	font-size:17px;
+	font-weight:bold;
+	text-align:center;
+	line-height:40px;
+}
+.protocol span{
+	color:red;
+}
+.submit{
+	width:100%;
+	height:50px;
+	text-align:center;
+	line-height:50px;
+}
+.submit input{
+	width:150px;
+	height:35px;
+	background-color:red;
+	font-size:18px;
+	color:white;
+	font-weight:bold;
+}

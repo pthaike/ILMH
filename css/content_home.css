@@ -1,7 +1,7 @@
 /*head*/
 @import url("init.css");
 #head_in{
-	width:70em;
+	width:960px;
 	margin:auto;
 }
 #head_left{
@@ -60,6 +60,7 @@ p{
 #list_1{
 	margin-left:10px;
 	float:left;
+	clear:left;
 }
 #list_2{
 	float:left;			
@@ -67,7 +68,7 @@ p{
 	margin-left:13px;
 }
 #list_3{
-	float:right;	
+	float:right;
 }
 #a_main{
 	padding:0;
@@ -80,15 +81,17 @@ a{
 	color:#000000;
 	text-decoration:none;
 }
+
 hr{
 	width:95%;
+	clear:both;
 }
 	/*content*/
 #hr2{
 	width:100%;
 	border:0;
 	height:2px;
-	background-color:#000000;
+	background-color:#DCDCDC;
 }
 #content_1{
 	height:3.2em;

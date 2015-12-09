@@ -2,10 +2,12 @@
 <!-- saved from url=(0028)http://www.w3.org/1999/xhtml -->
 <html>
 <head>
-<title>我爱我家</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/house.css">
+  <title>订单中心</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="css/frame_home.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/content_home.css">
+  <link rel="stylesheet" type="text/css" href="css/house.css">
 <script src="js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
 <script src="js/jquery.bxslider.js"></script>
@@ -32,29 +34,25 @@
 </script>
 </head>
 <body>
-<!-- header -->
-<div class="header">
-	<div class="header-top">
-		<div class="navlogo">
-			<ul>
-				<li><a href="#"><img src="images/logo.png" alt="home"></a></li>
-			</ul>
+<div id="body">	
+<!--head-->
+	<div id="head">
+	<!--head_in-->	
+	  <div id="head_in">
+		<div id="head_left">
+			<img src="images/logo_home.png"/>
 		</div>
-		<div class="navlogin">
-			<ul>
-				<li id="">注册就送50元优惠券</li>
-				<li>.</li>
-				<li class="login-header"><a href="javascript:void(0);">登录</a></li>
-				<li>.</li>
-				<li class="navsearch"><span >立即搜索房源</span></li>
-			</ul>
+	    <div class="head_right">
+			<div class="text_head">
+				<a href="">注册送50元优惠券</a><span style="color:red;font-size:20px;">·</span><span class="login-header"><a href="javascript:void(0);" >登录</a></span></span>
+			</div>
+			<div id="img_head">
+				立即搜索房源
+			</div>
 		</div>
+	  </div>
 	</div>
-</div>
-<!-- hearder end -->
-
-<!-- login dialog -->
-<div class="login">
+	<div class="login">
 	<div><a href="javascript:void(0);" class="close-login"><img src="images/close.png"></a></div>
 	<div class="phone-log">
 		<div class="login-title">登录</div>
@@ -86,7 +84,7 @@
 	    <div class="register-input-content">
 	        <div class="register-input">
 	            <div class="register_num"><img src="images/phone.png"></div>
-	            <input type="text" placeholder="输手机号" class="list-input"/>
+	            <input type="text" placeholder="输手机号" class="phone-input"/>
 	            <input type="button" value="获取验证码" class="get-code"/>
 	        </div>
 	        <div class="register-input">
@@ -129,10 +127,9 @@
 <div class="login-bg"></div>
 <!-- login dialog end-->
 
-<!-- content -->
-<div class="clear"></div>
+<!--center-->
 
-<div class="content">
+		<div class="content">
 	<div class="main">
 		<div class="content_left">
 			<div class="content_1">
@@ -152,7 +149,7 @@
 							  <li class="house_slide_img"><a href="#"><img src="images/house2.png" alt=""></a></li>
 							</ul>
 						</div>
-						<div class="house_slide_right"></div>
+<!-- 						<div class="house_slide_right"></div> -->
 					</div>
 				</div>
 				<div class="clear"></div>
@@ -287,12 +284,12 @@
 		</div>
 		</div>
 	</div>
-</div>
-</div>
-<!-- footer -->
-<!-- <div class="footer"> -->
+
+<!--bottom-->
+	<div class="clear"></div>
+<!-- 	<div id="bottom"> -->
+	</div>
 	
-</div>
 </div>
 </body>
 </html>
