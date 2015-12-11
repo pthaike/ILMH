@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0028)http://www.w3.org/1999/xhtml -->
 <html>
 <head>
   <title>订单中心</title>
@@ -6,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="css/frame_home.css">
   <link rel="stylesheet" type="text/css" href="css/content_home.css">
   <link rel="stylesheet" type="text/css" href="css/dingdan_home.css">
+  <script src="js/dingdan.js"></script>
 </head>
 <body>
 <div id="body">	
@@ -33,36 +35,36 @@
 		<div id="center_list">
 		
 			<div id="center_1">
-				<p>用户中心<p>
+				<p>用户中心</p>
 			</div>
 			<div id="center_1_1"></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/user_home.png"></img></div>
-				<div id="list_2"><a href="">个人中心首页</div>
+				<div id="list_2"><a href="zhuye_home.html">个人中心首页</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
 			<hr/>
 			<div id="center_3">
 				<div id="list_1"><img src="images/dingdan_home.png"></img></div>
-				<div id="list_2"><a id="a_main" href="">订单中心</div>
+				<div id="list_2"><a id="a_main" href="dingdan_home.html">订单中心</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
 			<hr/>
 			<div id="center_4">
 				<div id="list_1"><img src="images/ruzhuren_home.png"></img></div>
-				<div id="list_2"><a  href="">入住人信息</div>
+				<div id="list_2"><a  href="ruzhuren_home.html">入住人信息</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
 			<hr/>
 			<div id="center_5">
 				<div id="list_1"><img src="images/xiugai_home.png"></img></div>
-				<div id="list_2"><a href="">修改资料</div>
+				<div id="list_2"><a href="xiugai_home.html">修改资料</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
 			<hr/>
 			<div id="center_3">
 				<div id="list_1"><img src="images/mima_home.png"></img></div>
-				<div id="list_2"><a href="">密码设置</div>
+				<div id="list_2"><a href="mima_home.html">密码设置</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
 		
@@ -76,10 +78,18 @@
 			<div id="content_2">
 				<table id="dingdan_table">
 					<tr>
-						<td id="td_main" style="border-left:none;">全部订单</td>
-						<td>已完成订单</td>
-						<td>待支付订单</td>
-						<td style="border-right:none;">已删除订单</td>
+						<td id="td_main" style="border-left:none;">
+							<input id= "button_1" style="background-color:#696969;color:#ffffff;" type="button" value="全部订单" onclick="Select(1)" \>
+						</td>
+						<td>
+							<input id= "button_2" type="button" value="已完成订单" onclick="return Select(2)"\>
+						</td>
+						<td>
+							<input id= "button_3" type="button" value="待完成订单" onclick="return Select(3)"\>
+						</td>
+						<td style="border-right:none;">
+							<input id= "button_4" type="button" value="已删除订单" onclick="return Select(4)"\>
+						</td>
 					</tr>
 				</table>
 			</div>

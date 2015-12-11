@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0028)http://www.w3.org/1999/xhtml -->
 <html>
 <head>
   <title>修改资料</title>
@@ -6,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="css/frame_home.css">
   <link rel="stylesheet" type="text/css" href="css/content_home.css">
   <link rel="stylesheet" type="text/css" href="css/xiugai_home.css">
-  <script src="js/xiugai.js"></script>
+   <script src="js/xiugai.js"></script>
 </head>
 <body>
 <div id="body">	
@@ -15,7 +16,7 @@
 	<!--head_in-->	
 	  <div id="head_in">
 		<div id="head_left">
-			<img src="images/logo_home.png" />
+			<img src="images/logo_home.png"/>
 		</div>
 	    <div id="head_right">
 			<div id="img_head">
@@ -32,59 +33,50 @@
 	<div id="center">
 		<div id="center_top"></div>
 		<div id="center_list">
+		
 			<div id="center_1">
 				<p>用户中心<p>
 			</div>
 			<div id="center_1_1"></div>
-			
 			<div id="center_2">
 				<div id="list_1"><img src="images/user_home.png"></img></div>
-				<a id="a_content_1" href="">
-				<div id="list_2">个人中心首页</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div>	
-				</a>
-			</div>	
+				<div id="list_2"><a href="zhuye_home.html">个人中心首页</div>
+				<div id="list_3"><img src="images/right_home.png"></img></div></a>
+			</div>
 			<hr/>
 			<div id="center_3">
 				<div id="list_1"><img src="images/dingdan_home.png"></img></div>
-				<a id="a_content_1" href="">
-				<div id="list_2">订单中心</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div>
-				</a>
+				<div id="list_2"><a href="dingdan_home.html">订单中心</div>
+				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
 			<hr/>
 			<div id="center_4">
 				<div id="list_1"><img src="images/ruzhuren_home.png"></img></div>
-				<a id="a_main" href="">
-				<div id="list_2">入住人信息</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div>
-				</a>
+				<div id="list_2"><a  href="ruzhuren_home.html">入住人信息</div>
+				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
 			<hr/>
 			<div id="center_5">
 				<div id="list_1"><img src="images/xiugai_home.png"></img></div>
-				<a id="a_content_1" href="">
-				<div id="list_2">修改资料</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div>
-				</a>
+				<div id="list_2"><a id="a_main" href="xiugai_home.html">修改资料</div>
+				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
 			<hr/>
 			<div id="center_3">
 				<div id="list_1"><img src="images/mima_home.png"></img></div>
-				<a id="a_content_1" href="">
-				<div id="list_2">密码设置</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div>
-				</a>
+				<div id="list_2"><a href="mima_home.html">密码设置</div>
+				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
-		</div>
-		
+		</div>	
+
+
 		<div id="center_content">
 			<div id="content_1">
 				<nobr id="nobr1">修改资料</nobr>
 			</div>
 			<hr id="hr2" />
 			<div id="content_2">
-				<form>
+				<form target="myFrame">
 					<table id="t_1">
 						<tr>
 							<td id="td_1">用<span style="font-family:'Times New Roman';">&nbsp;&nbsp;</span>户<span style="font-family:'Times New Roman';">&nbsp;&nbsp;</span>名:</td>
@@ -107,8 +99,9 @@
 						</tr>
 						<tr>
 							<td id="td_1">性<span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>别:</td>
-							<td id="td_2"><label><input type="radio" value="" id="input_2"/>男</label> 
-								<label><input type="radio" value="" id="input_2"/>女</label> 
+							<td id="td_2">
+								<label><input type="radio" name="sex" value="" checked="checked" id="input_2"/>男</label> 
+								<label><input type="radio" name="sex" value="" id="input_2"/>女</label> 
 							</td>
 						</tr>
 						<tr>
@@ -116,31 +109,25 @@
 							<td id="td_2"><img id="img_1" src="images/qq.png"><img id="img_1" src="images/weixin.png"></td>
 						</tr>
 					</table>
-				
-				<div id="xiugai_3">
 					
-					<table id="xiugai_3_1" width="100%" border="0" cellspacing="0" cellpadding="0">
-					<tbody>
-					<tr>
-					<td height="101" align="center">
-					<div id="localImag"><img id="preview" src="images/touxiang_home.jpg" width="120" height="140" style="display: block; width: 120px; height: 140px; margin-left:-30px;"></div>
-					</td>
-					</tr>
-					<tr>
-					<td align="center" style="padding-top:10px;"><input type="file" name="file" id="doc" style="width:150px;" onchange="javascript:setImagePreview();"></td>
-					</tr>
-					</tbody>
-					</table>
-					<!--
-					<div id="xiugai_3_1">
-						<div id="pic" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);width: 120px;height: 100px;border: 1px black solid;"></div>  
-						<!--<img style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)" src="images/touxiang_home.jpg" id="img_2"/>	
-						<input type="file" name="pctVirgin" value="点击上传头像" onchange="changePic(this)" />  
-					</div>
-					-->
-					<img src="images/queren_home.png" id="img_3"/>
-					
-				</div>	
+					<div id="xiugai_3">
+						
+						<table id="xiugai_3_1" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+							<tr>
+							<td height="101" align="center">
+							<div id="localImag"><img id="preview" src="images/touxiang_home.jpg" width="120" height="140" style="display: block; width: 120px; height: 140px; margin-left:-30px;"></div>
+							</td>
+							</tr>
+							<tr>
+							<td align="center" style="padding-top:10px;"><input type="file" name="file" id="doc" style="width:150px;" onchange="javascript:setImagePreview();"></td>
+							</tr>
+							</tbody>
+						</table>
+						<div id="butt_queren">
+							<input type="button" value="确认修改" />
+						</div>
+					</div>	
 				</form>
 			</div>
 		</div>
