@@ -13,22 +13,51 @@ $(function () {
         });
     };
 
-    H_login.openreg = function(){
-        $('.wantreg a').click(function(){
+    // H_login.openreg = function(){
+    //     $('.wantreg a').click(function(){
+    //         $('.phone-log').hide();
+    //         $('.wantreg').hide();
+    //         $('.register').show();
+    //         $('.havecount').show();
+    //     });
+    // };
+    // H_login.reopenlogin = function(){
+    //     $('.havecount a').click(function(){
+    //         $('.phone-log').show();
+    //         $('.wantreg').show();
+    //         $('.register').hide();
+    //         $('.havecount').hide();
+    //     });
+    // };
+
+    H_login.opencountlogin = function(){
+        $('#count_login_link').click(function(){
+            $('.message_login').hide();
+            $('.count_login').show();
+            document.getElementById('count_login_title').style.borderBottom="solid red 1px";
+            document.getElementById('message_login_title').style.borderBottom='none'
+        });
+    }
+    H_login.openmsglogin = function(){
+        $('#msg_login_link').click(function(){
+            $('.count_login').hide();
+            $('.message_login').show();
+            document.getElementById('message_login_title').style.borderBottom='solid red 1px'
+            document.getElementById('count_login_title').style.borderBottom="none";
+        });
+    }
+    H_login.openregbox = function(){
+        $('.reg_instant a').click(function(){
             $('.phone-log').hide();
-            $('.wantreg').hide();
             $('.register').show();
-            $('.havecount').show();
         });
-    };
-    H_login.reopenlogin = function(){
-        $('.havecount a').click(function(){
-            $('.phone-log').show();
-            $('.wantreg').show();
+    }
+    H_login.openloginbox = function(){
+        $('.login_instant a').click(function(){
             $('.register').hide();
-            $('.havecount').hide();
+            $('.phone-log').show();
         });
-    };
+    }
     H_login.loginForm = function () {
         $("#login-button-submit").on('click',function(){
               var username = $("#username");
@@ -65,8 +94,12 @@ $(function () {
         this.closeLogin();
         this.openLogin();
         this.loginForm();
-        this.openreg();
-        this.reopenlogin();
+        // this.openreg();
+        // this.reopenlogin();
+        this.opencountlogin();
+        this.openmsglogin();
+        this.openregbox();
+        this.openloginbox();
     };
     H_login.run();
 });

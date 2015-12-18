@@ -1,5 +1,8 @@
 @import url("init.css");
 .clear{clear:both;} /* clear float */
+body{
+  background: white;
+}
 
 .header-top {
   display: block;
@@ -77,12 +80,12 @@
 
 
 .login{
-  width:680px;
+  width:400px;
   position:fixed;
   border:#ebebeb;
   height:320px;
   top:50%;
-  left:45%;
+  left:50%;
   display:none;
   background-color:#ffffff;
   box-shadow:0px 0px 20px #ddd;
@@ -90,15 +93,35 @@
   margin-left:-250px;
   margin-top:-140px;
 }
+.message_login{
+  display: none;
+}
+.login_title_box{
+  width: 100%;
+  margin: 10px 0px;
+  border-bottom: solid 1px #ebebeb;
+  height: 50px;
+}
+.login_title_box a{
+  text-decoration: none;
+  color: black;
+}
+.login_instant{
+  float: right;
+  margin-right: 30px;
+}
+.reg_instant{
+  float: right;
+}
 
 .register{
-  width: 380px;
+  width: 100%;
   float: left;
   display: none;
 }
 
 .phone-log{
-  width: 380px;
+  width: 100%;
   float: left;
   
 }
@@ -108,23 +131,45 @@
   float: left;
 }
 
-.login-title, .register-title{
+#count_login_title{
+  border-bottom: solid red 1px;
+}
+
+.login-title{
+  width:186px;
+  margin:10px 0px 0px 0px;
+  text-align:center;
+  line-height:40px;
+  height:40px;
+  font-size:24px;
+  position:relative;
+  float: left;
+}
+
+.register-title{
   width:100%;
   margin:10px 0px 0px 0px;
   text-align:center;
   line-height:40px;
   height:40px;
-  font-size:18px;
+  font-size:24px;
   position:relative;
+  border-bottom: solid 1px #ebebeb ;
 }
+
 .register-input{
   height:35px;
   float: left;
   margin: 5px 5px;
   /*border: #ebebeb 1px solid;*/
 }
-
-.register-input div{
+.msg-lg-input{
+  height:35px;
+  float: left;
+  margin: 10px 5px;
+  /*border: #ebebeb 1px solid;*/
+}
+.register-input div, .msg-lg-input div{
       float: left;
 }
 .register-input-content{
@@ -145,11 +190,11 @@
   border: none;
   border: #ebebeb 1px solid;
 }
-.register-input img{
+.register-input img, .msg-lg-input img{
   height: 35px;
   width: 35px;
 }
-.register-input input.item-input{
+.register-input input.item-input, .msg-lg-input input.item-input{
   border: none;
   text-indent: 5px;
   width: 170px;
@@ -158,6 +203,7 @@
   height: 35px;
   border: #ebebeb 1px solid;
 }
+
 /*.login-title span{
   position:absolute;
   font-size:12px;
@@ -191,10 +237,14 @@
   font-size:14px;
 }*/
 .close-login{
-    float: right;
+    
     background-color: black;
     height: 40px;
     width: 40px;
+    z-index: 9;
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 .close-login img{
   height: 40px;
@@ -215,8 +265,7 @@
 .login-input img{
   height: 35px;
   width: 35px;
-  line-height: 35px
-      
+  line-height: 35px   
 }
 
 .login-input div{
@@ -237,23 +286,23 @@
   color: white;
   margin-left: 35px;
 }
-.reg-button{
+.reg-button, .msg-lg-button{
     width: 250px;
     line-height: 40px;
     font-size: 14px;
     text-align: center;
     background-color: red;
     color: white;
-    margin: 27px 40px;
+    margin: 16px 40px;
 }
-.login-button a, .reg-button a{
+.login-button a, .reg-button a, .msg-lg-button a{
   display:block;
   text-decoration: none;
   color: white;
   font-size: 1.6em;
 }
 .login-footer{
-  margin: 35px 0;
+  margin: 25px 35px 10px 35px;
   height: 20px;
 }
 .pswdlabel{
