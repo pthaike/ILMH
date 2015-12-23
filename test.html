@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0028)http://www.w3.org/1999/xhtml -->
+<html>
+<head>
+<title>我爱我家</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<link rel="stylesheet" type="text/css" href="css/frame_home.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href="css/jquery.bxslider.css" rel="stylesheet" />
+<script src="js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script src="js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="css/daterangepicker.css" />
+<script src="js/moment.min.js"></script>
+<script src="js/jquery.daterangepicker.js"></script>
+
+<script>
+  	function msglogin(){
+  		$.get("http://www.homeuhere.com/api/captcha/pcrimg",null, function(data){
+  			document.getElementById('#imgcode').src = data;
+  		});
+  	}
+  	// function msglogin(){
+  	// 	$.post("http://api.map.baidu.com/geoconv/v1/",
+  	// 		{
+  	// 			"coords": "114.21892734521,29.575429778924;114.21892734521,29.575429778924",
+  	// 			"ak": "jZfu4LcQBHGrTbgNl4fXm7nx"
+  	// 		}, function(data){
+  	// 		// document.getElementById('#imgcode').src = data;
+  	// 	});
+  	// }
+</script>
+</head>
+<body>
+<div>
+<a href="javascript:void(0);" onclick="msglogin()">dian wo</a>
+	<img src="" id="imgcode">
+</div>
+</body>
+</html>

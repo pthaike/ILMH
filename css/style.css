@@ -83,7 +83,7 @@ body{
   width:400px;
   position:fixed;
   border:#ebebeb;
-  height:320px;
+  height:350px;
   top:50%;
   left:50%;
   display:none;
@@ -166,7 +166,7 @@ body{
 .msg-lg-input{
   height:35px;
   float: left;
-  margin: 10px 5px;
+  margin: 0px 5px 15px 5px;
   /*border: #ebebeb 1px solid;*/
 }
 .register-input div, .msg-lg-input div{
@@ -190,7 +190,7 @@ body{
   border: none;
   border: #ebebeb 1px solid;
 }
-.register-input img, .msg-lg-input img{
+.input_img{
   height: 35px;
   width: 35px;
 }
@@ -261,8 +261,21 @@ body{
   border: none;
   border: #ebebeb 1px solid;
 }
-
-.login-input img{
+.token-input{
+  float:left;
+  line-height:34px;
+  height:34px;
+  width:172px;
+  text-indent:5px;
+  float: left;
+  border: none;
+  border: #ebebeb 1px solid;
+}
+.token_code{
+  width: 74px;
+  height: 36px;
+}
+.input_img{
   height: 35px;
   width: 35px;
   line-height: 35px   
