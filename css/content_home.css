@@ -27,18 +27,15 @@
 	/*list*/
 
 #center_list{
-	margin-top:24px; 
 	width:18em;
-	height:20em	;
 	background-color:#ffffff;
 }
 #center_1{
 	width:100%;
 	height:5em;
-	margin-top:-25px;
 	background-color:#696969;
 }
-p{
+#center_1 p{
 	line-height:3.5em;
 	margin-left:1em;
 	color:#ffffff;
@@ -49,14 +46,21 @@ p{
 	height:1em;
 	background-color:#DCDCDC;
 }
-#a_content_1{
-	padding:0;
-	margin:0;
-}
-#center_2 {
+
+#center_2{
 	width:100%;
 	margin:5px 0;	
-	height:2.4em;
+	height:2.5em;
+}
+#hr{
+	width:95%;
+	height:7px; 
+	margin:0 auto;
+	margin-top: -5px;
+}
+#hr img{
+	width:100%;
+	height:7px; 
 }
 #list_1{
 	margin-left:10px;
@@ -88,6 +92,7 @@ hr{
 	clear:both;
 	margin: 0px;
 }
+*/
 	/*content*/
 #hr2{
 	width:100%;

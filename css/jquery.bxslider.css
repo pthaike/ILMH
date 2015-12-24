@@ -21,10 +21,17 @@
 	*zoom: 1;
 }
 
-.bx-wrapper img {
-	/*max-width: 100%;*/
+.gallery .bx-wrapper img {
+	max-width: 100%;
 	display: block;
 	/*height: 393px;*/
+	/*width: 577px;*/
+}
+.house_slide_img img {
+	/*max-width: 100%;*/
+	/*display: block;*/
+	height: 393px;
+	width: 577px;
 }
 
 /** THEME

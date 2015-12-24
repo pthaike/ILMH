@@ -7,6 +7,10 @@ body{
   float:right;
   width:350px;
 }
+.serach_house_bt{
+  color: white;
+}
+
 .text_head{
   float:left;
   margin-top:13px;
@@ -220,7 +224,7 @@ body{
   background-color: red;
   font-size: 1.2em;
 }
-.content_right_map img{
+.content_right_map {
   height: 379px;
   width: 100%;
 }
@@ -229,7 +233,7 @@ body{
   line-height: 25px;
 }
 .content_right_price, .content_right_unit{
-  font-size: 2em;
+  font-size: 1.6em;
 }
 .content_right_price{
   color: red;

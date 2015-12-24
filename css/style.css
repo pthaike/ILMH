@@ -3,6 +3,9 @@
 body{
   background: white;
 }
+.logopic{
+  height: 96px;
+}
 
 .header-top {
   display: block;
@@ -31,7 +34,53 @@ body{
   text-decoration: none;
   color: white;
 }
-
+.usernav ul{
+  height:0;
+  /*left:0;*/
+  overflow:hidden;
+  position:absolute;
+  top:35px;
+  margin-top: 30px;
+}
+.usernav ul a{
+  display: block;
+  background-color: #292626;
+  opacity: 0.8;
+  border: solid black 1px;
+  width: 95px;
+  font-size: 20px;
+  margin: auto;
+  padding: 2px;
+}
+.usernav li.user_hover:hover ul.subnav{
+  height: auto;
+}
+.usernav li.user_hover:hover{
+  background-color: #292626;
+  opacity: 0.6;
+  height: 40px;
+}
+.subnav li{
+  clear: both;
+}
+.subnav li:hover{
+  border: solid 1px black;
+}
+.userpic{
+  height: 48px;
+  width: 48px;
+  margin-right: 5px;
+}
+.usernavname{
+  margin-right: 15px;
+  line-height: 45px;
+}
+.onlogin{
+  /*display: none;*/
+}
+.usernav{
+  display: none;
+}
 .navsearch{
   height: 36px;
   background: red;

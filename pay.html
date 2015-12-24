@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="css/frame_home.css">
   <link rel="stylesheet" type="text/css" href="css/content_home.css">
   <link rel="stylesheet" type="text/css" href="css/pay.css">
+  <script src="js/jquery.qrcode.min.js"></script>
   <script type="text/javascript">
   	function changepaytoyl(){
   		var wxobj=document.getElementById("weixin")
@@ -21,7 +22,13 @@
   		var obj = document.getElementById("zfb");
   		obj.style.display="none";
   	}
+  	
   </script>
+  <style type="text/css">
+  #wp_qrcode{
+  	margin-left: 193px;
+  }
+  </style>
 </head>
 <body>
 <div id="body">	
@@ -56,25 +63,25 @@
 				<div id="list_2"><a href="zhuye_home.html">个人中心首页</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
-			<hr/>
+			<div id="hr"><img src="images/line_home.png" /></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/dingdan_home.png"></img></div>
 				<div id="list_2"><a id="a_main" href="dingdan_home.html">订单中心</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
-			<hr/>
+			<div id="hr"><img src="images/line_home.png" /></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/ruzhuren_home.png"></img></div>
 				<div id="list_2"><a  href="ruzhuren_home.html">入住人信息</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
-			<hr/>
+			<div id="hr"><img src="images/line_home.png" /></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/xiugai_home.png"></img></div>
 				<div id="list_2"><a href="xiugai_home.html">修改资料</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
-			<hr/>
+			<div id="hr"><img src="images/line_home.png" /></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/mima_home.png"></img></div>
 				<div id="list_2"><a href="mima_home.html">密码设置</div>
@@ -98,9 +105,9 @@
 				</div>
 			</div>
 			<div class="clear"></div>
-			<div class="choose_pay_title">支付方式选择</div>
+			<div class="choose_pay_title">微信支付</div>
 			<div class="pay_way_choose">
-			<table border="1px" cellspacing="0px">
+			<!-- <table border="1px" cellspacing="0px">
 				<tr class="pay_title">
 					<td ><span><a href="javascript:void(0)" class="pay_title_plat" onclick="changepaytoyl();">支付平台</a></span></td>
 					<td ><span><a href="javascript:void(0)" class="pay_title_yl" onclick="return changepaytopt()">银联支付</a></span></td>
@@ -134,7 +141,8 @@
 				<div id="ylpay">
 					
 				</div>
-			</table>
+			</table> -->
+			<div id="wp_qrcode"></div>
 			<div class="pay_way_box">
 			<div class="pay_way_bt">
 				<input type="botton" value="确认支付"/>
@@ -151,3 +159,12 @@
 </div>
 </body>
 </html>
+<script type="text/javascript">
+jQuery('#wp_qrcode').qrcode(
+	{
+		width:196,
+		height:196,
+		text:"i love you"
+	}
+	);
+</script>

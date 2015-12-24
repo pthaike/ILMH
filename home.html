@@ -19,178 +19,19 @@
   $(document).ready(function(){
   $('.bxslider').bxSlider({auto:true,autoControls: false,pager:false});
 });
-
-  //日期选择
+//日期选择
   $(function(){
-  	var curDate = new Date();
-  	$('#search_time').dateRangePicker(
-  		{
-  			startDate: '$curDate',
-  			autoClose: true,
-  			showShortcuts: false
-  		}
-  		);
+    var curDate = new Date();
+    $('#search_time').dateRangePicker(
+        {
+            startDate: '$curDate',
+            autoClose: true,
+            showShortcuts: false
+        }
+        );
   });
-
-  //账户登录
-  function countlg(){
-  	var countinput = $('#lgusername');
-  	var lgusername = $('#lgusername').val();
-  	var pswdinput = $('#lgpassword');
-  	var pswdval = $('#lgpassword').val();
-  	if (lgusername == "") {
-  		alert("请输入账号");
-  		countinput.focus();
-  		return false;
-  	};
-  	if (pswdval == "") {
-  		alert("请输入密码");
-  		pswdinput.focus();
-  		return false;
-  	};
-  	$.post("http://www.homeuhere.com/api/auth/login",{
-  		"userTel":lgusername,
-  		"userPw":pswdval
-  	},function(data){
-  		alert(data.message);
-  		return true;
-  	},"json");
-  }
-
-  	//短信登录
-  	function msglogin(){
-  		var phoneinput = $('#msg_phone');
-  		var phonenum = $('#msg_phone').val();
-  		var codeinput = $('#msg_lg_code_input');
-  		var codeval = $('#msg_lg_code_input').val();
-  		if(phonenum == ""){
-  			alert("请输入手机号");
-  			phoneinput.focus();
-  			return false;
-  		}
-  		if (codeval == "") {
-  			alert("请输入手机号");
-  			codeinput.focus();
-  			return false;
-  		};
-  		$.post("http://www.homeuhere.com/api/auth/login",
-  		{
-  			"userTel":phonenum,
-  			"authCode":codeval
-  		},function(data){
-  			alert(data.message);
-  			return true;
-  		});
-  	}
-  	//手机登录获取验证码
-  	function getmsgcode(){
-  		var phoneinput = $('#msg_phone');
-  		var phonenum = $('#msg_phone').val();
-  		if(phonenum == ""){
-  			alert("请输入手机号");
-  			phoneinput.focus();
-  			return false;
-  		}
-  		$.post("http://www.homeuhere.com/api/auth/getTelAuthCode",
-  		{
-  			"userTel":phonenum
-  		}, function(data){
-  			if(data.code == 200){
-  				time($('#getcodebt'));
-  			}
-  		}
-  			);
-  		var wait = 60;
-  		function time(o){
-	  		if (wait == 0) {
-	  			o.removeAttr("disabled");
-	  			o.attr("value", "获取验证码"); 
-	  			wait = 60;
-	  		}else{
-	  			o.attr("disabled", true); 
-	  			o.attr("value", wait+"s"); 
-	  			wait--; 
-	  			setTimeout(function(){
-	  				time(o);
-	  			},1000);
-	  		}
-	  	}
-	  	
-  	}
-
-  	//注册验证码
-  	function regcode(){
-  		var phoneinput = $('#reg_phone_input');
-  		var phoneval = $('#reg_phone_input').val();
-  		if(phoneval == ""){
-  			alert("请输入手机号");
-  			phoneinput.focus();
-  			return false;
-  		}
-  		$.post("http://www.homeuhere.com/api/auth/getTelAuthCode",
-  		{
-  			"userTel":phoneval
-  		}, function(data){
-  			if(data.code == 200){
-  				time($('#reg_code_bt'));
-  			}
-  		}
-  			);
-  		var wait = 60;
-  		function time(o){
-	  		if (wait == 0) {
-	  			o.removeAttr("disabled");
-	  			o.attr("value", "获取验证码"); 
-	  			wait = 60;
-	  		}else{
-	  			o.attr("disabled", true); 
-	  			o.attr("value", wait+"s"); 
-	  			wait--; 
-	  			setTimeout(function(){
-	  				time(o);
-	  			},1000);
-	  		}
-	  	}
-  	}
-
-  	//注册
-  	function register(){
-  		var phoneinput = $('#reg_phone_input');
-  		var phoneval = $('#reg_phone_input').val();
-  		var codeinput = $('#reg_code_input');
-  		var codeval = $('#reg_code_input').val();
-  		var pswdinput = $('#reg_pswd');
-  		var pswdval = $('#reg_pswd').val();
-  		if(phoneval == ""){
-  			alert("请输入手机号");
-  			phoneinput.focus();
-  			return false;
-  		}
-  		if(codeval == ""){
-  			alert("请输入验证码");
-  			codeinput.focus();
-  			return false;
-  		}
-  		if(pswdval == ""){
-  			alert("请输入密码");
-  			pswdinput.focus();
-  			return false;
-  		}
-  		$.post("http://www.homeuhere.com/api/user/",
-  			{
-  				"userTel":phoneval,
-  				"userPw":pswdval,
-  				"authCode":codeval
-  			},
-  			function(data){
-  				alert(data.message);
-  		});
-  	}
-  	
-  	//获取验证码
-  	function lgcountgettk(){
-  		$('#lg_count_tk_img').attr("src", "http://www.homeuhere.com/api/captcha/pcrimg");
-  	}
+  //检查是否已经登录
+  setuser();
 </script>
 </head>
 <body>
@@ -199,15 +40,27 @@
 	<div class="header-top">
 		<div class="navlogo">
 			<ul>
-				<li><a href="#"><img src="images/logo.png" alt="home"></a></li>
+				<li><a href="home.html"><img src="images/logo.png" alt="home" class="logopic"></a></li>
 			</ul>
 		</div>
 		<div class="navlogin">
-			<ul>
-				<li>注册就送50元优惠券</li>
+			<ul class="onlogin">
+				<li><a href="javascript:void(0);" id="navreg">注册就送50元优惠券</a></li>
 				<li>.</li>
 				<li class="login-header"><a href="javascript:void(0);">登录</a></li>
 				<li>.</li>
+				<li class="navsearch"><span ><a href="./search_home.html">立即搜索房源</a></span></li>
+			</ul>
+			<ul class="usernav">
+				<li><img src="images/portraint.png" class="userpic"> </li>
+				<li class ="user_hover">
+				<a href="#" class="usernavname" id="nav_username">121313132132</a>
+					<ul class="subnav">
+						<li><a href="dingdan_home.html">订单信息</a></li>
+						<li><a href="xiugai_home.html">用户信息</a></li>
+						<li><a href="javascript:void(0);" onclick="logout();">退出</a></li>
+					</ul>
+				</li>
 				<li class="navsearch"><span ><a href="./search_home.html">立即搜索房源</a></span></li>
 			</ul>
 		</div>
@@ -225,7 +78,7 @@
 		<div class="sinput">
 			<div class="search_box">
 				<div class="search_img"><img src="images/addr.png"></div>
-				<input id="search_addr" class="search_input" type="text" placeholder="现在只开放成都地区">
+				<input id="search_addr" class="search_input" type="text" disabled="disabled" placeholder="" value="现在只开放成都地区">
 			</div>
 			<div class="search_box">
 				<div class="search_img"><img src="images/time.png"></div>
@@ -261,7 +114,6 @@
 		            <div class="login_num"><img class="input_img" src="images/login-user.png"></div>
 		            <input type="text" placeholder="请输账号"  name="info[username]" id="lgusername" class="list-input"/>
 		        </div>
-
 		        <div class="login-input">
 		            <div class="login_pswd"><img class="input_img" src="images/login-pswd.png"></div>
 		            <input type="password" placeholder="请输入登录密码" name="info[password]" id="lgpassword" class="list-input"/>
@@ -269,7 +121,7 @@
 		        <div class="login-input">
 		            <div class="login_token"><img class="input_img" src="images/token.png"></div>
 		            <input type="text" placeholder="请输入验证码"  id="lg_count_tk" class="token-input"/>
-		            <div><a href="javascript:void(0);" onclick="lgcountgettk();" ><img src="http://www.homeuhere.com/api/captcha/pcrimg" id="lg_count_tk_img" class="token_code"></a></div> 
+		            <div><a href="javascript:void(0);" onclick="lgcountgettk();" ><img src="http://www.homeuhere.com/api/captcha/pcrimg" id="tk_img" class="token_code"></a></div> 
 		        </div>
 		        <div class="login-button"><a href="javascript:void(0);" id="count_lg_bt" onclick="countlg()">登录</a></div>
 		        <div class="login-footer">
@@ -289,7 +141,6 @@
 		            <div class="msg_lg_code"><img class="input_img" src="images/email.png"></div>
 		            <input type="text" placeholder="验证码" class="item-input" id="msg_lg_code_input" />
 		        </div>
-
 		        <div class="msg-lg-input">
 		            <div class="login_token"><img class="input_img" src="images/token.png"></div>
 		            <input type="text" placeholder="请输入验证码"  id="lg_msg_tk" class="token-input"/>

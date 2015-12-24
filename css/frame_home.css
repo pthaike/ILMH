@@ -51,3 +51,106 @@ body{
 .clear{
 	clear:both;
 }
+.all_head_left img{
+	height: 72px;
+	float: left;
+}
+.all_head_right{
+	float: right;
+}
+.all_usernav li{
+	float: left;
+	
+}
+.all_user_hover{
+	height: 72px;
+	margin-top: 28px;
+}
+.all_userpic{
+	height: 72px;
+	width: 72px
+}
+.allsubnav{
+	height:0;
+  /*left:0;*/
+  overflow:hidden;
+  position:absolute;
+  top:35px;
+  margin-top: 20px;
+  
+}
+.allsubnav li{
+	clear: both;
+}
+.all_usernav li.all_user_hover:hover ul.allsubnav{
+  height: auto;
+}
+.all_usernav li.all_user_hover:hover a.usernavname{
+  color: red;
+}
+.allsubnav li:hover{
+  border: solid 1px #f5f5f5;
+}
+.allsubnav{
+  background: white;
+}
+.all_usernav ul a{
+  display: block;
+  width: 85px;
+  font-size: 15px;
+  margin: auto;
+  padding: 5px;
+}
+
+
+/*房子搜索导航*/
+.serach_house_bt{
+  color: white;
+}
+.logoimg{
+  height: 75px;
+}
+#nav_count{
+  float: left;
+  margin-top: 13px;
+  display: none;
+}
+.userpic{
+  height: 48px;
+  width: 48px;
+  margin-right: 5px;
+}
+.house_usernav ul{
+  height:0;
+  /*left:0;*/
+  overflow:hidden;
+  position:absolute;
+  top:35px;
+  margin-top: 20px;
+}
+.house_usernav ul a{
+  display: block;
+  width: 85px;
+  font-size: 15px;
+  margin: auto;
+  padding: 5px;
+}
+.house_usernav li{
+  float: left;
+}
+.house_usernav li.user_hover:hover ul.housesubnav{
+  height: auto;
+}
+.house_usernav li.user_hover:hover a.usernavname{
+  color: red;
+}
+.housesubnav li:hover{
+  border: solid 1px #f5f5f5;
+}
+.housesubnav li{
+  clear: both;
+
+}
+.housesubnav{
+  background: white;
+}

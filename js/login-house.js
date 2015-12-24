@@ -65,7 +65,6 @@ $(function () {
     H_login.run();
 });
 
-  
 
   //账户登录
   function countlg(){
@@ -287,8 +286,8 @@ $(function () {
     function logout(){
         $.get("http://www.homeuhere.com/api/auth/logout",null,function(data){
             if(data.code == 200){
-                $('.usernav').hide();
-                $('.onlogin').show();
+                $('#nav_count').hide();
+                $('#navhead').show();
             }
         });
     }
@@ -296,9 +295,10 @@ $(function () {
     function setuser(){
         $.get("http://www.homeuhere.com/api/user/",null,function(data){
             if(data.code == 200){
-                $('.onlogin').hide();
-                $('.usernav').show();
+                $('#navhead').hide();
+                $('#nav_count').show();
                 document.getElementById('nav_username').innerHTML = data.userName;
+                return true;
             }
         })
     }

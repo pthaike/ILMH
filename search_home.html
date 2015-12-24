@@ -4,6 +4,7 @@
 <head>
   <title>订单中心</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/frame_home.css">
   <link rel="stylesheet" type="text/css" href="css/content_home.css">
   <link rel="stylesheet" type="text/css" href="css/search_home.css">
@@ -12,33 +13,24 @@
   <script src="js/jquery-1.10.2.js"></script>
   <script src="js/jquery-ui.js"></script>
   <link rel="stylesheet" href="css/daterangepicker.css" />
-	<script src="js/moment.min.js"></script>
-	<script src="js/jquery.daterangepicker.js"></script>
-  <script>
-	$(function() {
-		$( "#slider-range" ).slider({
-			range: true,
-			min: 0,
-			max: 1000,
-			values: [ 75, 300 ],
-			slide: function( event, ui ) {
-				$( "#amount" ).val( "￥" + ui.values[ 0 ] + " - ￥" + ui.values[ 1 ] );
-			}
-		});
-		$( "#amount" ).val( "￥" + $( "#slider-range" ).slider( "values", 0 ) +
-			" - ￥" + $( "#slider-range" ).slider( "values", 1 ) );
-	});
-	$(function(){
-  	var curDate = new Date();
-  	$('#search_1_2').dateRangePicker(
-  		{
-  			startDate: '$curDate',
-  			autoClose: true,
-  			showShortcuts: false
-  		}
-  		);
-  });
-	</script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/jquery.daterangepicker.js"></script>
+  <script type="text/javascript" src="js/login-house.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jZfu4LcQBHGrTbgNl4fXm7nx"></script>
+<script type="text/javascript">
+	setuser();
+$.get("http://www.homeuhere.com/api/suite/2",null, function(data){
+	//百度地图
+	var map = new BMap.Map("leftmap");    // 创建Map实例
+	map.centerAndZoom(new BMap.Point(parseFloat(data.spotLongitude),parseFloat(data.spotLatitude)), 15);  // 初始化地图,设置中心点坐标和地图级别
+	map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+	map.setCurrentCity("成都");          // 设置地图显示的城市 此项是必须设置的
+	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放   
+	var marker = new BMap.Marker(new BMap.Point(parseFloat(data.spotLongitude),parseFloat(data.spotLatitude)));
+	map.addOverlay(marker);
+	marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+});
+</script>
 </head>
 <body>
 <div id="body">	
@@ -47,14 +39,27 @@
 	<!--head_in-->	
 	  <div id="head_in">
 		<div id="head_left">
-			<img src="images/logo_home.png"/>
+			<a href="home.html"><img class="logoimg" src="images/logo-orange.png"/></a>
 		</div>
 	    <div class="head_right">
-			<div class="text_head">
-				<a href="">注册送50元优惠券</a><span style="color:red;font-size:20px;">·</span><a href="">登陆</a></span>
+			<div class="text_head" id="navhead">
+				<a href="javascript:void(0);" id="navreg">注册送50元优惠券</a><span style="color:red;font-size:20px;">·</span><span class="login-header"><a href="javascript:void(0);" >登录</a></span></span>
+			</div>
+			<div id="nav_count">
+				<ul class="house_usernav">
+					<li><img src="images/portraint.png" class="userpic"> </li>
+					<li class ="user_hover">
+					<a href="#" class="usernavname" id="nav_username">121313132132</a>
+						<ul class="housesubnav">
+							<li><a href="dingdan_home.html">订单信息</a></li>
+							<li><a href="xiugai_home.html">用户信息</a></li>
+							<li><a href="javascript:void(0);" onclick="logout();">退出</a></li>
+						</ul>
+					</li>
+				</ul>
 			</div>
 			<div id="img_head">
-				立即搜索房源
+				<a class="serach_house_bt" href="./search_home.html">立即搜索房源</a>
 			</div>
 		</div>
 	  </div>
@@ -165,9 +170,8 @@
 			</div>
 		</div>
 		<div class="search_center2">
-			<div class="left">
-				<img src="images/map_home.png"/>
-			</div>
+			<!-- 百度地图 -->
+			<div id="leftmap"></div>
 			<div class="right">
 				<div id="top">
 					住我家 > 锦江区共有102个结果  
@@ -232,7 +236,95 @@
 <!--bottom-->
 	<div class="clear"></div>
 	<div id="bottom"></div>
-	
+	<!-- login dialog -->
+<div class="login">
+	<div><a href="javascript:void(0);" class="close-login"><img src="images/close.png"></a></div>
+	<div class="phone-log">
+		<div class="login_title_box">
+			<div class="login-title" id="count_login_title"><a href="javascript:void(0);" id="count_login_link">账号登录</a></div>
+			<div class="login-title" id="message_login_title"><a href="javascript:void(0);" id="msg_login_link">短信登录</a></div>
+		</div>
+		<div class="clear"></div>
+	    <div class="login-input-content">
+	    	<div class="count_login">
+	    		<div class="login-input">
+		            <div class="login_num"><img class="input_img" src="images/login-user.png"></div>
+		            <input type="text" placeholder="请输账号"  name="info[username]" id="lgusername" class="list-input"/>
+		        </div>
+		        <div class="login-input">
+		            <div class="login_pswd"><img class="input_img" src="images/login-pswd.png"></div>
+		            <input type="password" placeholder="请输入登录密码" name="info[password]" id="lgpassword" class="list-input"/>
+		        </div>
+		        <div class="login-input">
+		            <div class="login_token"><img class="input_img" src="images/token.png"></div>
+		            <input type="text" placeholder="请输入验证码"  id="lg_count_tk" class="token-input"/>
+		            <div><a href="javascript:void(0);" onclick="lgcountgettk();" ><img src="http://www.homeuhere.com/api/captcha/pcrimg" id="tk_img" class="token_code"></a></div> 
+		        </div>
+		        <div class="login-button"><a href="javascript:void(0);" id="count_lg_bt" onclick="countlg()">登录</a></div>
+		        <div class="login-footer">
+		        	<input type="checkbox" name="rempswd" class="pswdlabel" />
+		        	<div class="pswdlabel">记住密码</div>
+		        	<div class="reg_instant"><a href="javascript:void(0);">立即注册</a></div>
+		        	<!-- <div class="forget-pswd"><a href="#">忘记密码</a></div> -->
+		        </div>
+	    	</div>
+	        <div class="message_login">
+	        	<div class="msg-lg-input">
+		            <div class="msg_lg_num"><img class="input_img" src="images/phone.png"></div>
+		            <input type="text" placeholder="输手机号" class="item-input" id="msg_phone" />
+		            <input type="button" value="获取验证码" class="get-code" id="getcodebt" onclick="getmsgcode()" />
+		        </div>
+		        <div class="msg-lg-input">
+		            <div class="msg_lg_code"><img class="input_img" src="images/email.png"></div>
+		            <input type="text" placeholder="验证码" class="item-input" id="msg_lg_code_input" />
+		        </div>
+		        <div class="msg-lg-input">
+		            <div class="login_token"><img class="input_img" src="images/token.png"></div>
+		            <input type="text" placeholder="请输入验证码"  id="lg_msg_tk" class="token-input"/>
+		            <div><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="images/code.png" class="token_code"></a></div> 
+		        </div>
+		        <div class="clear"></div>
+		        <div class="msg-lg-button"><a href="javascript:void(0);" id="msg_login_bt" onclick="msglogin()">登录</a></div>
+		        <div class="login-footer">
+		        	<div class="reg_instant"><a href="javascript:void(0);">立即注册</a></div>
+		        	<!-- <div class="forget-pswd"><a href="#">忘记密码</a></div> -->
+		        </div>
+	        </div>
+	    </div>
+	</div>
+	<!-- register -->
+	<div class="register">
+		<div class="register-title">注册</div>
+	    <div class="register-input-content">
+	        <div class="register-input">
+	            <div class="register_num"><img class="input_img" src="images/phone.png"></div>
+	            <input type="text" placeholder="输手机号" class="item-input" id="reg_phone_input" />
+	            <input type="button" value="获取验证码" class="get-code" id="reg_code_bt" onclick="regcode()" />
+	        </div>
+	        <div class="register-input">
+	            <div class="register_code"><img class="input_img" src="images/email.png"></div>
+	            <input type="text" placeholder="验证码" class="item-input" id="reg_code_input" />
+	        </div>
+	        <div class="register-input">
+	            <div class="register_pswd"><img class="input_img" src="images/login-pswd.png"></div>
+	            <input type="password" placeholder="登录密码" class="item-input" id="reg_pswd" />
+	        </div>
+	        <div class="register-input">
+		            <div class="login_token"><img class="input_img" src="images/token.png"></div>
+		            <input type="text" placeholder="请输入验证码"  id="reg_tk" class="token-input"/>
+		            <div ><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="images/code.png" class="token_code" id="reg_tk_img"></a></div> 
+		    </div>
+	        <div class="clear"></div>
+	        <div class="reg-button"><a href="javascript:void(0);" id="login-button-submit" onclick="register()">注册</a></div>
+	        <div class="reg-footer">
+	        	<div class="login_instant"><a href="#">立即登录</a></div>
+	        </div>
+	    </div>
+	</div>
+</div>
+<div class="login-bg"></div>
+<!-- login dialog end-->
+
 </div>
 </body>
 </html>
