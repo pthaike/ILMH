@@ -2,18 +2,16 @@
 <!-- saved from url=(0028)http://www.w3.org/1999/xhtml -->
 <html>
 <head>
-  <title>订单详情</title>
+  <title>订单中心</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <script src="js/jquery-1.9.0.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/frame_home.css">
   <link rel="stylesheet" type="text/css" href="css/content_home.css">
-  <link rel="stylesheet" type="text/css" href="css/pay.css">
+  <link rel="stylesheet" type="text/css" href="css/dingdan_home.css">
   <script src="js/jquery-1.9.0.min.js"></script>
-  
-  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jZfu4LcQBHGrTbgNl4fXm7nx"></script>
+
 </head>
 <body>
-<div id="body" onload="paydetal()">	
+<div id="body">	
 <!--head-->
 	<div id="head">
 	<!--head_in-->	
@@ -44,6 +42,7 @@
 	<div id="center">
 		<div id="center_top"></div>
 		<div id="center_list">
+		
 			<div id="center_1">
 				<p>用户中心</p>
 			</div>
@@ -71,7 +70,7 @@
 			<div id="center_2">
 				<div id="list_1"><img src="images/xiugai_home.png"></img></div>
 				<div id="list_2"><a href="xiugai_home.html">修改资料</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div></a>
+				<div id="list_3"><img src="images/right_home.png"></img></div></a>		
 			</div>
 			<!--
 			<div id="hr"><img src="images/line_home.png" /></div>
@@ -83,51 +82,45 @@
 			-->
 		</div>
 		
+		
 		<div id="center_content">
 			<div id="content_1">
-				<nobr id="nobr1">订单详情</nobr>
-				<span class="second_title"><img src="images/right-row.png"><span>支付</span></span>
+				<nobr id="nobr1">订单中心</nobr>
 			</div>
 			<hr id="hr2" />
-			<div class="pay_center_view">
-				<div class="pay_center_img"><img id="picPath" src=""></div>
-				<div class="pay_center_des">
-					<div class="pay_dt_item"><span>订单状态:</span><span class="pay_des_right"><a id="orderStatus"href="#"></a></span><!-- <span class="pay_des_right">已完成</span><span class="pay_des_right">(<a href="#">去评价</a>)</span> --></div>
-					<div class="pay_dt_item"><span>订单编号：</span><span id="orderId" class="pay_des_right"></span></div>
-					<div class="pay_dt_item"><span>住房地址：</span><span id="suiteTitle" class="pay_des_right"></span></div>
-					<div class="pay_dt_item"><span>入住离开时间</span><span id="inTime" class="pay_des_right"></span>至<span id="outTime"></span></div>
-				</div>
+			<div id="content_2">
+				<table id="dingdan_table" class="dingdan_title_item">
+					<tr>
+						<td id="td_main" style="border-left:none;">
+							<!-- <input id= "button_1" style="background-color:#696969;color:#ffffff;" type="button" value="全部订单" onclick="Select(1)" \> -->
+							<a href="dingdan_home.html">全部订单</a>
+						</td>
+						<td>
+							<a href="dingdan_home_finish.html" style="background-color:#696969;color:#ffffff;">已完成订单</a>
+							<!-- <input id= "button_2" type="button" value="已完成订单" \> -->
+						</td>
+						<td>
+							<a href="dingdan_home_wait.html">待完成订单</a>
+							<!-- <input id= "button_3" type="button" value="待完成订单" \> -->
+						</td>
+						<td style="border-right:none;">
+							<a href="dingdan_home_del.html">已删除订单</a>
+							<!-- <input id= "button_4" type="button" value="已删除订单" \> -->
+						</td>
+					</tr>
+				</table>
 			</div>
-			<div class="clear"></div>
-			<div class="pay_center_view">
-				<div id="leftmap1" class="pay_center_img">dadas</div>
-				<div class="pay_center_des">
-					<div class="pay_dt_item"><span>创建时间：</span><span id="orderTime" class="pay_des_right"></span></div>
-					<div class="pay_dt_item"><span>支付方式：</span><span class="pay_des_right"><a id = "payType" href="#"></a></span></div>
-					<!-- <div class="pay_dt_item"><span>支付时间：</span>2015.09.12</div> -->
-					<div class="pay_detail_tb">
-						<table border="1px" cellspacing="0px">
-							<tr>
-								<td>房屋照片</td>
-								<td>状态</td>
-								<td>单价</td>
-								<td>入住天数</td>
-								<td>总价</td>
-							</tr>
-							<tr>
-								<td><img id="picPath1"src=""></td>
-								<td><span><a id="orderStatus1" href="#"></a></span></td>
-								<td id="realPrice"></td>
-								<td id="stayTime"></td>
-								<td id="totalPrice"></td>
-							</tr>
-						</table>
+			<div id="hourse">
+				<div class="dingdanlist">
+					<div class="dingdan_item" id="dditem">
+						<!-- 订单列表 -->
+						
 					</div>
+					
 				</div>
-			</div>
 			</div>
 
-			</div>
+			<div class="page" id="pages"></div>
 		</div>
 	</div>
 <!--bottom-->
@@ -137,5 +130,7 @@
 </div>
 </body>
 </html>
-
-<script src="js/paydetail.js"></script>
+<script src="js/dingdan.js"></script>
+<script type="text/javascript">
+  loading("completed");
+</script>

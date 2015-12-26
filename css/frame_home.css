@@ -36,7 +36,7 @@ body{
 #center_list{
 	float:left;
 	width:18em;
-	height:23em;
+	height:15.5em;
 	margin-left:0px;
 	background-color:#ffffff;
 }
@@ -47,6 +47,7 @@ body{
 	padding:15px;
 	background-color:#ffffff;
 	margin-left:5px;
+	margin-top:-6px;
 }
 .clear{
 	clear:both;
@@ -127,6 +128,7 @@ body{
   position:absolute;
   top:35px;
   margin-top: 20px;
+  z-index: 999;
 }
 .house_usernav ul a{
   display: block;

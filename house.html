@@ -14,13 +14,20 @@
 <link href="css/jquery.bxslider.css" rel="stylesheet" />
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jZfu4LcQBHGrTbgNl4fXm7nx"></script>
 <script>
-
+var id = 1
+var url = document.location.search; 
+if (url.indexOf("?") != -1) {    
+    var str = url.substr(1); 
+    strs = str.split("=");   
+    id = strs[1]       
+}
 //获取房源
-$.get("http://www.homeuhere.com/api/suite/2",null, function(data){
+$.get("http://www.homeuhere.com/api/suite/"+id,null, function(data){
 	document.getElementById('suiteTitle').innerHTML = data.suiteTitle;
 	document.getElementById('posStreet').innerHTML = data.posStreet;
 	document.getElementById('intrText').innerHTML = data.intrText;
 	document.getElementById('fitNum').innerHTML = data.fitNum;
+	document.getElementById('suiteType').innerHTML = data.suiteType;
 	document.getElementById('intrPerimeter').innerHTML = data.intrPerimeter;
 	document.getElementById('intrTransport').innerHTML = data.intrTransport;
 	document.getElementById('intrFacility').innerHTML = data.intrFacility;
@@ -99,8 +106,9 @@ setuser();
 					<li class ="user_hover">
 					<a href="#" class="usernavname" id="nav_username">121313132132</a>
 						<ul class="housesubnav">
-							<li><a href="dingdan_home.html">订单信息</a></li>
-							<li><a href="xiugai_home.html">用户信息</a></li>
+							<li><a href="zhuye_home.html">个人中心</a></li>
+							<li><a href="dingdan_home.html">订单中心</a></li>
+							<li><a href="xiugai_home.html">修改资料</a></li>
 							<li><a href="javascript:void(0);" onclick="logout();">退出</a></li>
 						</ul>
 					</li>
@@ -230,7 +238,7 @@ setuser();
 						<div class="brf_des_img"><img src="images/house_size.png"></div>
 						<div class="brf_des">
 							<div class="brf_des_title">房屋面积：50平米</div>
-							<div class="brf_des_com">房屋户型：1室2厅1卫1厨2阳台</div>
+							<div class="brf_des_com" >房屋户型: <span id="suiteType"></span></div>
 						</div>
 					</div>
 					<div class="brf_des_slide"><img src="images/small_line.png"></div>

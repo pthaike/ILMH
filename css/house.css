@@ -241,7 +241,7 @@ body{
 .line_through{
   text-decoration: line-through;
 }
-.content_right_item2 div,img{
+.content_right_item2 div, .content_right_item2 img{
   float: left;
 }
 .fisr_tr img div{

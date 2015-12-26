@@ -22,13 +22,16 @@
   		var obj = document.getElementById("zfb");
   		obj.style.display="none";
   	}
-  	
+  	$.get("http://www.homeuhere.com/api/user/",function(data,state){
+		if(data.code == 2001){
+			window.location.href = 'home.html';
+			alert(data.message);
+		}
+		else if(data.code == 200){
+			$("#nav_all_username").html(data.userTel);
+		}
+	});
   </script>
-  <style type="text/css">
-  #wp_qrcode{
-  	margin-left: 193px;
-  }
-  </style>
 </head>
 <body>
 <div id="body">	
@@ -36,15 +39,23 @@
 	<div id="head">
 	<!--head_in-->	
 	  <div id="head_in">
-		<div id="head_left">
-			<img src="images/logo_home.png"/>
+		<div class="all_head_left">
+			<a href="home.html"><img src="images/logo-orange.png"/></a>
 		</div>
-	    <div id="head_right">
-			<div id="img_head">
-				<img src="images/dingdan_head.png">
-			</div>
-			<div id="p_head">
-				我的订单
+	    <div class ="all_head_right">
+			<div class="nav_all">
+				<ul class="all_usernav">
+					<li><img src="images/portraint.png" class="all_userpic"> </li>
+					<li class ="all_user_hover">
+					<a href="#" class="usernavname" id="nav_all_username"></a>
+						<ul class="allsubnav">
+							<li><a href="zhuye_home.html">个人中心</a></li>
+							<li><a href="dingdan_home.html">订单中心</a></li>
+							<li><a href="xiugai_home.html">修改资料</a></li>
+							<li><a href="javascript:void(0);" onclick="logout();">退出</a></li>
+						</ul>
+					</li>
+				</ul>
 			</div>
 		</div>
 	  </div>
@@ -69,24 +80,25 @@
 				<div id="list_2"><a id="a_main" href="dingdan_home.html">订单中心</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
-			<div id="hr"><img src="images/line_home.png" /></div>
+			<!-- <div id="hr"><img src="images/line_home.png" /></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/ruzhuren_home.png"></img></div>
 				<div id="list_2"><a  href="ruzhuren_home.html">入住人信息</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
-			</div>
+			</div> -->
 			<div id="hr"><img src="images/line_home.png" /></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/xiugai_home.png"></img></div>
 				<div id="list_2"><a href="xiugai_home.html">修改资料</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
-			<div id="hr"><img src="images/line_home.png" /></div>
+
+			<!-- <div id="hr"><img src="images/line_home.png" /></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/mima_home.png"></img></div>
 				<div id="list_2"><a href="mima_home.html">密码设置</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
-			</div>
+			</div> -->
 		</div>
 		
 		<div id="center_content">
@@ -102,10 +114,11 @@
 					<div class="pay_des_item"><span>住房地址：</span><span class="pay_des_right">成都锦江城市花园2期3.309</span></div>
 					<div class="pay_des_item"><span>入住离开时间：</span><span class="pay_des_right">2015.09.12至2015.09.15</span></div>
 					<div class="pay_des_item"><span>支付金额：</span><span class="pay_des_price">￥400</span></div>
+					<div id="weixinpayimg" class="pay_des_item "><div class="payweixinmig">微信支付</div><div class="payweixinmig"><img src="images/wexinpay.png"></div></div>
 				</div>
 			</div>
 			<div class="clear"></div>
-			<div class="choose_pay_title">微信支付</div>
+			<!-- <div class="choose_pay_title">微信支付</div> -->
 			<div class="pay_way_choose">
 			<!-- <table border="1px" cellspacing="0px">
 				<tr class="pay_title">
@@ -142,13 +155,18 @@
 					
 				</div>
 			</table> -->
-			<div id="wp_qrcode"></div>
-			<div class="pay_way_box">
-			<div class="pay_way_bt">
-				<input type="botton" value="确认支付"/>
-			</div>
-			</div>
+			
 
+			<div class="pay_way_box" id="paybtbox">
+				<div class="pay_way_bt">
+					<input type="botton" value="确认支付" onclick="addpay()" class="bt" />
+				</div>
+			</div>
+			<div id="scancodebox">
+				<div id="wp_qrcode" class="scancode"></div>
+				<div class="scantishi">扫描微信支付(请在15分钟内完成)</div>
+			</div>
+			
 			</div>
 		</div>
 	</div>
@@ -160,11 +178,65 @@
 </body>
 </html>
 <script type="text/javascript">
-jQuery('#wp_qrcode').qrcode(
-	{
-		width:196,
-		height:196,
-		text:"i love you"
-	}
-	);
+function addpay(){
+	$.get("http://www.homeuhere.com/api/user/",function(data,state){
+		if(data.code == 2001){
+			window.location.href = 'home.html';
+			alert(data.message);
+		}
+		else if(data.code == 200){
+			$.post("http://www.homeuhere.com/api/order/",
+				{
+					"suiteId":1,
+					"inTime":"2015-11-15",
+					"outTime":"2015-11-17"
+				},
+				function(paydata){
+					$('#paybtbox').hide();
+					$('#scancodebox').show();
+					$.post("http://www.homeuhere.com/api/order/payorder",
+					{
+						"orderId":paydata.orderId
+					},function(payoder){
+						if(paydata.code == 200){
+							jQuery('#wp_qrcode').qrcode(
+							{
+								width:196,
+								height:196,
+								text:payoder.qrText
+							}
+							);
+							checktime();
+						}
+						//5min
+						var wait = 180;
+						function checktime(){
+							if(wait == 0){
+								//15min
+								alert("超时，订单已经关闭");
+								window.location.href = 'home.html';
+							}else{
+								wait--;
+								//alert("5s");
+								$.get("http://www.homeuhere.com/api/order/"+paydata.orderId,
+									null,function(returndata){
+										if (returndata.code == 200) {
+											if(returndata.orderId == 1){
+												alert("支付完成");
+												window.location.href = 'home.html';
+											}
+										};
+									});
+								setTimeout(function(){
+				                    checktime();
+				                },5000);
+							}
+						}
+					});
+
+			});
+		}
+	});
+
+}
 </script>

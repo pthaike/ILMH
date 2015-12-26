@@ -1,40 +1,68 @@
-//下面用于图片上传预览功能
-function setImagePreview(avalue) {
-	var docObj=document.getElementById("doc");
+function loading(){
+	$.get("http://www.homeuhere.com/api/user/",function(data,state){
+		if(data.code == 2001){
+			window.location.href = 'home.html';
+			alert(data.message);
+		}
+		else if(data.code == 200){
+			document.getElementById("userTel").value = data.userTel;
+			document.getElementById("tokens").value = data.token;
+			$("#nav_all_username").html(data.userTel);
+			if(data.userName != undefined){
+				document.getElementById("userName").value = data.userName;
+			}
+			if(data.userGender != undefined){
+				if(userGender == 0){
+					document.getElementById("female").style.checked ="checked";
+				}else{
+					document.getElementById("male").style.checked ="checked";
+				}
+			}
+			if(data.userEmail != undefined){
+				document.getElementById("userEmail").value = data.userEmail;
+			}
+		}
+	});
 
-	var imgObjPreview=document.getElementById("preview");
-	if(docObj.files &&docObj.files[0])
-	{
-	//火狐下，直接设img属性
-	imgObjPreview.style.display = 'block';
-	imgObjPreview.style.width = '120px';
-	imgObjPreview.style.height = '140px'; 
-	//imgObjPreview.src = docObj.files[0].getAsDataURL();
+}
+window.load = loading();
 
-	//火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式
-	imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+function changeInfo(){
+	var gender = 1;
+	if(document.getElementById("female").checked == true){
+		gender = 0;
 	}
-	else
-	{
-	//IE下，使用滤镜
-	docObj.select();
-	var imgSrc = document.selection.createRange().text;
-	var localImagId = document.getElementById("localImag");
-	//必须设置初始大小
-	localImagId.style.width = "120px";
-	localImagId.style.height = "140px";
-	//图片异常的捕捉，防止用户修改后缀来伪造图片
-	try{
-	localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
-	localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+	if( $("#new_pwd").val() == ""){
+		$.post("http://www.homeuhere.com/api/user/",{
+	        "userName":document.getElementById("userName").value,
+	        "userEmail":document.getElementById("userEmail").value,
+	        "token":document.getElementById("tokens").value,
+	        "userGener":gender,
+	        "_method":"put"
+	    },function(data){
+	        alert(data.message);
+	        }
+	    );
+	}else{
+		$.post("http://www.homeuhere.com/api/user/",{
+	        "userName":document.getElementById("userName").value,
+	        "userEmail":document.getElementById("userEmail").value,
+	        "token":document.getElementById("tokens").value,
+	        "userGener":gender,
+	        "userNewPw":$("#new_pwd").val(),
+	        "_method":"put"
+	    },function(data){
+	        alert(data.message);
+	        }
+	    );
 	}
-	catch(e)
-	{
-	alert("您上传的图片格式不正确，请重新选择!");
-	return false;
-	}
-	imgObjPreview.style.display = 'none';
-	document.selection.empty();
-	}
-	return true;
+	
+}	
+
+function logout(){
+    $.get("http://www.homeuhere.com/api/auth/logout",null,function(data){
+        if(data.code == 200){
+        	window.location.href="home.html";
+        }
+    });
 }

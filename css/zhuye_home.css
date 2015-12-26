@@ -81,8 +81,18 @@
 	height:180px;
 	border-collapse:separate;
 }
-
+.content_2 td{
+	width:25%;
+	height:167px;
+}
 .content_2 img{
 	width:95%;
 	height:167px;
+}
+#hr2 {
+    width: 100%;
+    border: 0;
+    height: 2px;
+    background-color: #DCDCDC;
+    margin-bottom: 10px;
 }

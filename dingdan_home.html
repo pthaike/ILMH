@@ -7,22 +7,8 @@
   <link rel="stylesheet" type="text/css" href="css/frame_home.css">
   <link rel="stylesheet" type="text/css" href="css/content_home.css">
   <link rel="stylesheet" type="text/css" href="css/dingdan_home.css">
-  <script src="js/dingdan.js"></script>
-  <script type="text/javascript">
-  	function setuser(){
-        $.get("http://www.homeuhere.com/api/user/",null,function(data){
-            if(data.code == 200){
-                document.getElementById('nav_all_username').innerHTML = data.userName;
-            }
-        })
-    }
-    function logout(){
-        $.get("http://www.homeuhere.com/api/auth/logout",null,function(data){
-            if(data.code == 200){
-            }
-        });
-    }
-  </script>
+  <script src="js/jquery-1.9.0.min.js"></script>
+
 </head>
 <body>
 <div id="body">	
@@ -38,10 +24,11 @@
 				<ul class="all_usernav">
 					<li><img src="images/portraint.png" class="all_userpic"> </li>
 					<li class ="all_user_hover">
-					<a href="#" class="usernavname" id="nav_all_username">121313132132</a>
+					<a href="#" class="usernavname" id="nav_all_username"></a>
 						<ul class="allsubnav">
-							<li><a href="dingdan_home.html">订单信息</a></li>
-							<li><a href="xiugai_home.html">用户信息</a></li>
+							<li><a href="zhuye_home.html">个人中心</a></li>
+							<li><a href="dingdan_home.html">订单中心</a></li>
+							<li><a href="xiugai_home.html">修改资料</a></li>
 							<li><a href="javascript:void(0);" onclick="logout();">退出</a></li>
 						</ul>
 					</li>
@@ -71,26 +58,30 @@
 				<div id="list_2"><a id="a_main" href="dingdan_home.html">订单中心</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
+			<!--
 			<div id="hr"><img src="images/line_home.png" /></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/ruzhuren_home.png"></img></div>
 				<div id="list_2"><a  href="ruzhuren_home.html">入住人信息</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
+			-->
 			<div id="hr"><img src="images/line_home.png" /></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/xiugai_home.png"></img></div>
 				<div id="list_2"><a href="xiugai_home.html">修改资料</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div></a>
+				<div id="list_3"><img src="images/right_home.png"></img></div></a>		
 			</div>
+			<!--
 			<div id="hr"><img src="images/line_home.png" /></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/mima_home.png"></img></div>
 				<div id="list_2"><a href="mima_home.html">密码设置</div>
 				<div id="list_3"><img src="images/right_home.png"></img></div></a>
 			</div>
-		
+			-->
 		</div>
+		
 		
 		<div id="center_content">
 			<div id="content_1">
@@ -98,101 +89,38 @@
 			</div>
 			<hr id="hr2" />
 			<div id="content_2">
-				<table id="dingdan_table">
+				<table id="dingdan_table" class="dingdan_title_item">
 					<tr>
 						<td id="td_main" style="border-left:none;">
-							<input id= "button_1" style="background-color:#696969;color:#ffffff;" type="button" value="全部订单" onclick="Select(1)" \>
+							<!-- <input id= "button_1" style="background-color:#696969;color:#ffffff;" type="button" value="全部订单" onclick="Select(1)" \> -->
+							<a href="dingdan_home.html" style="background-color:#696969;color:#ffffff;">全部订单</a>
 						</td>
 						<td>
-							<input id= "button_2" type="button" value="已完成订单" onclick="return Select(2)"\>
+							<a href="dingdan_home_finish.html">已完成订单</a>
+							<!-- <input id= "button_2" type="button" value="已完成订单" \> -->
 						</td>
 						<td>
-							<input id= "button_3" type="button" value="待完成订单" onclick="return Select(3)"\>
+							<a href="dingdan_home_wait.html">待完成订单</a>
+							<!-- <input id= "button_3" type="button" value="待完成订单" \> -->
 						</td>
 						<td style="border-right:none;">
-							<input id= "button_4" type="button" value="已删除订单" onclick="return Select(4)"\>
+							<a href="dingdan_home_del.html">已删除订单</a>
+							<!-- <input id= "button_4" type="button" value="已删除订单" \> -->
 						</td>
 					</tr>
 				</table>
 			</div>
-			<div id="content_3">
-				<div id="content_3_1">
-					<img id="img_3_1" src="images/banner.jpg" />
-				</div>
-				<div id="content_3_2">
-					<table>
-						<tr><td id="table_3_2_1">订单编号:</td><td id="table_3_2_2">1256156165</td></tr>
-						<tr><td id="table_3_2_1">房屋名称:</td><td id="table_3_2_2">东大街住房</td></tr>
-						<tr><td id="table_3_2_1">下单时间:</td><td id="table_3_2_2">2015.9.12</td></tr>
-						<tr><td id="table_3_2_1">入住离开时间：</td><td id="table_3_2_2">2015.9.16至<br/>2015.10.21</td></tr>
-					</table>
+			<div id="hourse">
+				<div class="dingdanlist">
+					<div class="dingdan_item" id="dditem">
+						<!-- 订单列表 -->
+						
+					</div>
 					
 				</div>
-				<div id="content_3_3">
-					￥400/晚 原价￥700/晚
-				</div>
-				<div id="content_3_4">
-					订单详情<br/><br/>
-					待支付<br/><br/>
-					取消订单<br/><br/>
-				</div>
 			</div>
-						<div id="content_3">
-				<div id="content_3_1">
-					<img id="img_3_1" src="images/jinjiang_home.png" />
-				</div>
-				<div id="content_3_2">
-					<table>
-						<tr><td id="table_3_2_1">订单编号:</td><td id="table_3_2_2">1256156165</td></tr>
-						<tr><td id="table_3_2_1">房屋名称:</td><td id="table_3_2_2">东大街住房</td></tr>
-						<tr><td id="table_3_2_1">下单时间:</td><td id="table_3_2_2">2015.9.12</td></tr>
-						<tr><td id="table_3_2_1">入住离开时间：</td><td id="table_3_2_2">2015.9.16至<br/>2015.10.21</td></tr>
-					</table>
-					
-				</div>
-				<div id="content_3_3">
-					￥400/晚 原价￥700/晚
-				</div>
-				<div id="content_3_4">
-					订单详情<br/><br/>
-					待支付<br/><br/>
-					取消订单<br/><br/>
-				</div>
-			</div>
-						<div id="content_3">
-				<div id="content_3_1">
-					<img id="img_3_1" src="images/jinjiang_home.png" />
-				</div>
-				<div id="content_3_2">
-					<table>
-						<tr><td id="table_3_2_1">订单编号:</td><td id="table_3_2_2">1256156165</td></tr>
-						<tr><td id="table_3_2_1">房屋名称:</td><td id="table_3_2_2">东大街住房</td></tr>
-						<tr><td id="table_3_2_1">下单时间:</td><td id="table_3_2_2">2015.9.12</td></tr>
-						<tr><td id="table_3_2_1">入住离开时间：</td><td id="table_3_2_2">2015.9.16至<br/>2015.10.21</td></tr>
-					</table>
-					
-				</div>
-				<div id="content_3_3">
-					￥400/晚 原价￥700/晚
-				</div>
-				<div id="content_3_4">
-					订单详情<br/><br/>
-					待支付<br/><br/>
-					取消订单<br/><br/>
-				</div>
-			</div>
-			
-			<div class="digg">
-				<span class="disabled"> < </span>
-				<span class="current">1</span>
-				<a href="#?page=2">2</a>
-				<a href="#?page=3">3</a>
-				<a href="#?page=4">4</a>
-				<a href="#?page=5">5</a>
-				...<a href="#?page=199">10</a>
-				<a href="#?page=200">11</a>
-				<a href="#?page=2"> > </a>
-			</div>
+
+			<div class="page" id="pages"></div>
 		</div>
 	</div>
 <!--bottom-->
@@ -202,3 +130,7 @@
 </div>
 </body>
 </html>
+<script src="js/dingdan.js"></script>
+<script type="text/javascript">
+  loading("all");
+</script>

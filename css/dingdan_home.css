@@ -10,10 +10,30 @@
 	font-weight:bold;
 	background-color:#CDCDCD;
 }
-td{
-	border:1.5px solid #9B9B9B;
-	border-bottom:none;
-	border-top:none;
+.dingdan_item td{
+	border: none;
+	padding: 15px;
+}
+.dingdan_item tr{
+	border: solid 1px #9B9B9B;
+}
+.dingdan_item table{
+	margin-bottom: 20px;
+	width: 100%;
+}
+.dingdan_item img{
+	height: 100px;
+	width: 100px;
+}
+.dingdan_item table div{
+	line-height: 25px;
+}
+.del{
+	text-decoration: line-through;
+}
+.dingdan_item .price{
+	color: red;
+	font-size: 2em;
 }
 #dingdan_table input{
 	width:100%;
@@ -24,7 +44,7 @@ td{
 	outline:none;
 	background-color:#CDCDCD;
 }
-#content_3{
+.content_3{
 	border:1px solid #9B9B9B;
 	background-color:#ffffff;
 	height:8em;
@@ -32,13 +52,13 @@ td{
 	padding:10px;
 	width:97%;
 }
-#content_3_1{
+.content_3_1{
 	border:1px solid #9B9B9B;
 	float:left;
 	width:15%;
 	height:100%;
 }
-#img_3_1{
+.img_3_1{
 	width:100%;
 	height:100%;
 }
@@ -47,7 +67,7 @@ td{
 	width:40%;
 	height:100%;
 }
-#table_3_2_1{
+.table_3_2_1{
 	border:none;
 	text-align:right;
 	width:120px;
@@ -55,7 +75,7 @@ td{
 	border-left:none;
 	border-right:none;
 }
-#table_3_2_2{
+.table_3_2_2{
 	text-align:left;
 	padding-left:20px;
 	width:160px;
@@ -63,7 +83,7 @@ td{
 	border-left:none;
 	border-right:none;
 }
-#content_3_3{
+.content_3_3{
 	float:left;
 	width:28%;
 	height:100%;
@@ -72,7 +92,7 @@ td{
 	border-left:none;
 	border-right:none;
 }
-#content_3_4{
+.content_3_4{
 	width:15%;
 	float:left;
 	text-align:center;
@@ -81,21 +101,38 @@ td{
 	border-right:none;
 	
 }
-DIV.digg {
-    PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; MARGIN: 3px; PADDING-TOP: 3px; TEXT-ALIGN: center
+#hr2 {
+    width: 100%;
+    border: 0;
+    height: 2px;
+    background-color: #DCDCDC;
+    margin-bottom: 10px;
 }
-DIV.digg A {
-	BORDER-RIGHT: #aaaadd 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #aaaadd 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #aaaadd 1px solid; COLOR: #000099; PADDING-TOP: 2px; BORDER-BOTTOM: #aaaadd 1px solid; TEXT-DECORATION: none
+.page{
+	width:100%;
+	text-align: center;
+	height:20px;
+	margin-top:20px;
 }
-DIV.digg A:hover {
-	BORDER-RIGHT: #000099 1px solid; BORDER-TOP: #000099 1px solid; BORDER-LEFT: #000099 1px solid; COLOR: #000; BORDER-BOTTOM: #000099 1px solid
+.page a{text-decoration:none;display:inline-block;line-height:14px;padding:2px 5px;color:#333;border:1px solid #ccc;margin:0 2px;}
+.page a:hover,.page a.on{background:#999;color:#fff;border:1px solid #333;}
+.page a.unclick,.page a.unclick:hover{background:none;border:1px solid #eee;color:#999;cursor:default;}
+
+
+
+.tb1{
+	border:1xp solid red;
+	background-color: red;
 }
-DIV.digg A:active {
-	BORDER-RIGHT: #000099 1px solid; BORDER-TOP: #000099 1px solid; BORDER-LEFT: #000099 1px solid; COLOR: #000; BORDER-BOTTOM: #000099 1px solid
+.tb1 #ted1{
+	border:1xp solid red;
 }
-DIV.digg A.current {
-	BORDER-RIGHT: #000099 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #000099 1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #000099 1px solid; COLOR: #fff; PADDING-TOP: 2px; BORDER-BOTTOM: #000099 1px solid; BACKGROUND-COLOR: #000099
+
+.dingdan_title_item a{
+	height: 50px;
+	display: block;
+	line-height: 50px;
 }
-DIV.digg SPAN.disabled {
-	BORDER-RIGHT: #eee 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #eee 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #eee 1px solid; COLOR: #ddd; PADDING-TOP: 2px; BORDER-BOTTOM: #eee 1px solid
+.grayspan{
+	color: gray;
 }

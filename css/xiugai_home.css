@@ -10,13 +10,12 @@
 #td_2{	
 	text-align:left;
 }
-#input_1{
-	margin-left:10px;
-	width:150px;
-	height:23px; 
-	line-height:20px;
+.input_1{
+	height:23px;
+	width:200px;
+	font-size:18px;
 }
-#input_2{
+.input_2{
 	margin-left:10px;
 	width:25px;		
 }
@@ -47,4 +46,14 @@
 	border:none;
 	font-size: 18px;
 	color:white;
+}
+#tokens{
+	display: none;
+}
+#hr2 {
+    width: 100%;
+    border: 0;
+    height: 2px;
+    background-color: #DCDCDC;
+    margin-bottom: 10px;
 }

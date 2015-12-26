@@ -289,6 +289,7 @@ $(function () {
             if(data.code == 200){
                 $('.usernav').hide();
                 $('.onlogin').show();
+                window.location.href="home.html";
             }
         });
     }
@@ -298,7 +299,7 @@ $(function () {
             if(data.code == 200){
                 $('.onlogin').hide();
                 $('.usernav').show();
-                document.getElementById('nav_username').innerHTML = data.userName;
+                document.getElementById('nav_username').innerHTML = data.userTel;
             }
         })
     }

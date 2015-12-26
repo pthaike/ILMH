@@ -297,7 +297,7 @@ $(function () {
             if(data.code == 200){
                 $('#navhead').hide();
                 $('#nav_count').show();
-                document.getElementById('nav_username').innerHTML = data.userName;
+                document.getElementById('nav_username').innerHTML = data.userTel;
                 return true;
             }
         })

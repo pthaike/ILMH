@@ -2,7 +2,7 @@
 <!-- saved from url=(0028)http://www.w3.org/1999/xhtml -->
 <html>
 <head>
-  <title>订单中心</title>
+  <title>房屋搜索</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/frame_home.css">
@@ -11,25 +11,61 @@
   <link rel="stylesheet" type="text/css" href="css/page_home.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
   <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/jquery-1.9.0.min.js"></script>
+
   <script src="js/jquery-ui.js"></script>
   <link rel="stylesheet" href="css/daterangepicker.css" />
   <script src="js/moment.min.js"></script>
   <script src="js/jquery.daterangepicker.js"></script>
   <script type="text/javascript" src="js/login-house.js"></script>
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jZfu4LcQBHGrTbgNl4fXm7nx"></script>
-<script type="text/javascript">
+
+  <script type="text/javascript">
 	setuser();
-$.get("http://www.homeuhere.com/api/suite/2",null, function(data){
-	//百度地图
-	var map = new BMap.Map("leftmap");    // 创建Map实例
-	map.centerAndZoom(new BMap.Point(parseFloat(data.spotLongitude),parseFloat(data.spotLatitude)), 15);  // 初始化地图,设置中心点坐标和地图级别
-	map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
-	map.setCurrentCity("成都");          // 设置地图显示的城市 此项是必须设置的
-	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放   
-	var marker = new BMap.Marker(new BMap.Point(parseFloat(data.spotLongitude),parseFloat(data.spotLatitude)));
-	map.addOverlay(marker);
-	marker.setAnimation(BMAP_ANIMATION_BOUNCE);
-});
+// $.get("http://www.homeuhere.com/api/suite/",null, function(data){
+// 	//百度地图
+	// var map = new BMap.Map("leftmap");    // 创建Map实例
+	// map.centerAndZoom(new BMap.Point(parseFloat(data.spotLongitude),parseFloat(data.spotLatitude)), 15);  // 初始化地图,设置中心点坐标和地图级别
+	// map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+	// map.setCurrentCity("成都");          // 设置地图显示的城市 此项是必须设置的
+	// map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放   
+	// var marker = new BMap.Marker(new BMap.Point(parseFloat(data.spotLongitude),parseFloat(data.spotLatitude)));
+	// map.addOverlay(marker);
+	// marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+// });
+	// $.post("http://www.homeuhere.com/api/suite/",
+	// {
+		
+	// },function(data){
+		
+ //   	});
+</script>
+<script>
+	$(function() {
+		$( "#slider-range" ).slider({
+			range: true,
+			min: 0,
+			max: 1000,
+			values: [ 0, 500 ],
+			slide: function( event, ui ) {
+				$( "#amount" ).val( "￥" + ui.values[ 0 ] + " - ￥" + ui.values[ 1 ] );
+			}
+		});
+		$( "#amount" ).val( "￥" + $( "#slider-range" ).slider( "values", 0 ) +
+			"-￥" + $( "#slider-range" ).slider( "values", 1 ) );
+	});
+	$(function(){
+  	var curDate = new Date();
+  	$('#search_1_2').dateRangePicker(
+  		{
+  			startDate: '$curDate',
+  			autoClose: true,
+  			showShortcuts: false
+  		}
+  		);
+  });
+
+
 </script>
 </head>
 <body>
@@ -69,7 +105,7 @@ $.get("http://www.homeuhere.com/api/suite/2",null, function(data){
 		<div class="search_center1">
 			<div id="search_1">
 				<div id="search_1_1">日期</div>
-				<input id="search_1_2" placeholder="日期">
+				<input id="search_1_2" class="search_date" placeholder="日期">
 			</div>
 			<div id="search_2">
 				<div id="search_1_1">价格</div>
@@ -100,73 +136,23 @@ $.get("http://www.homeuhere.com/api/suite/2",null, function(data){
 				</div>
 			</div>
 			<div id="search_2">
-				<div id="search_1_1">位置</div>
+				<div id="search_1_1">地区类型</div>
 				<div id="search_1_5">
 				  <select id="select2">
 					<option value="1" selected="selected">行政区</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10</option>
+					<option value="2">地铁</option>
+					<option value="3">车站机场</option>
+					<option value="4">商圈</option>
+					<option value="5">景点</option>
 				  </select>
-				  <select id="select2">
-					<option value="1" selected="selected">地铁</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10</option>
-				  </select>
-				  <select id="select2">
-					<option value="1" selected="selected">车站机场</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10</option>
-				  </select>
-				  <select id="select2">
-					<option value="1" selected="selected">商圈</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10</option>
-				  </select>
-				  <select id="select2">
-					<option value="1" selected="selected">景点</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10</option>
-				  </select>
-				  
+				   &nbsp;周边名字
+				  <input type="text" id="spotname"/>
 				</div>
-				<div id="search_1_4"><input id="in1" value="确定搜索" type="submit"></div>
+				<div id="search_1_4">
+					<input id="in1" value="确定搜索" type="button" onclick="searchcon();"/>
+				</div>
 			</div>
-			<div id="search_3">似懂非懂
+			<div id="search_3">
 			</div>
 		</div>
 		<div class="search_center2">
@@ -174,13 +160,13 @@ $.get("http://www.homeuhere.com/api/suite/2",null, function(data){
 			<div id="leftmap"></div>
 			<div class="right">
 				<div id="top">
-					住我家 > 锦江区共有102个结果  
+					住我家 > <span id="respos"></span>共有<span id="resnum"></span>个结果  
 				</div>
 				<div id="center">
-					<table class="table1">
-						<tr>
+					<table class="table1" id="searchtb">
+						<!-- <tr>
 							<td>
-								<table class="table2">
+								<table class="table2" >
 									<tr><td id="td1"><img src="images/zhufang1.png"\></td></tr>
 									<tr><td id="td2">锦江区一环路念一段私搭乱建</td></tr>
 									<tr><td id="td2">水电费水电费</td></tr>
@@ -213,22 +199,15 @@ $.get("http://www.homeuhere.com/api/suite/2",null, function(data){
 									<tr><td id="td2">的</td></tr>
 								</table>
 							</td>
-						</tr>
+						</tr> -->
 					</table>
 				</div>
 				<div id="bb"></div>
 				<div id="bottom">
-					<div class="digg">
-						<span class="disabled"> < </span>
-						<span class="current">1</span>
-						<a href="#?page=2">2</a>
-						<a href="#?page=3">3</a>
-						<a href="#?page=4">4</a>
-						<a href="#?page=5">5</a>
-						...<a href="#?page=199">10</a>
-						<a href="#?page=200">11</a>
-						<a href="#?page=2"> > </a>
-					</div>
+				<div class="pagebox">
+					<div class="page" id="pages"></div>
+				</div>
+					
 				</div>
 			</div>
 		</div>
@@ -328,3 +307,5 @@ $.get("http://www.homeuhere.com/api/suite/2",null, function(data){
 </div>
 </body>
 </html>
+
+<script src="js/search.js"></script>

@@ -44,7 +44,7 @@
 
 }
 .pay_way_choose{
-	width: 565px;
+	/*width: 565px;*/
 }
 .pay_way_choose td{
 /*	width: 184px;*/
@@ -147,4 +147,27 @@
 }
 .house_values div{
 	float: left;
+}
+.pay_center_img{
+	height: 250px;
+	width: 270px;
+}
+.payweixinmig{
+	float: left;
+	line-height: 65px;
+	margin-right: 20px;
+}
+.scancode{
+	width: 200px;
+	margin: auto;
+}
+.scantishi{
+	width: 240px;
+	margin:10px auto;
+}
+#scancodebox{
+	display: none;
+}
+.bt{
+	cursor: pointer;
 }
