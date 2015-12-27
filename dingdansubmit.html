@@ -100,7 +100,7 @@
 			</div>
 			<hr id="hr2" />
 			<div class="pay_center_view">
-				<div class="pay_center_img"><img src="images/pay_house.png"></div>
+				<div class="pay_center_img"><img src="images/pay_house.png" id="payhouseimg"></div>
 				<div class="pay_center_des">
 					<div class="pay_des_item"><span>房名：</span><span class="pay_des_right" id="housetitle">成武</span></div>
 					<div class="pay_des_item"><span>住房地址：</span><span class="pay_des_right" id="houseaddress">成都锦江城市花园2期3.309</span></div>
@@ -159,14 +159,18 @@ if (url.indexOf("?") != -1) {
   suiteId = strs[0].split("=")[1];
   fromtime = strs[1].split("=")[1];
   totime = strs[2].split("=")[1];      
+}else{
+alert("无效支付页面");
+window.location.href = 'home.html';
 }
 
 //设置订单信息
 $.get("http://www.homeuhere.com/api/suite/"+suiteId,null,function(housedata){
-document.getElementById("housetitle").innerHTML = housedata.suiteTitle;
-document.getElementById("houseaddress").innerHTML = housedata.posStreet;
-document.getElementById("ordertime").innerHTML = fromtime+"至"+totime;
-document.getElementById("houseprice").innerHTML = housedata.realPrice;
+	document.getElementById("payhouseimg").src = housedata.suitePicture[0];
+	document.getElementById("housetitle").innerHTML = housedata.suiteTitle;
+	document.getElementById("houseaddress").innerHTML = housedata.posStreet;
+	document.getElementById("ordertime").innerHTML = fromtime+"至"+totime;
+	document.getElementById("houseprice").innerHTML = housedata.realPrice;
 });
 //点击提交事件
 function addpay(){
@@ -179,9 +183,6 @@ function addpay(){
 			// alert(parseInt(suiteId));
 			$.post("http://www.homeuhere.com/api/order/",
 				{
-					// "suiteId":1,
-					// "inTime":"2015-11-15",
-					// "outTime":"2015-11-17",
 					"suiteId":parseInt(suiteId),
 					"inTime":fromtime,
 					"outTime":totime
@@ -190,12 +191,12 @@ function addpay(){
 					if(paydata.code == 200){
 						window.location.href = "pay.html?id="+ paydata.orderId;
 					}
-					else{
+					else if(paydata.code == 6001){
 						alert(paydata.message);
+						window.location.href = 'home.html';
 					}
 			});
 		}
 	});
-
 }
 </script>

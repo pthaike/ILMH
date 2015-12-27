@@ -3,7 +3,9 @@ function fun_search(jsondata){
 	$.post("http://www.homeuhere.com/api/suite/",
 	jsondata,function(data){
 		if(data.code == 200){
+
 		document.getElementById("resnum").innerHTML = data.dataSize;
+
         var id = 1
         var url = document.location.search; 
           if (url.indexOf("?") != -1) {    
@@ -12,62 +14,64 @@ function fun_search(jsondata){
               id = strs[1]       
           }
 
-        
-
-        var pages= parseInt(data.dataSize / 4) + 1;
+        var pages= parseInt(data.dataSize / 4);
+        if(data.dataSize % 4 != 0 ){
+          pages = pages + 1;
+        }
         var num = (id-1)*4;
-        setPage(document.getElementById("pages"),pages,id);
-		var searchtb = document.getElementById("searchtb");
-		var numtmp = num;
+        var searchtb = document.getElementById("searchtb");
+        var numtmp = num;
+        if(data.dataSize > 0){
+          setPage(document.getElementById("pages"),pages,id);
+          var map = new BMap.Map("leftmap");    // 创建Map实例
+          map.centerAndZoom(new BMap.Point(parseFloat(data.data[num].posLongitude),parseFloat(data.data[num].posLatitude)), 15);  // 初始化地图,设置中心点坐标和地图级别
+          map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+          map.setCurrentCity("成都");          // 设置地图显示的城市 此项是必须设置的
+          map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放 
+        }
 
-		var map = new BMap.Map("leftmap");    // 创建Map实例
-		map.centerAndZoom(new BMap.Point(parseFloat(data.data[num].posLongitude),parseFloat(data.data[num].posLatitude)), 15);  // 初始化地图,设置中心点坐标和地图级别
-		map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
-		map.setCurrentCity("成都");          // 设置地图显示的城市 此项是必须设置的
-		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放   
+    		for( var i = 0; i<2&&numtmp<data.dataSize; i++){
+    			var tr = document.createElement("tr");
+    			for(var j = 0; j<2&&numtmp<data.dataSize;j++){
+    				
+    				var td1 = document.createElement("td");
+    				var table1 = document.createElement("table");
+    				table1.setAttribute("class","table2");
+    				//alert(data.data[numtmp].pictureUrl);
+    				var tr1_1 = document.createElement("tr");
+    				var tr1_2 = document.createElement("tr");
+    				var tr1_3 = document.createElement("tr");
+    				var td1_1 = document.createElement("td");
+    				var td1_2 = document.createElement("td");
+    				var td1_3 = document.createElement("td");
 
-		for( var i = 0; i<2&&numtmp<data.dataSize; i++){
-			var tr = document.createElement("tr");
-			for(var j = 0; j<2&&numtmp<data.dataSize;j++){
-				
-				var td1 = document.createElement("td");
-				var table1 = document.createElement("table");
-				table1.setAttribute("class","table2");
-				//alert(data.data[numtmp].pictureUrl);
-				var tr1_1 = document.createElement("tr");
-				var tr1_2 = document.createElement("tr");
-				var tr1_3 = document.createElement("tr");
-				var td1_1 = document.createElement("td");
-				var td1_2 = document.createElement("td");
-				var td1_3 = document.createElement("td");
+    				var img1 = document.createElement("img");
+    				img1.src=data.data[numtmp].pictureUrl;
+    				
+            var a1 = document.createElement("a");
+            a1.appendChild(img1);
+            a1.href = "house.html?suitId="+data.data[numtmp].suitId;
+            td1_1.appendChild(a1);
+    				td1_2.innerHTML =data.data[numtmp].suiteTitle;
+    				td1_3.innerHTML = "￥"+data.data[numtmp].realPrice;
+    				tr1_1.appendChild(td1_1);
+    				tr1_2.appendChild(td1_2);
+    				tr1_3.appendChild(td1_3);
+    				table1.appendChild(tr1_1);
+    				table1.appendChild(tr1_2);
+    				table1.appendChild(tr1_3);
+    				td1.appendChild(table1);
+    				tr.appendChild(td1);
 
-				var img1 = document.createElement("img");
-				img1.src=data.data[numtmp].pictureUrl;
-				
-        var a1 = document.createElement("a");
-        a1.appendChild(img1);
-        a1.href = "house.html?suitId="+data.data[numtmp].suitId;
-        td1_1.appendChild(a1);
-				td1_2.innerHTML =data.data[numtmp].suiteTitle;
-				td1_3.innerHTML = "￥"+data.data[numtmp].realPrice;
-				tr1_1.appendChild(td1_1);
-				tr1_2.appendChild(td1_2);
-				tr1_3.appendChild(td1_3);
-				table1.appendChild(tr1_1);
-				table1.appendChild(tr1_2);
-				table1.appendChild(tr1_3);
-				td1.appendChild(table1);
-				tr.appendChild(td1);
+    				var marker = new BMap.Marker(new BMap.Point(parseFloat(data.data[num].posLongitude),parseFloat(data.data[num].posLatitude)));
+    				map.addOverlay(marker);
+    				marker.setAnimation(BMAP_ANIMATION_BOUNCE);
 
-				var marker = new BMap.Marker(new BMap.Point(parseFloat(data.data[num].posLongitude),parseFloat(data.data[num].posLatitude)));
-				map.addOverlay(marker);
-				marker.setAnimation(BMAP_ANIMATION_BOUNCE);
-
-				numtmp= numtmp +1;
-			}
-			searchtb.appendChild(tr);
-		}
-	}
+    				numtmp= numtmp +1;
+    			}
+    			searchtb.appendChild(tr);
+    		}
+    	}
 		
    	});
 }
@@ -181,6 +185,7 @@ function searchcon(){
 		"spotName":spotname
 	};
 	$('#searchtb tr').remove();
+  $('#pages a').remove();
 	fun_search(jsondata);
 
 }
