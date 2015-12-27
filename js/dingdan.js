@@ -9,10 +9,11 @@
 // }
 
 //container 容器，count 总页数 pageindex 当前页数
-function setPage(container, count, pageindex) {
+function setPage(container, count, pageindex,loc) {
 var container = container;
 var count = count;
 var pageindex = pageindex;
+var location = loc;
 var a = [];
   //总页数少于10 全部显示,大于10 显示前3 后3 中间3 其余....
   if (pageindex == 1) {
@@ -69,14 +70,14 @@ var a = [];
         return false;
       }
       inx--;
-      window.location="dingdan_home.html?page="+inx;
+      window.location=location+"?page="+inx;
       setPage(container, count, inx);
       return false;
     }
     for (var i = 1; i < oAlink.length - 1; i++) { //点击页码
       oAlink[i].onclick = function() {
         inx = parseInt(this.innerHTML);
-        window.location="dingdan_home.html?page="+inx;
+        window.location=location+"?page="+inx;
         setPage(container, count, inx);
         return false;
       }
@@ -86,13 +87,27 @@ var a = [];
         return false;
       }
       inx++;
-      window.location="dingdan_home.html?page="+inx;
+      window.location=location+"?page="+inx;
       setPage(container, count, inx);
       return false;
     }
   } ()
 }
-
+ function delclick(data,location){
+  alert(location);
+  // $.post("http://www.homeuhere.com/api/order/"+data.data[i].orderId,
+  //   {
+  //     "_method":"delete"
+  //   },
+  //   function(data){
+  //     alert(data.message);
+  //     if(data.message == "success"){
+  //       alert("删除成功！");
+  //       window.location.href=location;
+  //     }
+      
+  // });
+};
 function loading(type){
   $.get("http://www.homeuhere.com/api/user/",null,function(data){
       if(data.code == 2001){
@@ -107,6 +122,8 @@ function loading(type){
   {
     "listType":type
   },function(data,state){
+      var url = window.location.pathname;
+      var loc = url.substring(url.lastIndexOf('/')+1, url.length);
       if(data.code == 200){
         var id = 1
         var url = document.location.search; 
@@ -115,13 +132,17 @@ function loading(type){
               strs = str.split("=");   
               id = strs[1]       
           }
-        var pages= parseInt(data.dataSize / 3) + 1;
+        var pages= parseInt(data.dataSize / 3);
+        if(data.dataSize % 3 != 0 ){
+          pages = pages + 1;
+        }
         var num = (id-1)*3;
         if(data.dataSize > 0){
-          setPage(document.getElementById("pages"),pages,id);
+          setPage(document.getElementById("pages"),pages,id,loc);
         }
         
          for(var i =num; i<3+num&&i<data.dataSize;i++){
+          var dataId = data.data[i].orderId;
           var table = document.createElement("table");
           var tr = document.createElement("tr");
           var td1 = document.createElement("td");
@@ -178,10 +199,25 @@ function loading(type){
             td4.appendChild(div7);
           }
           else if(data.data[i].orderStatus==1){
-            a1.href = "paydetail.html?orderId="+data.data[i].orderId;
-            a2.href = "#";
+            a1.href = "paydetail.html?orderId="+ data.data[i].orderId;
+            a2.href = "javascript:void(0)";
             a1.text = "订单详情";
             a2.text = "删除";
+            a2.onclick= function(){
+                $.post("http://www.homeuhere.com/api/order/"+ dataId,
+                  {
+                    "_method":"delete"
+                  },
+                  function(data){
+                    alert(data.message);
+                    if(data.message == "success"){
+                      alert("删除成功！");
+                      window.location.href=loc;
+                    }
+                    
+                });
+            };
+
             span0.innerHTML = "已完成";
             div5.appendChild(a1);
             div7.appendChild(span0);
@@ -189,12 +225,26 @@ function loading(type){
             td4.appendChild(div5);
             td4.appendChild(div6);
             td4.appendChild(div7);
-          }else{
+          }
+          else if(data.data[i].orderStatus==2){
             a1.href = "paydetail.html?orderId="+data.data[i].orderId;
             a2.href = "pay.html";
             a1.text = "订单详情";
             a2.text = "立即下单";
             span0.innerHTML = "删除订单";
+            div5.appendChild(a1);
+            div7.appendChild(span0);
+            div6.appendChild(a2);
+            td4.appendChild(div5);
+            td4.appendChild(div6);
+            td4.appendChild(div7);
+          }
+          else if(data.data[i].orderStatus==3){
+            a1.href = "paydetail.html?orderId="+data.data[i].orderId;
+            a2.href = "pay.html";
+            a1.text = "订单详情";
+            a2.text = "已关闭订单";
+            //span0.innerHTML = "删除订单";
             div5.appendChild(a1);
             div7.appendChild(span0);
             div6.appendChild(a2);
@@ -212,6 +262,8 @@ function loading(type){
          }
       } 
     });
+
+    
 }
 
 
