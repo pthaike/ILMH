@@ -102,10 +102,11 @@ if (url.indexOf("?") != -1) {
        fun_search(null);
     }   
     // alert(id);
+}else{
+  fun_search(null);
 }
 
 
-setPage(document.getElementById("pages"),2,1);
 function setPage(container, count, pageindex) {
 var container = container;
 var count = count;

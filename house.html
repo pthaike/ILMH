@@ -92,14 +92,21 @@ $.get("http://www.homeuhere.com/api/suite/"+id,null, function(data){
 	marker.setAnimation(BMAP_ANIMATION_BOUNCE);
 });
    function clicktrans(){
-   	if($("#search_time").val()==""){
-   		alert("请选择入住时间");
-   		return false;
-   	}
-   		var date = $("#search_time").val().split("to");
-		var fromDate = $.trim(date[0]);
-		var toDate = $.trim(date[1]);
-   		window.location.href="dingdansubmit.html?id="+id+"&fromdate="+fromDate+"&todate="+toDate;
+   	$.get("http://www.homeuhere.com/api/user/",function(data,state){
+   		if (data.code == 200) {
+   			if($("#search_time").val()==""){
+		   		alert("请选择入住时间");
+		   		return false;
+		   	}
+			var date = $("#search_time").val().split("to");
+			var fromDate = $.trim(date[0]);
+			var toDate = $.trim(date[1]);
+			window.location.href="dingdansubmit.html?id="+id+"&fromdate="+fromDate+"&todate="+toDate;
+   		}else{
+   			alert("请登录")；
+   		}
+   	});
+   	
    }
 setuser();
 </script>
