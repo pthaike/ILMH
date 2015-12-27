@@ -49,7 +49,7 @@ function fun_search(jsondata){
         a1.href = "house.html?suitId="+data.data[numtmp].suitId;
         td1_1.appendChild(a1);
 				td1_2.innerHTML =data.data[numtmp].suiteTitle;
-				td1_3.innerHTML = data.data[numtmp].realPrice;
+				td1_3.innerHTML = "￥"+data.data[numtmp].realPrice;
 				tr1_1.appendChild(td1_1);
 				tr1_2.appendChild(td1_2);
 				tr1_3.appendChild(td1_3);

@@ -40,7 +40,12 @@ function changeInfo(){
 	        "userGener":gender,
 	        "_method":"put"
 	    },function(data){
-	        alert(data.message);
+	        if(data.code == 200){
+	        	alert("修改成功");
+	        }else if(data.code == 2001){
+	        	window.location.href = 'home.html';
+				alert(data.message);
+	        }
 	        }
 	    );
 	}else{
@@ -52,7 +57,12 @@ function changeInfo(){
 	        "userNewPw":$("#new_pwd").val(),
 	        "_method":"put"
 	    },function(data){
-	        alert(data.message);
+	        if(data.code == 200){
+	        	alert("修改成功");
+	        }else if(data.code == 2001){
+	        	window.location.href = 'home.html';
+				alert(data.message);
+	        }
 	        }
 	    );
 	}

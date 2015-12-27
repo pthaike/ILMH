@@ -231,7 +231,7 @@ function loading(type){
             a2.href = "house.html?suitId="+data.data[i].suiteId;
             a1.text = "订单详情";
             a2.text = "立即下单";
-            span0.innerHTML = "删除订单";
+            span0.innerHTML = "已删除";
             div5.appendChild(a1);
             div7.appendChild(span0);
             div6.appendChild(a2);
@@ -244,7 +244,7 @@ function loading(type){
             a2.href = "house.html?suitId="+data.data[i].suiteId;
             a1.text = "订单详情";
             a2.text = "立即下单";
-            //span0.innerHTML = "删除订单";
+            span0.innerHTML = "已关闭";
             div5.appendChild(a1);
             div7.appendChild(span0);
             div6.appendChild(a2);

@@ -156,3 +156,16 @@ body{
 .housesubnav{
   background: white;
 }
+.footer-float{
+	float: left;
+}
+.footer-float img{
+	height: 100px;
+}
+.footer-float div{
+	line-height: 32px;
+}
+.footerbox{
+	width: 70em;
+	margin: auto;
+}

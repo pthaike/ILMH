@@ -86,20 +86,99 @@
 				<input id="search_time" class="search_input" type="text" placeholder="入住离开时间">
 			</div>
 			<div class="search_bt">
-				<input id="search_botton" class="search_input" type="button" value="搜索" >
+				<input id="search_botton" class="search_input" type="button" value="搜索" onclick="homesearch()">
 			</div>
 		</div>
 	</div>
 	<div class="clear"></div>
-	<div class="ad">
+	<!-- <div class="ad">
 		<div class="ad_box">
 			<div class="ad_img"><img src="images/ad.png"></div>
 			<div class="ad_text">注册就送50元优惠券</div>
 		</div>
-	</div>
+	</div> -->
 </div>
 <!-- hearder end -->
 
+<!-- content -->
+<div class="content-box">
+	<div class="theme">
+		<div class="theme_box">
+			<div class="theme_title">来成都，住我家</div>
+			<div class="theme_cont">和你在这里遇见，是我最美的记忆</div>
+		</div>
+	</div>
+	<div class="view_pic">
+		<ul class="view_pic_box">
+			<li class="view_img_left">
+				<div class="view_pic_describe">
+					<div class="price">￥268.00</div>
+					<div class="address">锦江、天府广场春熙路旁房源</div>
+				</div>
+				<a href="house.html?suitid=1"></a>
+				<img src="images/pic1.jpg" alt="">
+			</li>
+			<li class="view_img_right">
+				<div class="view_pic_describe">
+					<div class="price">￥268.00</div>
+					<div class="address">锦江、天府广场春熙路旁房源</div>
+				</div>
+				<span><a href="house.html?suitid=1"></a></span>
+				<img src="images/pic2.jpg" alt="">
+			</li>
+			<li class="view_img_right">
+				
+				<div class="view_pic_describe">
+					<div class="price">￥168.00</div>
+					<div class="address">新会展中心</div>
+				</div>
+				<a href="house.html?suitid=1"></a>
+				<img src="images/pic2.jpg" alt="">
+			</li>
+			<li class="view_img_right">
+				
+				<div class="view_pic_describe">
+					<div class="price">￥188.00</div>
+					<div class="address">新会展中心</div>
+				</div>
+				<a href="house.html?suitid=1"></a>
+				<img src="images/pic2.jpg" alt="">
+			</li>
+			<li class="view_img_right">
+				<img src="images/pic2.jpg" alt="">
+				<div class="view_pic_describe">
+					<div class="price">￥268.00</div>
+					<div class="address">新会展中心</div>
+				</div>
+				<a href="house.html?suitid=1"></a>
+			</li>
+		</ul>
+	</div>
+
+	<!-- video -->
+	<div class="theme">
+		<div class="theme_box">
+			<div class="theme_title">理念，特色</div>
+			<div class="theme_cont">住我家，给你一份最特别的温暖</div>
+		</div>
+	</div>
+	<div class="view_video">
+		<ul class="view_video_box">
+			<li class="video_cont">
+				<img src="images/video1.jpg" class="backimg">
+				<img src="images/play.png" class="play">
+				<div class="play_des">住我家，给你一个温暖的家</div>
+				<a href="#" class="play_link"></a>
+			</li>
+			<li class="video_cont">
+				<img src="images/video2.jpg" class="backimg">
+				<img src="images/play.png" class="play">
+				<div class="play_des">成都(锦官城、天府之国)</div>
+				<a href="#" class="play_link"></a>
+			</li>
+		</ul>
+	</div>
+</div>
 <!-- login dialog -->
 <div class="login">
 	<div><a href="javascript:void(0);" class="close-login"><img src="images/close.png"></a></div>
@@ -126,8 +205,8 @@
 		        </div>
 		        <div class="login-button"><a href="javascript:void(0);" id="count_lg_bt" onclick="countlg()">登录</a></div>
 		        <div class="login-footer">
-		        	<input type="checkbox" name="rempswd" class="pswdlabel" />
-		        	<div class="pswdlabel">记住密码</div>
+		        	<!-- <input type="checkbox" name="rempswd" class="pswdlabel" /> -->
+		        	<!-- <div class="pswdlabel">记住密码</div> -->
 		        	<div class="reg_instant"><a href="javascript:void(0);">立即注册</a></div>
 		        	<!-- <div class="forget-pswd"><a href="#">忘记密码</a></div> -->
 		        </div>
@@ -188,91 +267,26 @@
 </div>
 <div class="login-bg"></div>
 <!-- login dialog end-->
-
-<!-- content -->
-<div class="content-box">
-	<div class="theme">
-		<div class="theme_box">
-			<div class="theme_title">来成都，住我家</div>
-			<div class="theme_cont">和你在这里遇见，是我最美的记忆</div>
-		</div>
-	</div>
-	<div class="view_pic">
-		<ul class="view_pic_box">
-			<li class="view_img_left">
-				<div class="view_pic_describe">
-					<div class="price">￥268.00</div>
-					<div class="address">锦江、天府广场春熙路旁房源</div>
-				</div>
-				<a href="#"></a>
-				<img src="images/pic1.jpg" alt="">
-			</li>
-			<li class="view_img_right">
-				<div class="view_pic_describe">
-					<div class="price">￥268.00</div>
-					<div class="address">锦江、天府广场春熙路旁房源</div>
-				</div>
-				<span><a href="#"></a></span>
-				<img src="images/pic2.jpg" alt="">
-			</li>
-			<li class="view_img_right">
-				
-				<div class="view_pic_describe">
-					<div class="price">￥168.00</div>
-					<div class="address">新会展中心</div>
-				</div>
-				<a href="#"></a>
-				<img src="images/pic2.jpg" alt="">
-			</li>
-			<li class="view_img_right">
-				
-				<div class="view_pic_describe">
-					<div class="price">￥188.00</div>
-					<div class="address">新会展中心</div>
-				</div>
-				<a href="#"></a>
-				<img src="images/pic2.jpg" alt="">
-			</li>
-			<li class="view_img_right">
-				<img src="images/pic2.jpg" alt="">
-				<div class="view_pic_describe">
-					<div class="price">￥268.00</div>
-					<div class="address">新会展中心</div>
-				</div>
-				<a href="#"></a>
-			</li>
-		</ul>
-	</div>
-
-	<!-- video -->
-	<div class="theme">
-		<div class="theme_box">
-			<div class="theme_title">理念，特色</div>
-			<div class="theme_cont">住我家，给你一份最特别的温暖</div>
-		</div>
-	</div>
-	<div class="view_video">
-		<ul class="view_video_box">
-			<li class="video_cont">
-				<img src="images/video1.jpg" class="backimg">
-				<img src="images/play.png" class="play">
-				<div class="play_des">住我家，给你一个温暖的家</div>
-				<a href="#" class="play_link"></a>
-			</li>
-			<li class="video_cont">
-				<img src="images/video2.jpg" class="backimg">
-				<img src="images/play.png" class="play">
-				<div class="play_des">成都(锦官城、天府之国)</div>
-				<a href="#" class="play_link"></a>
-			</li>
-		</ul>
-	</div>
-</div>
 <!--bottom-->
 <div class="clear"></div>
-<div id="bottom"></div>
+	<div id="bottom">
+		<div class = "footerbox">
+			<div class="footer-float"><a href="home.html"><img src="images/logo-orange.png"></a></div>
+			<div class="footer-float">
+				<div>@2015 www.homeuhere.com 我爱我家，四川成都磨子桥</div>
+				<div>地址：四川成都磨子桥</div>
+				<div>联系电话：10008992</div>
+			</div>
+		</div>
+	</div>
+
 	
 </div>
 </div>
 </body>
 </html>
+<script type="text/javascript">
+	function homesearch(){
+		window.location.href = 'search_home.html';
+	}
+</script>

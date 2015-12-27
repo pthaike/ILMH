@@ -115,7 +115,7 @@
 
 			<div class="pay_way_box" id="paybtbox">
 				<div class="pay_way_bt">
-					<input type="botton" value="确认支付" onclick="addpay()" class="bt" />
+					<input type="button" value="确认支付" onclick="addpay()" class="bt" />
 				</div>
 			</div>
 			</div>
@@ -123,12 +123,22 @@
 	</div>
 <!--bottom-->
 	<div class="clear"></div>
-	<div id="bottom">
+		<div id="bottom">
+		<div class = "footerbox">
+			<div class="footer-float"><a href="home.html"><img src="images/logo-orange.png"></a></div>
+			<div class="footer-float">
+				<div>@2015 www.homeuhere.com 我爱我家，四川成都磨子桥</div>
+				<div>地址：四川成都磨子桥</div>
+				<div>联系电话：10008992</div>
+			</div>
+		</div>
 	</div>
+
 </div>
 </body>
 </html>
 <script type="text/javascript">
+//获取用户信息
 $.get("http://www.homeuhere.com/api/user/",function(data,state){
 	if(data.code == 2001){
 		window.location.href = 'home.html';
@@ -138,6 +148,7 @@ $.get("http://www.homeuhere.com/api/user/",function(data,state){
 		$("#nav_all_username").html(data.userTel);
 	}
 });
+//获取url参数
 var suiteId = 1;
 var fromtime = "2015-11-15";
 var totime = "2015-11-17";
@@ -150,13 +161,14 @@ if (url.indexOf("?") != -1) {
   totime = strs[2].split("=")[1];      
 }
 
-
+//设置订单信息
 $.get("http://www.homeuhere.com/api/suite/"+suiteId,null,function(housedata){
 document.getElementById("housetitle").innerHTML = housedata.suiteTitle;
 document.getElementById("houseaddress").innerHTML = housedata.posStreet;
 document.getElementById("ordertime").innerHTML = fromtime+"至"+totime;
 document.getElementById("houseprice").innerHTML = housedata.realPrice;
 });
+//点击提交事件
 function addpay(){
 	$.get("http://www.homeuhere.com/api/user/",function(data,state){
 		if(data.code == 2001){
@@ -164,9 +176,13 @@ function addpay(){
 			alert(data.message);
 		}
 		else if(data.code == 200){
+			// alert(parseInt(suiteId));
 			$.post("http://www.homeuhere.com/api/order/",
 				{
-					"suiteId":1,
+					// "suiteId":1,
+					// "inTime":"2015-11-15",
+					// "outTime":"2015-11-17",
+					"suiteId":parseInt(suiteId),
 					"inTime":fromtime,
 					"outTime":totime
 				},
