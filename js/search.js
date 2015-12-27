@@ -40,9 +40,14 @@ function fun_search(jsondata){
 				var td1_1 = document.createElement("td");
 				var td1_2 = document.createElement("td");
 				var td1_3 = document.createElement("td");
+
 				var img1 = document.createElement("img");
 				img1.src=data.data[numtmp].pictureUrl;
-				td1_1.appendChild(img1);
+				
+        var a1 = document.createElement("a");
+        a1.appendChild(img1);
+        a1.href = "house.html?suitId="+data.data[numtmp].suitId;
+        td1_1.appendChild(a1);
 				td1_2.innerHTML =data.data[numtmp].suiteTitle;
 				td1_3.innerHTML = data.data[numtmp].realPrice;
 				tr1_1.appendChild(td1_1);

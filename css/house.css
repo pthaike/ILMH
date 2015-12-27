@@ -216,6 +216,12 @@ body{
 .content_right_item2{
   background-color: #ebebeb;
 }
+.content_right_item2 input{
+  border: none;
+  width:109%;
+  height:30px;
+  background-color: #ebebeb;
+}
 .content_right_item3 input{
   border: none;
   height: 100%;

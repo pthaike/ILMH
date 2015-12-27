@@ -187,7 +187,7 @@ function loading(type){
           span0.setAttribute("class","grayspan");
           if(data.data[i].orderStatus==0){
             a1.href = "paydetail.html?orderId="+data.data[i].orderId;
-            a2.href = "#";
+            a2.href = "pay.html?id="+ dataId;
             a1.text = "订单详情";
             a2.text = "待支付";
             span0.innerHTML = "取消订单";
@@ -198,7 +198,7 @@ function loading(type){
             td4.appendChild(div6);
             td4.appendChild(div7);
           }
-          else if(data.data[i].orderStatus==1){
+          else if(data.data[i].orderStatus==1&&data.data[i].isDeleted==false){
             a1.href = "paydetail.html?orderId="+ data.data[i].orderId;
             a2.href = "javascript:void(0)";
             a1.text = "订单详情";
@@ -226,9 +226,9 @@ function loading(type){
             td4.appendChild(div6);
             td4.appendChild(div7);
           }
-          else if(data.data[i].orderStatus==2){
+          else if(data.data[i].orderStatus==1&&data.data[i].isDeleted==true){
             a1.href = "paydetail.html?orderId="+data.data[i].orderId;
-            a2.href = "pay.html";
+            a2.href = "house.html?suitId="+data.data[i].suiteId;
             a1.text = "订单详情";
             a2.text = "立即下单";
             span0.innerHTML = "删除订单";
@@ -239,11 +239,11 @@ function loading(type){
             td4.appendChild(div6);
             td4.appendChild(div7);
           }
-          else if(data.data[i].orderStatus==3){
+          else if(data.data[i].orderStatus==2){
             a1.href = "paydetail.html?orderId="+data.data[i].orderId;
-            a2.href = "pay.html";
+            a2.href = "house.html?suitId="+data.data[i].suiteId;
             a1.text = "订单详情";
-            a2.text = "已关闭订单";
+            a2.text = "立即下单";
             //span0.innerHTML = "删除订单";
             div5.appendChild(a1);
             div7.appendChild(span0);

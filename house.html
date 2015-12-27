@@ -13,6 +13,9 @@
 <script src="js/jquery.bxslider.js"></script>
 <link href="css/jquery.bxslider.css" rel="stylesheet" />
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jZfu4LcQBHGrTbgNl4fXm7nx"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/jquery.daterangepicker.js"></script>
+<link rel="stylesheet" href="css/daterangepicker.css" />
 <script>
 var id = 1
 var url = document.location.search; 
@@ -21,6 +24,8 @@ if (url.indexOf("?") != -1) {
     strs = str.split("=");   
     id = strs[1]       
 }
+//日期选择
+
 //获取房源
 $.get("http://www.homeuhere.com/api/suite/"+id,null, function(data){
 	document.getElementById('suiteTitle').innerHTML = data.suiteTitle;
@@ -83,7 +88,12 @@ $.get("http://www.homeuhere.com/api/suite/"+id,null, function(data){
 	map.addOverlay(marker);
 	marker.setAnimation(BMAP_ANIMATION_BOUNCE);
 });
-   
+   function clicktrans(){
+   		var date = $("#search_time").val().split("to");
+		var fromDate = $.trim(date[0]);
+		var toDate = $.trim(date[1]);
+   		window.location.href="dingdansubmit.html?id="+id+"&fromdate="+fromDate+"&todate="+toDate;
+   }
 setuser();
 </script>
 </head>
@@ -355,9 +365,10 @@ setuser();
 			</div>
 			<div class="content_right_item2">
 				<img src="images/time_pic.png">
-				<div>2015-11-15至2015-11-13</div>
+				<div ><input id="search_time" type="text" placeholder="入住离开时间"></div>
+				<!-- <input id="search_time" class="search_input" type="text" placeholder="入住离开时间"> -->
 			</div>
-			<div class="content_right_item3"><input type="button" value="预定住房"></div>
+			<div class="content_right_item3"><input type="button" value="预定住房" onclick="clicktrans();"></div>
 			<div class="content_right_item4">地理位置</div>
 			<div class="content_right_map" id="allmap">
 				<!-- <img src="images/right_map.png"> -->
@@ -373,3 +384,15 @@ setuser();
 </div>
 </body>
 </html>
+<script>
+	$(function(){
+    var curDate = new Date();
+    $('#search_time').dateRangePicker(
+        {
+            startDate: '$curDate',
+            autoClose: true,
+            showShortcuts: false
+        }
+        );
+  });
+</script>

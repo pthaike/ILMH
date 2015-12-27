@@ -5,7 +5,6 @@ function paydetail(){
 		strs = str.split("=");   
 		id = strs[1]       
 	}
-
 	$.get("http://www.homeuhere.com/api/user/",null,function(data){
 	    if(data.code == 2001){
 	      window.location.href = 'home.html';
@@ -17,12 +16,19 @@ function paydetail(){
 	});
 
 	$.get("http://www.homeuhere.com/api/order/1234567890123456",function(data){
-	    if(data.orderStatus == 1){
+		if(data.orderStatus == 0){
+			$("#orderStatus").html("待支付");
+	    	$("#orderStatus1").html("待支付");
+		}
+	    else if(data.orderStatus == 1&&data.isDeleted==false){
 	    	$("#orderStatus").html("已完成");
 	    	$("#orderStatus1").html("已完成");
+	    }else if(data.orderStatus == 1&&data.isDeleted==true){
+	    	$("#orderStatus").html("已删除");
+	    	$("#orderStatus1").html("已删除");
 	    }else{
-	    	$("#orderStatus").html("待支付");
-	    	$("#orderStatus1").html("待支付");
+	    	$("#orderStatus").html("已关闭");
+	    	$("#orderStatus1").html("已关闭");
 	    }
 	    $("#picPath").attr("src",data.picPath);
 	    $("#picPath1").attr("src",data.picPath);
