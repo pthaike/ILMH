@@ -23,6 +23,9 @@ if (url.indexOf("?") != -1) {
     var str = url.substr(1); 
     strs = str.split("=");   
     id = strs[1]       
+}else{
+	alert("无效房源页面");
+	window.location.href="home.html";
 }
 //日期选择
 
