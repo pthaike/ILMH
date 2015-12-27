@@ -23,7 +23,7 @@ body{
 	bottom:0;
 	width:100%;
 	margin:auto;
-	height:7em;
+	height:4em;
 	margin-bottom:0px;
 	background-color:#696969;
 
@@ -160,10 +160,10 @@ body{
 	float: left;
 }
 .footer-float img{
-	height: 100px;
+	height: 4em;
 }
 .footer-float div{
-	line-height: 32px;
+	line-height: 4em;
 }
 .footerbox{
 	width: 70em;

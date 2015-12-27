@@ -11,7 +11,11 @@ function fun_search(jsondata){
           if (url.indexOf("?") != -1) {    
               var str = url.substr(1); 
               strs = str.split("=");   
-              id = strs[1]       
+              id = strs[1]
+              if(isNaN(id)){
+                id=1;
+              }     
+              // alert(id);
           }
 
         var pages= parseInt(data.dataSize / 4);
@@ -76,7 +80,31 @@ function fun_search(jsondata){
    	});
 }
 
-fun_search(null);
+
+var url = document.location.search; 
+if (url.indexOf("?") != -1) {    
+    var str = url.substr(1); 
+    strs = str.split("=");   
+    id = strs[1]
+    if(isNaN(id)){
+      strs = str.split("&");   
+      fromtime = strs[0].split("=")[1];
+      totime = strs[1].split("=")[1];  
+      $("#search_1_2").val(fromtime+" to "+totime);
+      var jsondata ={
+        "fromDate":fromtime,
+        "toDate":totime
+      };
+      $('#searchtb tr').remove();
+      $('#pages a').remove();
+      fun_search(jsondata);
+    } else{
+       fun_search(null);
+    }   
+    // alert(id);
+}
+
+
 setPage(document.getElementById("pages"),2,1);
 function setPage(container, count, pageindex) {
 var container = container;
