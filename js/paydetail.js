@@ -1,9 +1,13 @@
 function paydetail(){
 	var url = document.location.search; 
+	var id = 0;
 	if (url.indexOf("?") != -1) {    
 		var str = url.substr(1); 
 		strs = str.split("=");   
 		id = strs[1]       
+	}else{
+		alert("无效订单页面");
+		window.location.href = 'home.html';
 	}
 	$.get("http://www.homeuhere.com/api/user/",null,function(data){
 	    if(data.code == 2001){
@@ -15,7 +19,7 @@ function paydetail(){
 	    }
 	});
 
-	$.get("http://www.homeuhere.com/api/order/1234567890123456",function(data){
+	$.get("http://www.homeuhere.com/api/order/"+id,function(data){
 		if(data.orderStatus == 0){
 			$("#orderStatus").html("待支付");
 	    	$("#orderStatus1").html("待支付");
@@ -55,10 +59,3 @@ function paydetail(){
 
 window.load = paydetail();
 
-function logout(){
-    $.get("http://www.homeuhere.com/api/auth/logout",null,function(data){
-        if(data.code == 200){
-        	window.location.href="home.html";
-        }
-    });
-}

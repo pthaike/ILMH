@@ -8,30 +8,8 @@
   <link rel="stylesheet" type="text/css" href="css/frame_home.css">
   <link rel="stylesheet" type="text/css" href="css/content_home.css">
   <link rel="stylesheet" type="text/css" href="css/pay.css">
+  <script type="text/javascript" src="js/login.js"></script>
   <script src="js/jquery.qrcode.min.js"></script>
-  <script type="text/javascript">
- //  	function changepaytoyl(){
- //  		var wxobj=document.getElementById("weixin")
- //  		wxobj.style.display="table-row";
- //  		var obj = document.getElementById("zfb");
- //  		obj.style.display="table-row";
- //  	}
- //  	function changepaytopt(){
- //  		var wxobj=document.getElementById("weixin")
- //  		wxobj.style.display="none";
- //  		var obj = document.getElementById("zfb");
- //  		obj.style.display="none";
- //  	}
- //  	$.get("http://www.homeuhere.com/api/user/",function(data,state){
-	// 	if(data.code == 2001){
-	// 		window.location.href = 'home.html';
-	// 		alert(data.message);
-	// 	}
-	// 	else if(data.code == 200){
-	// 		$("#nav_all_username").html(data.userTel);
-	// 	}
-	// });
-  </script>
 </head>
 <body>
 <div id="body">	
@@ -45,9 +23,9 @@
 	    <div class ="all_head_right">
 			<div class="nav_all">
 				<ul class="all_usernav">
-					<li><img src="images/portraint.png" class="all_userpic"> </li>
+					<li><img src="images/portraint_man.jpg" class="all_userpic"> </li>
 					<li class ="all_user_hover">
-					<a href="#" class="usernavname" id="nav_all_username"></a>
+					<a href="zhuye_home.html" class="usernavname" id="nav_all_username"></a>
 						<ul class="allsubnav">
 							<li><a href="zhuye_home.html">个人中心</a></li>
 							<li><a href="dingdan_home.html">订单中心</a></li>
@@ -72,33 +50,22 @@
 			<div id="center_2">
 				<div id="list_1"><img src="images/user_home.png"></img></div>
 				<div id="list_2"><a href="zhuye_home.html">个人中心首页</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div></a>
+				<!-- <div id="list_3"><img src="images/right_home.png"></img></div> --></a>
 			</div>
-			<div id="hr"><img src="images/line_home.png" /></div>
+			<div id="hr"><!-- <img src="images/line_home.png" /> --></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/dingdan_home.png"></img></div>
 				<div id="list_2"><a id="a_main" href="dingdan_home.html">订单中心</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div></a>
+				<!-- <div id="list_3"><img src="images/right_home.png"></img></div> --></a>
 			</div>
-			<!-- <div id="hr"><img src="images/line_home.png" /></div>
-			<div id="center_2">
-				<div id="list_1"><img src="images/ruzhuren_home.png"></img></div>
-				<div id="list_2"><a  href="ruzhuren_home.html">入住人信息</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div></a>
-			</div> -->
-			<div id="hr"><img src="images/line_home.png" /></div>
+
+			<div id="hr"><!-- <img src="images/line_home.png" /> --></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/xiugai_home.png"></img></div>
 				<div id="list_2"><a href="xiugai_home.html">修改资料</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div></a>
+				<!-- <div id="list_3"><img src="images/right_home.png"></img></div> --></a>
 			</div>
 
-			<!-- <div id="hr"><img src="images/line_home.png" /></div>
-			<div id="center_2">
-				<div id="list_1"><img src="images/mima_home.png"></img></div>
-				<div id="list_2"><a href="mima_home.html">密码设置</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div></a>
-			</div> -->
 		</div>
 		
 		<div id="center_content">
@@ -209,7 +176,7 @@
 				document.getElementById("orderadddress").innerHTML = housedata.suiteTitle;
 				document.getElementById("payhouseimg").src = housedata.picPath;
 				document.getElementById("ordertime").innerHTML = housedata.inTime+"至"+ housedata.outTime;
-				document.getElementById("payprice").innerHTML = "￥"+housedata.realPrice;
+				document.getElementById("payprice").innerHTML = "￥"+housedata.totalPrice;
 			});
 			$('#scancodebox').show();
 			$.post("http://www.homeuhere.com/api/order/payorder",

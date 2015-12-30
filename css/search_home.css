@@ -13,7 +13,7 @@
 	width:140px;
 	margin-top:13px;
 	height:40px;
-	background-color:red;
+	background-color:#FF9900;
 	font-size:20px;
 	text-align:center;
 	line-height:40px;
@@ -81,11 +81,11 @@
 }
 .search_center1 #search_1_4 #in1{
 	width:100%;
-	height:38px;
+	height:40px;
 	font-size:20px;
 	color:white;
 	border:none;
-	background-color:red;
+	background-color:#FF9900;
 }
 .search_center1 #select1{
 	width:100%;

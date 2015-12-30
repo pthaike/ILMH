@@ -2,12 +2,12 @@
 <!-- saved from url=(0028)http://www.w3.org/1999/xhtml -->
 <html>
 <head>
-  <title>房源详情</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link rel="stylesheet" type="text/css" href="css/frame_home.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/content_home.css">
-  <link rel="stylesheet" type="text/css" href="css/house.css">
+<title>房源详情</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/frame_home.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/content_home.css">
+<link rel="stylesheet" type="text/css" href="css/house.css">
 <script src="js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="js/login-house.js"></script>
 <script src="js/jquery.bxslider.js"></script>
@@ -22,7 +22,7 @@ var url = document.location.search;
 if (url.indexOf("?") != -1) {    
     var str = url.substr(1); 
     strs = str.split("=");   
-    id = strs[1]       
+    id = strs[1];       
 }else{
 	alert("无效房源页面");
 	window.location.href="home.html";
@@ -35,6 +35,7 @@ $.get("http://www.homeuhere.com/api/suite/"+id,null, function(data){
 	document.getElementById('posStreet').innerHTML = data.posStreet;
 	document.getElementById('intrText').innerHTML = data.intrText;
 	document.getElementById('fitNum').innerHTML = data.fitNum;
+	document.getElementById('bedInfo').innerHTML = data.bedInfo;
 	document.getElementById('suiteType').innerHTML = data.suiteType;
 	document.getElementById('intrPerimeter').innerHTML = data.intrPerimeter;
 	document.getElementById('intrTransport').innerHTML = data.intrTransport;
@@ -103,7 +104,8 @@ $.get("http://www.homeuhere.com/api/suite/"+id,null, function(data){
 			var toDate = $.trim(date[1]);
 			window.location.href="dingdansubmit.html?id="+id+"&fromdate="+fromDate+"&todate="+toDate;
    		}else{
-   			alert("请登录")；
+   			alert("请登录");
+   			window.location.href="home.html";
    		}
    	});
    	
@@ -122,13 +124,13 @@ setuser();
 		</div>
 	    <div class="head_right">
 			<div class="text_head" id="navhead">
-				<a href="javascript:void(0);" id="navreg">注册送50元优惠券</a><span style="color:red;font-size:20px;">·</span><span class="login-header"><a href="javascript:void(0);" >登录</a></span></span>
+				<a href="javascript:void(0);" id="navreg">注册送50元优惠券</a><span style="color:#FF9900;font-size:20px;">·</span><span class="login-header"><a href="javascript:void(0);" >登录</a></span></span>
 			</div>
 			<div id="nav_count">
 				<ul class="house_usernav">
-					<li><img src="images/portraint.png" class="userpic"> </li>
+					<li><img src="images/portraint_man.jpg" class="userpic"> </li>
 					<li class ="user_hover">
-					<a href="#" class="usernavname" id="nav_username">121313132132</a>
+					<a href="zhuye_home.html" class="usernavname" id="nav_username"></a>
 						<ul class="housesubnav">
 							<li><a href="zhuye_home.html">个人中心</a></li>
 							<li><a href="dingdan_home.html">订单中心</a></li>
@@ -189,7 +191,7 @@ setuser();
 		        <div class="msg-lg-input">
 		            <div class="login_token"><img class="input_img" src="images/token.png"></div>
 		            <input type="text" placeholder="请输入验证码"  id="lg_msg_tk" class="token-input"/>
-		            <div><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="images/code.png" class="token_code"></a></div> 
+		            <div><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="" class="token_code"></a></div> 
 		        </div>
 		        <div class="clear"></div>
 		        <div class="msg-lg-button"><a href="javascript:void(0);" id="msg_login_bt" onclick="msglogin()">登录</a></div>
@@ -220,12 +222,12 @@ setuser();
 	        <div class="register-input">
 		            <div class="login_token"><img class="input_img" src="images/token.png"></div>
 		            <input type="text" placeholder="请输入验证码"  id="reg_tk" class="token-input"/>
-		            <div ><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="images/code.png" class="token_code" id="reg_tk_img"></a></div> 
+		            <div ><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="" class="token_code" id="reg_tk_img"></a></div> 
 		    </div>
 	        <div class="clear"></div>
 	        <div class="reg-button"><a href="javascript:void(0);" id="login-button-submit" onclick="register()">注册</a></div>
 	        <div class="reg-footer">
-	        	<div class="login_instant"><a href="#">立即登录</a></div>
+	        	<div class="login_instant"><a href="javascript:void(0);">立即登录</a></div>
 	        </div>
 	    </div>
 	</div>
@@ -261,7 +263,7 @@ setuser();
 					<div class="brf_des_box">
 						<div class="brf_des_img"><img src="images/house_size.png"></div>
 						<div class="brf_des">
-							<div class="brf_des_title">房屋面积：50平米</div>
+							<!-- <div class="brf_des_title">房屋面积：50平米</div> -->
 							<div class="brf_des_com" >房屋户型: <span id="suiteType"></span></div>
 						</div>
 					</div>
@@ -270,15 +272,15 @@ setuser();
 						<div class="brf_des_img"><img src="images/people_num.png"></div>
 						<div class="brf_des">
 							<div class="brf_des_title">宜住<span id="fitNum"></span>人</div>
-							<div class="brf_des_com">房客独享整套房屋</div>
+							<!-- <div class="brf_des_com">房客独享整套房屋</div> -->
 						</div>
 					</div>
 					<div class="brf_des_slide"><img src="images/small_line.png"></div>
 					<div class="brf_des_box">
 						<div class="brf_des_img"><img src="images/bed_size.png"></div>
 						<div class="brf_des">
-							<div class="brf_des_title">双人床2米 x 1.5米 x 1张</div>
-							<div class="brf_des_com">沙发：2米 x 0.8米 x 1张</div>
+							<div class="brf_des_title" id="bedInfo"></div>
+							<!-- <div class="brf_des_com" >沙发：2米 x 0.8米 x 1张</div> -->
 						</div>
 					</div>
 				</div>
@@ -288,19 +290,19 @@ setuser();
 				<table>
 					<tr>
 						<td class="content_2_img"><img src="images/content_2_house.png"><div>房屋介绍</div></td>
-						<td class="content_2_des" id="intrText">卧室里面有 无线宽带 55寸三星智能电视机 全新台式商务电脑 床头灯 茶桌 衣柜等。厨房里面有 冰箱 微波炉 燃气灶 电饭煲 各式调味品。房间主色调是 欧式时尚风。房间装修风格是 欧式奢华装修。卫生间里面有 滚筒洗衣机 抽水马桶 淋浴 各种洗浴用品。</td>
+						<td class="content_2_des" id="intrText"></td>
 					</tr>
 					<tr>
 						<td class="content_2_img"><img src="images/content_2-pat.png"><div>小区介绍</div></td>
-						<td class="content_2_des" id="posStreet">无线宽带 55寸三星智能电视机 全新台式商务电脑 床头灯 茶桌 衣柜等。厨房里面有 冰箱 微波炉 燃气灶 电饭煲 各式调味品。房间主色调是 欧式时尚风。房间装修风格是 欧式奢华装修。卫生间里面有 滚筒洗衣机 抽水马桶 淋浴 各</td>
+						<td class="content_2_des" id="posStreet"></td>
 					</tr>
 					<tr>
 						<td class="content_2_img"><img src="images/content_2_env.png"><div>周边介绍</div></td>
-						<td class="content_2_des" id="intrPerimeter">周围的饭馆有 湘菜馆 特色本地饭馆 等。有浦发银行 工商 建设银行。有 农工商 乐购等大中小型各种商超 满足日常需要。有空可以逛逛国美 乐购，医院 徐泾镇中心医院 等，各种设施齐全。</td>
+						<td class="content_2_des" id="intrPerimeter"></td>
 					</tr>
 					<tr>
 						<td class="content_2_img"><img src="images/content_2_bus.png"><div>交通情况</div></td>
-						<td class="content_2_des" id="intrTransport">无论从机场还是高铁均可乘坐地铁 2号线 坐到徐泾东 或者 车接。周围的公交车站有 朱徐线 710 706 865 等，交通便利。打的16元左右。从徐泾东到家里的距离大约4 公里。开车10左右分钟，客人白天到达，提前联系后可提供免费接送服务。</td>
+						<td class="content_2_des" id="intrTransport"></td>
 					</tr>
 					<tr>
 						<td class="content_2_img"><img src="images/content_2_tv.png"><div>配套设施</div></td>
@@ -308,74 +310,11 @@ setuser();
 					</tr>
 				</table>
 			</div>
-			<!-- house comment -->
-			<!--
-			<div class="content_3">
-				<table>
-					<tr class="fisr_tr">
-						<td colspan="3">
-							<img src="images/comment.png">
-							<div>
-								<span>房屋评价信息</span>
-								<span>(120)</span>
-							</div>
-							
-						</td>
-					</tr>
-					<tr class="comment_item">
-						<td>
-							<img src="images/portraint.png">
-						</td>
-						<td class="underline">
-							<div class="comment_type">
-								<div class="comment_name">山河故人</div>
-								<div class="comemnt_time">入住时间： <span>2015年10月</span></div>
-							</div>
-							<div class="clear"></div>
-							<div>来叔叔这边借宿好几次了，来过一次之后再也没留意过周边别的酒店宾馆，这里绝对是五星+。 房间收拾的特别整洁舒服，特别为借宿的客人着想 各种细节方面可以看出来。叔叔做的饭也特别好吃，特别有家的感觉。临走的时候还送我一大包东西，不知道的还以为我去了亲戚家。谢谢叔叔这样真诚的对待每一位房客。感恩。</div>
-							
-							<div class="comment_type">房东回复</div>
-							<div class="org_box"><span class="org_bot_cor"></span>美丽漂亮的朝鲜族美女带着两个韩国朋友（她们公司的老板和老板娘）入住我家，呵呵，还是第一次接待来自韩国的朋友，三天来相处的非常和谐，因为有美女做翻译，沟通交流一点也没有困难。感谢他们选择入住我家，期待着他们再次光临！</div>
-						</td>
-					</tr>
-					<tr class="comment_item">
-						<td>
-							<img src="images/portraint.png">
-						</td>
-						<td class="underline">
-							<div class="comment_type">
-								<div class="comment_name">山河故人</div>
-								<div class="comemnt_time">入住时间： <span>2015年10月</span></div>
-							</div>
-							<div class="clear"></div>
-							<div>来叔叔这边借宿好几次了，来过一次之后再也没留意过周边别的酒店宾馆，这里绝对是五星+。 房间收拾的特别整洁舒服，特别为借宿的客人着想 各种细节方面可以看出来。叔叔做的饭也特别好吃，特别有家的感觉。临走的时候还送我一大包东西，不知道的还以为我去了亲戚家。谢谢叔叔这样真诚的对待每一位房客。感恩。</div>
-						</td>
-					</tr>
-					<tr class="comment_item">
-						<td>
-							<img src="images/portraint.png">
-						</td>
-						<td class="underline">
-							<div class="comment_type">
-								<div class="comment_name">山河故人</div>
-								<div class="comemnt_time">入住时间： <span>2015年10月</span></div>
-							</div>
-							<div class="clear"></div>
-							<div>来叔叔这边借宿好几次了，来过一次之后再也没留意过周边别的酒店宾馆，这里绝对是五星+。 房间收拾的特别整洁舒服，特别为借宿的客人着想 各种细节方面可以看出来。叔叔做的饭也特别好吃，特别有家的感觉。临走的时候还送我一大包东西，不知道的还以为我去了亲戚家。谢谢叔叔这样真诚的对待每一位房客。感恩。</div>
-							
-							<div class="comment_type">房东回复</div>
-							<div class="org_box"><span class="org_bot_cor"></span>美丽漂亮的朝鲜族美女带着两个韩国朋友（她们公司的老板和老板娘）入住我家，呵呵，还是第一次接待来自韩国的朋友，三天来相处的非常和谐，因为有美女做翻译，沟通交流一点也没有困难。感谢他们选择入住我家，期待着他们再次光临！</div>
-						</td>
-					</tr>
-				</table>
-			</div>
-			-->
-			<!-- house comment end -->
 		</div>
 		<div class="content_right">
 		<div class="content_right_box">
 			<div class="content_right_item1">
-				<span class="content_right_price" id="suitprice">￥</span><span class="content_right_unit">/晚</span><span class="line_through">原价<span id="realprice">￥</span>/晚</span>
+				<span class="content_right_price" id="realprice">￥</span><span class="content_right_unit">/晚</span><span class="line_through">原价<span id="suitprice">￥</span>/晚</span>
 			</div>
 			<div class="content_right_item2">
 				<img src="images/time_pic.png">

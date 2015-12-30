@@ -6,6 +6,10 @@ body{
 	margin:0;
 	background-color:#DCDCDC;
 }
+.container{
+	position: relative;
+	min-height:1000px;
+}
 #head{
 	width:100%;
 	margin:auto;
@@ -19,7 +23,7 @@ body{
 	background-color:#DCDCDC;
 }
 #bottom{
-	position:relative;
+	position:absolute;
 	bottom:0;
 	width:100%;
 	margin:auto;
@@ -35,14 +39,14 @@ body{
 }
 #center_list{
 	float:left;
-	width:18em;
-	height:15.5em;
+	width:14em;
+	height:14.2em;
 	margin-left:0px;
 	background-color:#ffffff;
 }
 #center_content{
 	float:right;
-	width:48em;
+	width:51em;
 	height:40em;
 	padding:15px;
 	background-color:#ffffff;
@@ -68,8 +72,9 @@ body{
 	margin-top: 28px;
 }
 .all_userpic{
-	height: 72px;
-	width: 72px
+	height: 48px;
+	width: 48px;
+	margin-top: 13px;
 }
 .allsubnav{
 	height:0;
@@ -78,6 +83,8 @@ body{
   position:absolute;
   top:35px;
   margin-top: 20px;
+  right: 0;
+  width: 85px;
   
 }
 .allsubnav li{
@@ -87,7 +94,7 @@ body{
   height: auto;
 }
 .all_usernav li.all_user_hover:hover a.usernavname{
-  color: red;
+  color: #FF9900;
 }
 .allsubnav li:hover{
   border: solid 1px #f5f5f5;
@@ -144,7 +151,7 @@ body{
   height: auto;
 }
 .house_usernav li.user_hover:hover a.usernavname{
-  color: red;
+  color: #FF9900;
 }
 .housesubnav li:hover{
   border: solid 1px #f5f5f5;

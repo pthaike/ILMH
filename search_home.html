@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/jquery-ui.css">
   <script src="js/jquery-1.10.2.js"></script>
   <script src="js/jquery-1.9.0.min.js"></script>
-
   <script src="js/jquery-ui.js"></script>
   <link rel="stylesheet" href="css/daterangepicker.css" />
   <script src="js/moment.min.js"></script>
@@ -20,27 +19,8 @@
   <script type="text/javascript" src="js/login-house.js"></script>
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jZfu4LcQBHGrTbgNl4fXm7nx"></script>
 
-  <script type="text/javascript">
-	setuser();
-// $.get("http://www.homeuhere.com/api/suite/",null, function(data){
-// 	//百度地图
-	// var map = new BMap.Map("leftmap");    // 创建Map实例
-	// map.centerAndZoom(new BMap.Point(parseFloat(data.spotLongitude),parseFloat(data.spotLatitude)), 15);  // 初始化地图,设置中心点坐标和地图级别
-	// map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
-	// map.setCurrentCity("成都");          // 设置地图显示的城市 此项是必须设置的
-	// map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放   
-	// var marker = new BMap.Marker(new BMap.Point(parseFloat(data.spotLongitude),parseFloat(data.spotLatitude)));
-	// map.addOverlay(marker);
-	// marker.setAnimation(BMAP_ANIMATION_BOUNCE);
-// });
-	// $.post("http://www.homeuhere.com/api/suite/",
-	// {
-		
-	// },function(data){
-		
- //   	});
-</script>
 <script>
+setuser();
 	$(function() {
 		$( "#slider-range" ).slider({
 			range: true,
@@ -54,6 +34,7 @@
 		$( "#amount" ).val( "￥" + $( "#slider-range" ).slider( "values", 0 ) +
 			"-￥" + $( "#slider-range" ).slider( "values", 1 ) );
 	});
+
 	$(function(){
   	var curDate = new Date();
   	$('#search_1_2').dateRangePicker(
@@ -64,7 +45,6 @@
   		}
   		);
   });
-
 
 </script>
 </head>
@@ -79,16 +59,17 @@
 		</div>
 	    <div class="head_right">
 			<div class="text_head" id="navhead">
-				<a href="javascript:void(0);" id="navreg">注册送50元优惠券</a><span style="color:red;font-size:20px;">·</span><span class="login-header"><a href="javascript:void(0);" >登录</a></span></span>
+				<a href="javascript:void(0);" id="navreg">注册送50元优惠券</a><span style="color:#FF9900;font-size:20px;">·</span><span class="login-header"><a href="javascript:void(0);" >登录</a></span></span>
 			</div>
 			<div id="nav_count">
 				<ul class="house_usernav">
-					<li><img src="images/portraint.png" class="userpic"> </li>
+					<li><img src="images/portraint_man.jpg" class="userpic"> </li>
 					<li class ="user_hover">
-					<a href="#" class="usernavname" id="nav_username">121313132132</a>
+					<a href="zhuye_home.html" class="usernavname" id="nav_username">121313132132</a>
 						<ul class="housesubnav">
-							<li><a href="dingdan_home.html">订单信息</a></li>
-							<li><a href="xiugai_home.html">用户信息</a></li>
+							<li><a href="zhuye_home.html">个人中心</a></li>
+							<li><a href="dingdan_home.html">订单中心</a></li>
+							<li><a href="xiugai_home.html">修改资料</a></li>
 							<li><a href="javascript:void(0);" onclick="logout();">退出</a></li>
 						</ul>
 					</li>
@@ -111,6 +92,7 @@
 				<div id="search_1_1">价格</div>
 				<div id="search_1_3">
 					<div id="slider-range"></div>
+					<!-- <div id="slider-range"></div> -->
 				</div>
 				<div id="search_1_4">
 					<input type="text" id="amount" readonly style="border:0;font-weight:bold;">
@@ -164,42 +146,7 @@
 				</div>
 				<div id="center">
 					<table class="table1" id="searchtb">
-						<!-- <tr>
-							<td>
-								<table class="table2" >
-									<tr><td id="td1"><img src="images/zhufang1.png"\></td></tr>
-									<tr><td id="td2">锦江区一环路念一段私搭乱建</td></tr>
-									<tr><td id="td2">水电费水电费</td></tr>
-									<tr><td id="td2">的</td></tr>
-								</table>
-							</td>
-							<td>
-								<table class="table2">
-									<tr><td id="td1"><img src="images/zhufang1.png"\></td></tr>
-									<tr><td id="td2">锦江区一环路念一段私搭乱建</td></tr>
-									<tr><td id="td2">水电费水电费</td></tr>
-									<tr><td id="td2">的</td></tr>
-								</table>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<table class="table2">
-									<tr><td id="td1"><img src="images/zhufang1.png"\></td></tr>
-									<tr><td id="td2">锦江区一环路念一段私搭乱建</td></tr>
-									<tr><td id="td2">水电费水电费</td></tr>
-									<tr><td id="td2">的</td></tr>
-								</table>
-							</td>
-							<td>
-								<table class="table2">
-									<tr><td id="td1"><img src="images/zhufang1.png"\></td></tr>
-									<tr><td id="td2">锦江区一环路念一段私搭乱建</td></tr>
-									<tr><td id="td2">水电费水电费</td></tr>
-									<tr><td id="td2">的</td></tr>
-								</table>
-							</td>
-						</tr> -->
+
 					</table>
 				</div>
 				<div id="bb"></div>
@@ -268,7 +215,7 @@
 		        <div class="msg-lg-input">
 		            <div class="login_token"><img class="input_img" src="images/token.png"></div>
 		            <input type="text" placeholder="请输入验证码"  id="lg_msg_tk" class="token-input"/>
-		            <div><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="images/code.png" class="token_code"></a></div> 
+		            <div><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="" class="token_code"></a></div> 
 		        </div>
 		        <div class="clear"></div>
 		        <div class="msg-lg-button"><a href="javascript:void(0);" id="msg_login_bt" onclick="msglogin()">登录</a></div>
@@ -299,12 +246,12 @@
 	        <div class="register-input">
 		            <div class="login_token"><img class="input_img" src="images/token.png"></div>
 		            <input type="text" placeholder="请输入验证码"  id="reg_tk" class="token-input"/>
-		            <div ><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="images/code.png" class="token_code" id="reg_tk_img"></a></div> 
+		            <div ><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="" class="token_code" id="reg_tk_img"></a></div> 
 		    </div>
 	        <div class="clear"></div>
 	        <div class="reg-button"><a href="javascript:void(0);" id="login-button-submit" onclick="register()">注册</a></div>
 	        <div class="reg-footer">
-	        	<div class="login_instant"><a href="#">立即登录</a></div>
+	        	<div class="login_instant"><a href="javascript:void();">立即登录</a></div>
 	        </div>
 	    </div>
 	</div>

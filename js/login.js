@@ -16,7 +16,7 @@ $(function () {
         $('#count_login_link').click(function(){
             $('.message_login').hide();
             $('.count_login').show();
-            document.getElementById('count_login_title').style.borderBottom="solid red 1px";
+            document.getElementById('count_login_title').style.borderBottom="solid #FF9900 1px";
             document.getElementById('message_login_title').style.borderBottom='none';
             lgcountgettk();
         });
@@ -25,7 +25,7 @@ $(function () {
         $('#msg_login_link').click(function(){
             $('.count_login').hide();
             $('.message_login').show();
-            document.getElementById('message_login_title').style.borderBottom='solid red 1px'
+            document.getElementById('message_login_title').style.borderBottom='solid #FF9900 1px'
             document.getElementById('count_login_title').style.borderBottom="none";
             lgcountgettk();
         });

@@ -6,11 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <link rel="stylesheet" type="text/css" href="css/frame_home.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/daterangepicker.css" />
 <link href="css/jquery.bxslider.css" rel="stylesheet" />
 <script src="js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
 <script src="js/jquery.bxslider.js"></script>
-<link rel="stylesheet" href="css/daterangepicker.css" />
 <script src="js/moment.min.js"></script>
 <script src="js/jquery.daterangepicker.js"></script>
 
@@ -35,12 +35,11 @@
 </script>
 </head>
 <body>
-<!-- header -->
 <div class="header">
 	<div class="header-top">
 		<div class="navlogo">
 			<ul>
-				<li><a href="home.html"><img src="images/logo.png" alt="home" class="logopic"></a></li>
+				<li><a href="home.html"><img src="images/logo-orange.png" alt="home" class="logopic"></a></li>
 			</ul>
 		</div>
 		<div class="navlogin">
@@ -52,9 +51,9 @@
 				<li class="navsearch"><span ><a href="./search_home.html">立即搜索房源</a></span></li>
 			</ul>
 			<ul class="usernav">
-				<li><img src="images/portraint.png" class="userpic"> </li>
+				<li><img src="images/portraint_man.jpg" class="userpic"> </li>
 				<li class ="user_hover">
-				<a href="#" class="usernavname" id="nav_username"></a>
+				<a href="zhuye_home.html" class="usernavname" id="nav_username"></a>
 					<ul class="subnav">
 						<li><a href="zhuye_home.html">个人中心</a></li>
 						<li><a href="dingdan_home.html">订单中心</a></li>
@@ -168,13 +167,13 @@
 				<img src="images/video1.jpg" class="backimg">
 				<img src="images/play.png" class="play">
 				<div class="play_des">住我家，给你一个温暖的家</div>
-				<a href="#" class="play_link"></a>
+				<a href="house.html?suitid=1" class="play_link"></a>
 			</li>
 			<li class="video_cont">
 				<img src="images/video2.jpg" class="backimg">
 				<img src="images/play.png" class="play">
 				<div class="play_des">成都(锦官城、天府之国)</div>
-				<a href="#" class="play_link"></a>
+				<a href="house.html?suitid=1" class="play_link"></a>
 			</li>
 		</ul>
 	</div>
@@ -224,7 +223,7 @@
 		        <div class="msg-lg-input">
 		            <div class="login_token"><img class="input_img" src="images/token.png"></div>
 		            <input type="text" placeholder="请输入验证码"  id="lg_msg_tk" class="token-input"/>
-		            <div><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="images/code.png" class="token_code"></a></div> 
+		            <div><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="" class="token_code"></a></div> 
 		        </div>
 		        <div class="clear"></div>
 		        <div class="msg-lg-button"><a href="javascript:void(0);" id="msg_login_bt" onclick="msglogin()">登录</a></div>
@@ -255,12 +254,12 @@
 	        <div class="register-input">
 		            <div class="login_token"><img class="input_img" src="images/token.png"></div>
 		            <input type="text" placeholder="请输入验证码"  id="reg_tk" class="token-input"/>
-		            <div ><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="images/code.png" class="token_code" id="reg_tk_img"></a></div> 
+		            <div ><a href="javascript:void(0);" onclick="lgcountgettk()"><img src="" class="token_code" id="reg_tk_img"></a></div> 
 		    </div>
 	        <div class="clear"></div>
 	        <div class="reg-button"><a href="javascript:void(0);" id="login-button-submit" onclick="register()">注册</a></div>
 	        <div class="reg-footer">
-	        	<div class="login_instant"><a href="#">立即登录</a></div>
+	        	<div class="login_instant"><a href="javascript:void(0);">立即登录</a></div>
 	        </div>
 	    </div>
 	</div>

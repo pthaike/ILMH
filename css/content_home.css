@@ -2,7 +2,9 @@
 /*@import url("init.css");*/
 #head_in{
 	width:70em;
+	height: 72px;
 	margin:auto;
+	position: relative;
 }
 #head_left{
 	float:left;
@@ -27,16 +29,16 @@
 	/*list*/
 
 #center_list{
-	width:18em;
+	width:14em;
 	background-color:#ffffff;
 }
 #center_1{
 	width:100%;
-	height:5em;
+	height:2.8em;
 	background-color:#696969;
 }
 #center_1 p{
-	line-height:3.5em;
+	line-height:1.7em;
 	margin-left:1em;
 	color:#ffffff;
 	font-size:25px;
@@ -53,10 +55,9 @@
 	height:2.5em;
 }
 #hr{
-	width:95%;
-	height:7px; 
-	margin:0 auto;
-	margin-top: -5px;
+	width:100%;
+	height:0.5em; 
+	background-color: #DCDCDC;
 }
 #hr img{
 	width:100%;
@@ -78,7 +79,8 @@
 #a_main{
 	padding:0;
 	margin:0;
-	color:#DC143C;
+	color:#FF9900
+;
 }
 a{
 	padding:0;

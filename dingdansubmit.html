@@ -8,22 +8,9 @@
   <link rel="stylesheet" type="text/css" href="css/frame_home.css">
   <link rel="stylesheet" type="text/css" href="css/content_home.css">
   <link rel="stylesheet" type="text/css" href="css/pay.css">
+  <script type="text/javascript" src="js/login.js"></script>
   <script src="js/jquery.qrcode.min.js"></script>
-  <script type="text/javascript">
-  	// function changepaytoyl(){
-  	// 	var wxobj=document.getElementById("weixin")
-  	// 	wxobj.style.display="table-row";
-  	// 	var obj = document.getElementById("zfb");
-  	// 	obj.style.display="table-row";
-  	// }
-  	// function changepaytopt(){
-  	// 	var wxobj=document.getElementById("weixin")
-  	// 	wxobj.style.display="none";
-  	// 	var obj = document.getElementById("zfb");
-  	// 	obj.style.display="none";
-  	// }
-  	
-  </script>
+
 </head>
 <body>
 <div id="body">	
@@ -37,9 +24,9 @@
 	    <div class ="all_head_right">
 			<div class="nav_all">
 				<ul class="all_usernav">
-					<li><img src="images/portraint.png" class="all_userpic"> </li>
+					<li><img src="images/portraint_man.jpg" class="all_userpic"> </li>
 					<li class ="all_user_hover">
-					<a href="#" class="usernavname" id="nav_all_username"></a>
+					<a href="zhuye_home.html" class="usernavname" id="nav_all_username"></a>
 						<ul class="allsubnav">
 							<li><a href="zhuye_home.html">个人中心</a></li>
 							<li><a href="dingdan_home.html">订单中心</a></li>
@@ -64,33 +51,22 @@
 			<div id="center_2">
 				<div id="list_1"><img src="images/user_home.png"></img></div>
 				<div id="list_2"><a href="zhuye_home.html">个人中心首页</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div></a>
+				<!-- <div id="list_3"><img src="images/right_home.png"></img></div> --></a>
 			</div>
-			<div id="hr"><img src="images/line_home.png" /></div>
+			<div id="hr"><!-- <img src="images/line_home.png" /> --></div>
 			<div id="center_2">
 				<div id="list_1"><img src="images/dingdan_home.png"></img></div>
-				<div id="list_2"><a id="a_main" href="dingdan_home.html">订单中心</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div></a>
-			</div>
-			<!-- <div id="hr"><img src="images/line_home.png" /></div>
-			<div id="center_2">
-				<div id="list_1"><img src="images/ruzhuren_home.png"></img></div>
-				<div id="list_2"><a  href="ruzhuren_home.html">入住人信息</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div></a>
-			</div> -->
-			<div id="hr"><img src="images/line_home.png" /></div>
-			<div id="center_2">
-				<div id="list_1"><img src="images/xiugai_home.png"></img></div>
-				<div id="list_2"><a href="xiugai_home.html">修改资料</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div></a>
+				<div id="list_2"><a id="a_main" href="dingdan_home.html">订单中心</a></div>
+
 			</div>
 
-			<!-- <div id="hr"><img src="images/line_home.png" /></div>
+			<div id="hr"><!-- <img src="images/line_home.png" /> --></div>
 			<div id="center_2">
-				<div id="list_1"><img src="images/mima_home.png"></img></div>
-				<div id="list_2"><a href="mima_home.html">密码设置</div>
-				<div id="list_3"><img src="images/right_home.png"></img></div></a>
-			</div> -->
+				<div id="list_1"><img src="images/xiugai_home.png"></img></div>
+				<div id="list_2"><a href="xiugai_home.html">修改资料</a></div>
+
+			</div>
+
 		</div>
 		
 		<div id="center_content">
@@ -100,12 +76,12 @@
 			</div>
 			<hr id="hr2" />
 			<div class="pay_center_view">
-				<div class="pay_center_img"><img src="images/pay_house.png" id="payhouseimg"></div>
+				<div class="pay_center_img"><img src="" id="payhouseimg"></div>
 				<div class="pay_center_des">
-					<div class="pay_des_item"><span>房名：</span><span class="pay_des_right" id="housetitle">成武</span></div>
-					<div class="pay_des_item"><span>住房地址：</span><span class="pay_des_right" id="houseaddress">成都锦江城市花园2期3.309</span></div>
-					<div class="pay_des_item"><span>入住离开时间：</span><span class="pay_des_right" id="ordertime">2015.09.12至2015.09.15</span></div>
-					<div class="pay_des_item"><span>支付金额：</span><span class="pay_des_price" id="houseprice">￥400</span></div>
+					<div class="pay_des_item"><span>房名：</span><span class="pay_des_right" id="housetitle"></span></div>
+					<div class="pay_des_item"><span>住房地址：</span><span class="pay_des_right" id="houseaddress"></span></div>
+					<div class="pay_des_item"><span>入住离开时间：</span><span class="pay_des_right" id="ordertime"></span></div>
+					<div class="pay_des_item"><span>金额：</span><span class="pay_des_price" id="houseprice"></span></div>
 					<div id="weixinpayimg" class="pay_des_item "><div class="payweixinmig">微信支付</div><div class="payweixinmig"><img src="images/wexinpay.png"></div></div>
 				</div>
 			</div>
@@ -168,7 +144,7 @@ $.get("http://www.homeuhere.com/api/suite/"+suiteId,null,function(housedata){
 	document.getElementById("housetitle").innerHTML = housedata.suiteTitle;
 	document.getElementById("houseaddress").innerHTML = housedata.posStreet;
 	document.getElementById("ordertime").innerHTML = fromtime+"至"+totime;
-	document.getElementById("houseprice").innerHTML = housedata.realPrice;
+	document.getElementById("houseprice").innerHTML = "￥"+housedata.realPrice+"/晚";
 });
 //点击提交事件
 function addpay(){
@@ -191,7 +167,7 @@ function addpay(){
 					}
 					else if(paydata.code == 6001){
 						alert(paydata.message);
-						window.location.href = 'home.html';
+						window.location.href = 'house.html?suitId='+suiteId;
 					}
 			});
 		}

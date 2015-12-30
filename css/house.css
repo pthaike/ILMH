@@ -21,7 +21,7 @@ body{
   width:140px;
   margin-top:13px;
   height:40px;
-  background-color:red;
+  background-color:#FF9900;
   font-size:20px;
   text-align:center;
   line-height:40px;
@@ -59,7 +59,7 @@ body{
 }
 .content_1{
   width: 100%;
-  height: 578px;
+  height: 590px;
   background: white;
   margin-bottom: 10px;
 }
@@ -97,7 +97,7 @@ body{
   
   .bx-wrapper .bx-pager a:hover,
   .bx-wrapper .bx-pager a.active {
-    border: solid #52B1DD 2px;
+    border: solid #FF9900 2px;
   }
   
  /* .bx-wrapper {
@@ -228,7 +228,7 @@ body{
   height: 100%;
   width: 100%;
   color: white;
-  background-color: red;
+  background-color: #FF9900;
   font-size: 1.2em;
 }
 .content_right_map {

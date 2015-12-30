@@ -1,12 +1,3 @@
-// function Select(num){
-// 	for(var i=1; i<5; i++)
-// 	{
-// 		document.getElementById("button_"+i).style.backgroundColor="#CDCDCD";
-// 		document.getElementById("button_"+i).style.color="#000000";
-// 	}
-// 	document.getElementById("button_"+num).style.backgroundColor="#696969";
-// 	document.getElementById("button_"+num).style.color="#ffffff";
-// }
 
 //container 容器，count 总页数 pageindex 当前页数
 function setPage(container, count, pageindex,loc) {
@@ -188,12 +179,26 @@ function loading(type){
           if(data.data[i].orderStatus==0){
             a1.href = "paydetail.html?orderId="+data.data[i].orderId;
             a2.href = "pay.html?id="+ dataId;
+            a3.href = "javascript:void(0)";
+            a3.onclick = function(){
+              $.post("http://www.homeuhere.com/api/order/",
+                  {
+                    "orderId":dataId,
+                    "_method":"put"
+                  },
+                  function(data){
+                    //alert(data.message);
+                    if(data.message == "success"){
+                      window.location.href=loc;
+                    }
+                });
+            };
             a1.text = "订单详情";
             a2.text = "待支付";
-            span0.innerHTML = "取消订单";
+            a3.text = "关闭订单";
             div5.appendChild(a1);
             div6.appendChild(a2);
-            div7.appendChild(span0);
+            div7.appendChild(a3);
             td4.appendChild(div5);
             td4.appendChild(div6);
             td4.appendChild(div7);
@@ -266,10 +271,6 @@ function loading(type){
     
 }
 
-
-// function mainfunction(type){
-//   window.load = loading(type);
-// }
 
 function logout(){
     $.get("http://www.homeuhere.com/api/auth/logout",null,function(data){

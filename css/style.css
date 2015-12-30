@@ -83,7 +83,7 @@ body{
 }
 .navsearch{
   height: 36px;
-  background: red;
+  background: #FF9900;
   padding: 2px;
 }
 
@@ -142,6 +142,10 @@ body{
   margin-left:-250px;
   margin-top:-140px;
 }
+.login a{
+  text-decoration: none;
+  color: black;
+}
 .message_login{
   display: none;
 }
@@ -181,7 +185,7 @@ body{
 }
 
 #count_login_title{
-  border-bottom: solid red 1px;
+  border-bottom: solid #FF9900 1px;
 }
 
 .login-title{
@@ -344,7 +348,7 @@ body{
   line-height:40px;
   font-size:14px;
   text-align:center;
-  background-color: red;
+  background-color: #FF9900;
   color: white;
   margin-left: 35px;
 }
@@ -353,7 +357,7 @@ body{
     line-height: 40px;
     font-size: 14px;
     text-align: center;
-    background-color: red;
+    background-color: #FF9900;
     color: white;
     margin: 16px 40px;
 }
@@ -448,12 +452,17 @@ body{
     height: 60px;
     width: 60px;
   }
+  .search_img img{
+    height: 60px;
+    width: 60px;
+  }
 
   #search_botton{
     height: 60px;
     width: 100px;
-    background-color: red;
+    background-color: #FF9900;
     color: white;
+    font-size: 1.6em;
   }
   .ad{
     position: absolute;
@@ -558,8 +567,8 @@ body{
   }
 
   .price{
-    background-color: #FF0000;
-    opacity: 0.5;
+    background-color: #FF9900;
+    opacity: 0.7;
     filter:Alpha(opacity=50);
     color: white;
     height: 29px;
@@ -581,8 +590,8 @@ body{
 
   }
    .view_pic_box a:hover{
-    background-color: #EAE8E8;
-    opacity: 0.5;
+    background-color: #FF9900;
+    opacity: 0.3;
     filter:Alpha(opacity=50);
     border: solid 1px #ddd;
     
@@ -638,8 +647,8 @@ body{
   }
 
   .play_link:hover{
-    background-color: #EAE8E8;
-    opacity: 0.5;
+    background-color: #FF9900;
+    opacity: 0.3;
     filter:Alpha(opacity=50);
     border: solid 1px #ddd;
   }
